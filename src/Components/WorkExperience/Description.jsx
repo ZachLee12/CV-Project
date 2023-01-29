@@ -30,8 +30,7 @@ class Description extends React.Component {
                 id: uniqid()
             },
             descriptionList: [...this.state.descriptionList, this.state.description]
-        }, function () { console.log(this.state) })
-
+        })
     }
 
     onSubmitForm = (e) => {

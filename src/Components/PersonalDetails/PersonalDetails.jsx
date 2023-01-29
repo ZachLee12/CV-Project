@@ -1,4 +1,5 @@
 import './StylePersonalDetails.css'
+import Address from './Address';
 import React from 'react';
 
 class PersonalDetails extends React.Component {
@@ -7,8 +8,10 @@ class PersonalDetails extends React.Component {
         this.state = {
             firstName: 'Your First Name',
             lastName: 'Your Last Name',
-            displayFirstName: false,
-            displayLastName: false,
+            phoneNumber: '+123 456 789',
+            displayFirstNameInput: false,
+            displayLastNameInput: false,
+            displayPhoneNumberInput: false
         }
     }
 
@@ -16,14 +19,18 @@ class PersonalDetails extends React.Component {
         this.setState({
             firstName: e.target.value
         })
-        // setTimeout(() => console.log(this.state), 0)
     }
 
     onChangeLastName = (e) => {
         this.setState({
             lastName: e.target.value
         })
-        // setTimeout(() => console.log(this.state), 0)
+    }
+
+    onChangePhoneNumber = (e) => {
+        this.setState({
+            phoneNumber: e.target.value
+        })
     }
 
     onSubmitForm = (e) => {
@@ -32,13 +39,19 @@ class PersonalDetails extends React.Component {
 
     onClickFirstName = (e) => {
         this.setState({
-            displayFirstName: !this.state.displayFirstName
+            displayFirstNameInput: !this.state.displayFirstNameInput
         })
     }
 
     onClickLastName = (e) => {
         this.setState({
-            displayLastName: !this.state.displayLastName
+            displayLastNameInput: !this.state.displayLastNameInput
+        })
+    }
+
+    onClickPhoneNumber = (e) => {
+        this.setState({
+            displayPhoneNumberInput: !this.state.displayPhoneNumberInput
         })
     }
 
@@ -52,7 +65,7 @@ class PersonalDetails extends React.Component {
                             : this.state.firstName}
                     </label>
                     <input
-                        className={`first-name-input ${this.state.displayFirstName ? '' : 'hidden'}`}
+                        className={`first-name-input ${this.state.displayFirstNameInput ? '' : 'hidden'}`}
                         type="text"
                         id="first-name-input"
                         onChange={this.onChangeFirstName}
@@ -64,17 +77,22 @@ class PersonalDetails extends React.Component {
                             : this.state.lastName}
                     </label>
                     <input
-                        className={`last-name-input ${this.state.displayLastName ? '' : 'hidden'}`}
+                        className={`last-name-input ${this.state.displayLastNameInput ? '' : 'hidden'}`}
                         onChange={this.onChangeLastName}
                         type="text"
                         id="last-name-input"
                     />
 
-                    <div className='buttons-container'>
-                        <button className="save-button">Save</button>
-                        <button className="cancel-button">Cancel</button>
-                    </div>
+                    <label htmlFor="phone-number-input" onClick={this.onClickPhoneNumber}>{this.state.phoneNumber === '' ? '+123 456 789' : this.state.phoneNumber}</label>
+                    <input
+                        onChange={this.onChangePhoneNumber}
+                        className={`phone-number-input ${this.state.displayPhoneNumberInput ? '' : 'hidden'}`}
+                        type="text"
+                        id="phone-number-input" />
+
                 </form>
+
+                <Address />
             </div>
         )
     }
