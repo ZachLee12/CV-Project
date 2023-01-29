@@ -54,7 +54,7 @@ class Description extends React.Component {
 
                 <form action="" onSubmit={this.onSubmitForm}>
                     <label htmlFor="description-input"></label>
-                    <input type="text" id="description-input" onChange={this.onChangeInput} />
+                    <input value={this.state.description.text} type="text" id="description-input" onChange={this.onChangeInput} />
                     <button onClick={this.onClickAddDescription} >Add Description</button>
                 </form>
             </div>

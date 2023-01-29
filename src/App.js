@@ -1,7 +1,7 @@
 import React from "react";
 import PersonalDetails from "./Components/PersonalDetails/PersonalDetails";
 import WorkExperience from './Components/WorkExperience/WorkExperience'
-
+import Skills from "./Components/Skills/Skills";
 
 class App extends React.Component {
   render() {
@@ -9,6 +9,7 @@ class App extends React.Component {
       <div>
         <PersonalDetails />
         <WorkExperience />
+        <Skills />
       </div>
     )
   }
