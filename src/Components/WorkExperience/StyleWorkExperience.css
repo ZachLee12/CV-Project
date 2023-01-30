@@ -3,8 +3,10 @@
     flex-direction: column;
 }
 
-.work-experience-title{
+.work-experience-title {
     background-color: grey;
+    font-size: 2em;
+    position: relative;
 }
 
 .hidden {
@@ -12,5 +14,7 @@
     background-color: red;
 }
 
-
-
+.add-button {
+    position: absolute;
+    left: 50%;
+}

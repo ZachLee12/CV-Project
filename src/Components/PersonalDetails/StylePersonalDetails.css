@@ -1,3 +1,7 @@
+#PersonalDetails {
+    background-color: #7ea2e4
+}
+
 .personal-details-form {
     display: flex;
     flex-direction: column;
@@ -12,7 +16,7 @@
     flex-direction: column;
 }
 
-.skills-form{
+.skills-form {
     display: flex;
     flex-direction: column;
 }

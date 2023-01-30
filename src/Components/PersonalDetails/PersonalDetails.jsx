@@ -57,7 +57,7 @@ class PersonalDetails extends React.Component {
 
     render() {
         return (
-            <div className='Personal-Details'>
+            <div id='PersonalDetails'>
                 <form className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
                     <label htmlFor="first-name-input" onClick={this.onClickFirstName}>
                         {this.state.firstName === ''

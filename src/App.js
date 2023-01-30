@@ -8,9 +8,13 @@ class App extends React.Component {
   render() {
     return (
       <div id="App">
-        <PersonalDetails />
-        <WorkExperience />
-        <Skills />
+        <div className="side-bar">
+          <PersonalDetails />
+        </div>
+        <div className="main-content">
+          <WorkExperience />
+          <Skills />
+        </div>
       </div>
     )
   }

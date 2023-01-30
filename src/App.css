@@ -1,0 +1,16 @@
+#App {
+    background-color: #bababa;
+    height: 95vh;
+    width: 60vw;
+    margin: auto;
+    display: flex;
+}
+
+.side-bar {
+    background-color: #c0f5d6;
+    flex-grow: 0.3;
+}
+
+.main-content {
+    flex-grow: 0.7;
+}
