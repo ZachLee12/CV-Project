@@ -17,7 +17,8 @@ class WorkExperience extends React.Component {
                 descriptionList: []
             },
             workExperienceList: [],
-            displayForm: false
+            displayForm: false,
+            displayAddButton: false
         }
     }
 
@@ -73,10 +74,33 @@ class WorkExperience extends React.Component {
         })
     }
 
+    onMouseOverTitle = (e) => {
+        if (this.state.displayForm) {
+            this.setState({ displayAddButton: false })
+        } else {
+            this.setState({ displayAddButton: true })
+        }
+    }
+
+    onMouseOutTitle = (e) => {
+        this.setState({ displayAddButton: false })
+    }
+
     render() {
         return (
             <div>
-                <p>Work Experience</p>
+                <p
+                    className="work-experience-title"
+                    onMouseOver={this.onMouseOverTitle}
+                    onMouseOut={this.onMouseOutTitle}
+                >
+                    Work Experience
+                    <button
+                        className={`add-button ${this.state.displayAddButton ? '' : 'hidden'}`}
+                        onClick={this.onClickAddWorkExperience}>
+                        Add Work Experience
+                    </button>
+                </p>
                 <ul className="work-experience-container">
                     {this.state.workExperienceList.map(workExperience => {
                         return (
@@ -90,7 +114,6 @@ class WorkExperience extends React.Component {
                         )
                     })}
                 </ul>
-                <button onClick={this.onClickAddWorkExperience}>Add Work Experience</button>
 
                 <WorkExperienceForm
                     onChangeInput={this.onChangeInput}

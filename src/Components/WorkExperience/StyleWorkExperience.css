@@ -3,6 +3,14 @@
     flex-direction: column;
 }
 
+.work-experience-title{
+    background-color: grey;
+}
+
 .hidden {
     display: none;
+    background-color: red;
 }
+
+
+
