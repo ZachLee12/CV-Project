@@ -17,7 +17,7 @@ class WorkExperience extends React.Component {
                 descriptionList: []
             },
             workExperienceList: [],
-            displayForm: true
+            displayForm: false
         }
     }
 
