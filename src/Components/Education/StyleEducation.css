@@ -1,0 +1,12 @@
+.education-title {
+    background-color: antiquewhite;
+}
+
+.education-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}

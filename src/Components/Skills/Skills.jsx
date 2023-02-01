@@ -88,7 +88,7 @@ class Skills extends React.Component {
                     </button>
                 </p>
 
-                <ul className="skills-container">
+                <ul className="skill-list">
                     {this.state.skillList.map(skill => {
                         return (<li key={skill.id}>{skill.title} <button onClick={this.onClickDelete} id={skill.id} >x</button> <Description /></li>)
                     })}

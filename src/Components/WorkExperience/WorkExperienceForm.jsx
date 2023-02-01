@@ -1,7 +1,7 @@
 import React from "react";
 
 class WorkExperienceForm extends React.Component {
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
     constructor(props) {
         super(props)
     }

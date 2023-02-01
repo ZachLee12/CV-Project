@@ -101,7 +101,7 @@ class WorkExperience extends React.Component {
                         Add Work Experience
                     </button>
                 </p>
-                <ul className="work-experience-container">
+                <ul className="work-experience-list">
                     {this.state.workExperienceList.map(workExperience => {
                         return (
                             <li key={workExperience.id} className="work-experience">
