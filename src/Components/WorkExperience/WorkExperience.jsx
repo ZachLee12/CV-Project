@@ -97,9 +97,7 @@ class WorkExperience extends React.Component {
                     Work Experience
                     <button
                         className={`add-button ${this.state.displayAddButton ? '' : 'hidden'}`}
-                        onClick={this.onClickAddWorkExperience}
-                        
-                    >
+                        onClick={this.onClickAddWorkExperience}>
                         Add Work Experience
                     </button>
                 </p>

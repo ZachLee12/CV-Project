@@ -1,22 +1,64 @@
 #PersonalDetails {
-    background-color: #7ea2e4
+    background-color: #7ea2e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    border-right: 5px solid white;
 }
 
 .personal-details-form {
+    position: relative;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    background-color: aliceblue;
+    width: 100%;
 }
 
-.hidden {
-    display: none;
+.first-name,
+.last-name,
+.phone-number {
+    width: 100%;
+    text-align: center;
+}
+
+.first-name-input {
+    position: absolute;
+    top: 20px;
+}
+
+.last-name-input {
+    position: absolute;
+    top: 40px;
+}
+
+.phone-number-input {
+    position: absolute;
+    top: 60px;
+}
+
+#Address {
+    margin-top: 30px;
+    background-color: #4466a4;
+    width: 100%;
 }
 
 .address-form {
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: 30%;
 }
 
-.skills-form {
-    display: flex;
-    flex-direction: column;
+.profile-picture {
+    width: 90px;
+    /* background-color: red; */
+}
+
+
+.hidden {
+    display: none;
 }

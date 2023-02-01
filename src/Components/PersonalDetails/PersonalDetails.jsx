@@ -1,6 +1,7 @@
 import './StylePersonalDetails.css'
 import Address from './Address';
 import React from 'react';
+import ProfilePicture from './pencil.png'
 
 class PersonalDetails extends React.Component {
     constructor() {
@@ -58,8 +59,10 @@ class PersonalDetails extends React.Component {
     render() {
         return (
             <div id='PersonalDetails'>
+                <img className="profile-picture" src={ProfilePicture} alt="" />
+
                 <form className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
-                    <label htmlFor="first-name-input" onClick={this.onClickFirstName}>
+                    <label className='first-name' htmlFor="first-name-input" onClick={this.onClickFirstName}>
                         {this.state.firstName === ''
                             ? 'Your First Name'
                             : this.state.firstName}
@@ -71,7 +74,7 @@ class PersonalDetails extends React.Component {
                         onChange={this.onChangeFirstName}
                     />
 
-                    <label htmlFor="last-name-input" onClick={this.onClickLastName}>
+                    <label className='last-name' htmlFor="last-name-input" onClick={this.onClickLastName}>
                         {this.state.lastName === ''
                             ? 'Your Last Name'
                             : this.state.lastName}
@@ -83,7 +86,7 @@ class PersonalDetails extends React.Component {
                         id="last-name-input"
                     />
 
-                    <label htmlFor="phone-number-input" onClick={this.onClickPhoneNumber}>{this.state.phoneNumber === '' ? '+123 456 789' : this.state.phoneNumber}</label>
+                    <label className='phone-number' htmlFor="phone-number-input" onClick={this.onClickPhoneNumber}>{this.state.phoneNumber === '' ? '+123 456 789' : this.state.phoneNumber}</label>
                     <input
                         onChange={this.onChangePhoneNumber}
                         className={`phone-number-input ${this.state.displayPhoneNumberInput ? '' : 'hidden'}`}
@@ -92,7 +95,9 @@ class PersonalDetails extends React.Component {
 
                 </form>
 
-                <Address />
+                <div id="Address" >
+                    <Address />
+                </div>
             </div>
         )
     }
