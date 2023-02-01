@@ -1,4 +1,5 @@
 import React from "react";
+import AddressIcon from '../../assets/images/marker.png'
 
 class Address extends React.Component {
     constructor(props) {
@@ -54,21 +55,40 @@ class Address extends React.Component {
         return (
             <div>
                 <form action="" className="address-form">
-                    <label onClick={this.onClickStreet} htmlFor="street-input">{this.state.street === '' ? 'Street' : this.state.street}</label>
+                    <img id="address-icon" src={AddressIcon} alt="address-icon" />
+                    <label onClick={this.onClickStreet} htmlFor="street-input">
+                        <div className="addressText-wrapper">
+                            {this.state.street === ''
+                                ? 'Street'
+                                : this.state.street}
+                        </div>
+                    </label>
                     <input
                         className={`street-input ${this.state.displayStreet ? '' : 'hidden'}`}
                         onChange={this.onChangeStreet}
                         type="text"
                         id="street-input" />
 
-                    <label onClick={this.onClickZip} htmlFor="zip-input">{this.state.zip === '' ? 'Zip' : this.state.zip}</label>
+                    <label onClick={this.onClickZip} htmlFor="zip-input">
+                        <div className="addressText-wrapper">
+                            {this.state.zip === ''
+                                ? 'Zip'
+                                : this.state.zip}
+                        </div>
+                    </label>
                     <input
                         className={`zip-input ${this.state.displayZip ? '' : 'hidden'}`}
                         onChange={this.onChangeZip}
                         type="text"
                         id="zip-input" />
 
-                    <label onClick={this.onClickCity} htmlFor="city-input">{this.state.city === '' ? 'City' : this.state.city}</label>
+                    <label onClick={this.onClickCity} htmlFor="city-input">
+                        <div className="addressText-wrapper">
+                            {this.state.city === ''
+                                ? 'City'
+                                : this.state.city}
+                        </div>
+                    </label>
                     <input
                         className={`city-input ${this.state.displayCity ? '' : 'hidden'}`}
                         onChange={this.onChangeCity}

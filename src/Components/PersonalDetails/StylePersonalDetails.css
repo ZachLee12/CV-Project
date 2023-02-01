@@ -1,11 +1,13 @@
 #PersonalDetails {
-    background-color: #7ea2e4;
+    background-color: #aeede0;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     height: 100%;
-    border-right: 5px solid white;
+    box-sizing: border-box;
+    border-right: 10px solid white;
+    width: 100%;
 }
 
 .personal-details-form {
@@ -14,35 +16,57 @@
     flex-direction: column;
     margin-top: 20px;
     align-items: center;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     width: 100%;
+    gap: 10px;
 }
 
-.first-name,
-.last-name,
-.phone-number {
+.profile-picture {
+    margin-top: 20px;
+    width: 90px;
+}
+
+.name {
     width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 1.7em;
+}
+
+.nameText-wrapper {
+    width: 70%;
     text-align: center;
+    display: inline-block;
+    overflow-wrap: break-word;
 }
 
-.first-name-input {
-    position: absolute;
-    top: 20px;
+.details {
+    width: 100%;
+    display: flex;
+    /* background-color: #4466a4; */
+    position: relative;
 }
 
-.last-name-input {
-    position: absolute;
-    top: 40px;
+.details>img {
+    padding-right: 10px;
+    padding-left: 50px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 10px;
 }
 
-.phone-number-input {
-    position: absolute;
-    top: 60px;
+.details>.wrapper {
+    width: 60%;
+    display: inline-block;
+    overflow-wrap: break-word;
 }
 
 #Address {
     margin-top: 30px;
-    background-color: #4466a4;
+    /* background-color: #4466a4; */
     width: 100%;
 }
 
@@ -50,14 +74,20 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 30%;
+    width: 100%;
+    align-items: center;
 }
 
-.profile-picture {
-    width: 90px;
-    /* background-color: red; */
+#address-icon {
+    width: 20px;
+    position: absolute;
+    margin-right: 10px;
+    left: 70px;
 }
 
+.addressText-wrapper {
+    text-align: left;
+}
 
 .hidden {
     display: none;

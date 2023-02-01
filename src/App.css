@@ -1,18 +1,19 @@
 #App {
     background-color: #bababa;
     height: 95vh;
-    width: 60vw;
+    width: max(600px, 60vw);
     margin: auto;
     display: flex;
-    gap: 5px;
+    gap: 20px;
     box-shadow: 3px 3px 10px 0px #545454;
 }
 
 .side-bar {
     background-color: #c0f5d6;
-    flex-grow: 0.3;
+    width: 300px;
 }
 
 .main-content {
-    flex-grow: 0.7;
+    /**/
+    width: calc(100% - 300px - 10px) 
 }
