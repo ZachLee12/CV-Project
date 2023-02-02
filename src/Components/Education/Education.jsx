@@ -14,7 +14,8 @@ class Education extends React.Component {
                 id: uniqid()
             },
             educationList: [],
-            displayEducationForm: false
+            displayEducationForm: false,
+            displayAddButton: false
         }
     }
 
@@ -70,16 +71,31 @@ class Education extends React.Component {
         })
     }
 
+    onMouseOverTitle = (e) => {
+        if (this.state.displayEducationForm) {
+            this.setState({ displayAddButton: false })
+        } else {
+            this.setState({ displayAddButton: true })
+        }
+    }
+
+    onMouseOutTitle = (e) => {
+        this.setState({ displayAddButton: false })
+    }
+
     render() {
         return (
             <div>
                 <p
                     className="education-title"
+                    onMouseOver={this.onMouseOverTitle}
+                    onMouseOut={this.onMouseOutTitle}
                 >
                     Education
                     <button
                         id='add-education-button'
                         onClick={this.onClickAddEducation}
+                        className={this.state.displayAddButton? '' : 'hidden'}
                     >
                         Add Education
                     </button>

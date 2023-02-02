@@ -5,8 +5,9 @@
 
 .work-experience-title {
     background-color: grey;
-    font-size: 2em;
+    font-size: 1.7em;
     position: relative;
+    border-bottom: 2px solid black;
 }
 
 .hidden {

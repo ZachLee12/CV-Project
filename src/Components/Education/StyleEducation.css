@@ -1,5 +1,7 @@
 .education-title {
     background-color: antiquewhite;
+    font-size: 1.7em;
+    border-bottom: 2px solid black;
 }
 
 .education-form {
