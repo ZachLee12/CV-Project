@@ -1,0 +1,17 @@
+.description-list {
+    /* background-color: red; */
+}
+
+.description-list-item {
+    display: block;
+    width: 90%;
+    overflow-wrap: break-word;
+    border: 2px solid red;
+}
+
+.description-list-item::before {
+    content: "";
+    display: list-item;
+    position: absolute;
+    list-style-type: square;
+}

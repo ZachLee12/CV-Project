@@ -1,13 +1,42 @@
-.education-title {
+#Education{
     background-color: antiquewhite;
+}
+
+.education-title {
     font-size: 1.7em;
     border-bottom: 2px solid black;
+    margin-bottom: 10px;
 }
 
 .education-form {
     display: flex;
     flex-direction: column;
 }
+
+.education-list {
+    margin: 0px;
+    /* background-color: wheat; */
+}
+
+.education-list-item {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.edit-features-wrapper .delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.education-institution {
+    font-size: 1.3em;
+}
+
+.education-duration {
+    font-size: 0.9em;
+}
+
 
 .hidden {
     display: none;

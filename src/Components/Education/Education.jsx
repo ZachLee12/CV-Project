@@ -4,18 +4,25 @@ import './StyleEducation.css'
 import Description from "../Description";
 
 class Education extends React.Component {
+
     constructor() {
         super();
-
         this.state = {
             education: {
                 institution: '',
                 duration: '',
                 id: uniqid()
             },
-            educationList: [],
+            educationList: [{
+                institution: 'Some Institution',
+                duration: 'Jan 2012 - Feb 2022',
+                id: uniqid()
+            }],
             displayEducationForm: false,
-            displayAddButton: false
+            displayAddButton: false,
+            displayDescriptionForm: false,
+            displayDeleteButton: false,
+            displayDescriptionRemoveButton: false
         }
     }
 
@@ -83,9 +90,25 @@ class Education extends React.Component {
         this.setState({ displayAddButton: false })
     }
 
+    onMouseOverComponent = (e) => {
+        this.setState({
+            displayDescriptionForm: true,
+            displayDeleteButton: true,
+            displayDescriptionRemoveButton: true
+        })
+    }
+
+    onMouseOutComponent = (e) => {
+        this.setState({
+            displayDescriptionForm: false,
+            displayDeleteButton: false,
+            displayDescriptionRemoveButton: false
+        })
+    }
+
     render() {
         return (
-            <div>
+            <div id='Education' onMouseOver={this.onMouseOverComponent} onMouseOut={this.onMouseOutComponent}>
                 <p
                     className="education-title"
                     onMouseOver={this.onMouseOverTitle}
@@ -95,18 +118,24 @@ class Education extends React.Component {
                     <button
                         id='add-education-button'
                         onClick={this.onClickAddEducation}
-                        className={this.state.displayAddButton? '' : 'hidden'}
-                    >
+                        className={this.state.displayAddButton ? '' : 'hidden'}>
                         Add Education
                     </button>
                 </p>
                 <ul className="education-list">
                     {this.state.educationList.map(education => {
                         return (
-                            <li key={education.id}>{education.institution}
-                                {education.duration}
-                                <button onClick={this.onClickDelete} id={education.id}>x</button>
-                                <Description />
+                            <li
+                                key={education.id}
+                                className="education-list-item">
+                                <div className="education-institution">{education.institution}</div>
+                                <div className="education-duration">{education.duration}</div>
+                                <div className="edit-features-wrapper">
+                                    <button onClick={this.onClickDelete} id={education.id} className={`delete-button ${this.state.displayDeleteButton ? '' : 'hidden'}`} >x</button>
+                                    <Description
+                                        displayDescriptionRemoveButton={this.state.displayDescriptionRemoveButton}
+                                        displayDescriptionForm={this.state.displayDescriptionForm} />
+                                </div>
                             </li>
                         )
                     })}

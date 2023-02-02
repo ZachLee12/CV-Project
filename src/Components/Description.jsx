@@ -1,5 +1,6 @@
 import React from "react";
 import uniqid from "uniqid";
+import './StyleDescription.css'
 
 class Description extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Description extends React.Component {
                 text: '',
                 id: uniqid(),
             },
-            descriptionList: [],
+            descriptionList: [{ text: 'test', id: uniqid() }],
+            displayDescriptionForm: false
         }
     }
 
@@ -44,15 +46,24 @@ class Description extends React.Component {
     }
 
     render() {
+        const { displayDescriptionForm, displayDescriptionRemoveButton } = this.props
         return (
             <div>
-                <ul>
+                <ul className='description-list'>
                     {this.state.descriptionList.map(desc => {
-                        return <li key={desc.id}> {desc.text} <button id={desc.id} onClick={this.onClickDelete} >remove</button> </li>
+                        return <li key={desc.id} className='description-list-item'>
+                            {desc.text}
+                            <button
+                                className={`remove-button ${displayDescriptionRemoveButton ? '' : 'hidden'}`}
+                                id={desc.id}
+                                onClick={this.onClickDelete} >
+                                remove
+                            </button>
+                        </li>
                     })}
                 </ul>
 
-                <form action="" onSubmit={this.onSubmitForm}>
+                <form action="" onSubmit={this.onSubmitForm} className={`description-form ${displayDescriptionForm ? '' : 'hidden'}`}>
                     <label htmlFor="description-input"></label>
                     <input value={this.state.description.text} type="text" id="description-input" onChange={this.onChangeInput} />
                     <button onClick={this.onClickAddDescription} >Add Description</button>
