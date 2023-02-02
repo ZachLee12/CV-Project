@@ -12,9 +12,12 @@ class Skills extends React.Component {
                 title: '',
                 id: uniqid()
             },
-            skillList: [],
+            skillList: [{ title: 'Very good at hiking', id: uniqid() }],
             displaySkillsForm: false,
-            displayAddSkillButton: false
+            displayAddSkillButton: false,
+            displayDescriptionForm: false,
+            displayDeleteButton: false,
+            displayDescriptionRemoveButton: false
         }
     }
 
@@ -73,9 +76,28 @@ class Skills extends React.Component {
         this.setState({ displayAddSkillButton: false })
     }
 
+    onMouseOverComponent = (e) => {
+        this.setState({
+            displayDescriptionForm: true,
+            displayDeleteButton: true,
+            displayDescriptionRemoveButton: true
+        })
+    }
+
+    onMouseOutComponent = (e) => {
+        this.setState({
+            displayDescriptionForm: false,
+            displayDeleteButton: false,
+            displayDescriptionRemoveButton: false
+        })
+    }
+
     render() {
         return (
-            <div>
+            <div
+                onMouseOver={this.onMouseOverComponent}
+                onMouseOut={this.onMouseOutComponent}
+                id='Skills' >
                 <p className="skills-title"
                     onMouseOver={this.onMouseOverSkillsTitle}
                     onMouseOut={this.onMouseOutSkillsTitle}
@@ -90,7 +112,14 @@ class Skills extends React.Component {
 
                 <ul className="skill-list">
                     {this.state.skillList.map(skill => {
-                        return (<li key={skill.id}>{skill.title} <button onClick={this.onClickDelete} id={skill.id} >x</button> <Description /></li>)
+                        return (
+                            <li key={skill.id} className='skill-item'>
+                                <div className="skill-item-title">{skill.title}</div>
+                                <button className={`delete-button ${this.state.displayDeleteButton ? '' : 'hidden'}`} onClick={this.onClickDelete} id={skill.id} >x</button>
+                                <Description
+                                    displayDescriptionForm={this.state.displayDescriptionForm}
+                                    displayDescriptionRemoveButton={this.state.displayDescriptionRemoveButton} />
+                            </li>)
                     })}
                 </ul>
 
@@ -108,12 +137,11 @@ class Skills extends React.Component {
                         d="title-input"
                     />
                     <button onClick={this.onClickSave}>Save</button>
-                    <button onClick={this.onClickCancel} >Cancel</button>
+                    <button onClick={this.onClickCancel}>Cancel</button>
                 </form>
             </div>
         )
     }
-
 }
 
 export default Skills
