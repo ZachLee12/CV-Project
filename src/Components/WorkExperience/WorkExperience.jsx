@@ -13,12 +13,18 @@ class WorkExperience extends React.Component {
                 company: '',
                 duration: '',
                 id: uniqid(),
-                description: '',
-                descriptionList: []
             },
-            workExperienceList: [],
+            workExperienceList: [{
+                title: 'Trainee in IT Operations',
+                company: 'Hochschule Luzern',
+                duration: 'Jan 2002 - Jan 3000',
+                id: uniqid(),
+            }],
             displayForm: false,
-            displayAddButton: false
+            displayAddButton: false,
+            displayDescriptionForm: false,
+            displayDescriptionRemoveButton: false,
+            displayDeleteButton: false
         }
     }
 
@@ -86,14 +92,32 @@ class WorkExperience extends React.Component {
         this.setState({ displayAddButton: false })
     }
 
+    onMouseOverComponent = (e) => {
+        this.setState({
+            displayDescriptionForm: true,
+            displayDeleteButton: true,
+            displayDescriptionRemoveButton: true
+        })
+    }
+
+    onMouseOutComponent = (e) => {
+        this.setState({
+            displayDescriptionForm: false,
+            displayDeleteButton: false,
+            displayDescriptionRemoveButton: false
+        })
+    }
+
     render() {
         return (
-            <div>
+            <div
+                onMouseOver={this.onMouseOverComponent}
+                onMouseOut={this.onMouseOutComponent}
+                id='WorkExperience'>
                 <p
                     className="work-experience-title"
                     onMouseOver={this.onMouseOverTitle}
-                    onMouseOut={this.onMouseOutTitle}
-                >
+                    onMouseOut={this.onMouseOutTitle}>
                     Work Experience
                     <button
                         className={`add-button ${this.state.displayAddButton ? '' : 'hidden'}`}
@@ -108,8 +132,11 @@ class WorkExperience extends React.Component {
                                 <div className="title">{workExperience.title}</div>
                                 <div className="company">{workExperience.company}</div>
                                 <div className="duration">{workExperience.duration}</div>
-                                <button id={workExperience.id} onClick={this.onClickDelete}>x</button>
-                                <Description />
+                                <button className={`delete-button ${this.state.displayDeleteButton? '' : 'hidden'}`} id={workExperience.id} onClick={this.onClickDelete}>x</button>
+                                <Description
+                                    displayDescriptionForm={this.state.displayDescriptionForm}
+                                    displayDescriptionRemoveButton={this.state.displayDescriptionRemoveButton}
+                                />
                             </li>
                         )
                     })}
