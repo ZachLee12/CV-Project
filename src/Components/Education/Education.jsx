@@ -16,13 +16,13 @@ class Education extends React.Component {
             educationList: [{
                 institution: 'Some Institution',
                 duration: 'Jan 2012 - Feb 2022',
-                id: uniqid()
+                id: uniqid(),
             }],
-            displayEducationForm: true,
-            displayAddButton: false,
-            displayDescriptionForm: false,
-            displayDeleteButton: false,
-            displayDescriptionRemoveButton: false
+            displayEducationForm: false,
+            displayAddButton: true,
+            displayDescriptionForm: true,
+            displayDeleteButton: true,
+            displayDescriptionRemoveButton: true
         }
     }
 
@@ -119,7 +119,7 @@ class Education extends React.Component {
                         id='add-education-button'
                         onClick={this.onClickAddEducation}
                         className={this.state.displayAddButton ? '' : 'hidden'}>
-                        Add Education
+                        + Add Education
                     </button>
                 </p>
                 <ul className="education-list">

@@ -1,7 +1,45 @@
 #Education {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     padding-bottom: 1px;
     /*needed to enable margin for the form*/
+}
+
+.education-title {
+    display: flex;
+    position: relative;
+}
+
+#add-education-button {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background-color: #d0d0d0;
+    height: 25px;
+    border: none;
+    width: 130px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+@keyframes button-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#add-education-button:hover {
+    background-color: #b9b8b8;
+}
+
+#add-education-button:active {
+    background-color: #a5a5a5;
 }
 
 .education-form {
@@ -57,14 +95,15 @@
 label[for='institution-input'],
 label[for='duration-input'] {
     padding-left: 2px;
+    font-size: 1.2em;
 }
 
-input#institution-input {
-    
+/* BUTTON ANIMATIONS */
+
+.edit-features-wrapper .delete-button,
+#add-education-button {
+    animation: button-fade-in 400ms ease-in-out;
 }
-
-
-
 
 
 .education-list {
@@ -80,7 +119,19 @@ input#institution-input {
 .edit-features-wrapper .delete-button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 40px;
+    border-radius: 100%;
+    border: none;
+    background-color: #c8c6c6;
+    transition: background-color 300ms ease-in-out;
+}
+
+.edit-features-wrapper .delete-button:hover {
+    background-color: #b2b2b2;
+}
+
+.edit-features-wrapper .delete-button:active {
+    background-color: #9d9d9d;
 }
 
 .education-title {
@@ -96,7 +147,6 @@ input#institution-input {
 .education-duration {
     font-size: 0.9em;
 }
-
 
 .hidden {
     display: none;
