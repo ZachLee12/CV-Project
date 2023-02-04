@@ -18,7 +18,7 @@ class Education extends React.Component {
                 duration: 'Jan 2012 - Feb 2022',
                 id: uniqid()
             }],
-            displayEducationForm: false,
+            displayEducationForm: true,
             displayAddButton: false,
             displayDescriptionForm: false,
             displayDeleteButton: false,
@@ -148,14 +148,16 @@ class Education extends React.Component {
                         id='institution-input'
                         type="text" />
 
-                    <label htmlFor="institution-input">Duration</label>
+                    <label htmlFor="duration-input">Duration</label>
                     <input
                         onChange={this.onChangeDuration}
-                        id='institution-input'
+                        id='duration-input'
                         type="text" />
 
-                    <button onClick={this.onClickSave} id='save-button' >Save</button>
-                    <button onClick={this.onClickCancel} id='cancel-button' >Cancel</button>
+                    <div className="buttons-wrapper">
+                        <button onClick={this.onClickSave} id='save-button' >Save</button>
+                        <button onClick={this.onClickCancel} id='cancel-button' >Cancel</button>
+                    </div>
                 </form>
             </div>
         )

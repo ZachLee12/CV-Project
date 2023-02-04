@@ -1,11 +1,71 @@
-#Education{
+#Education {
     background-color: antiquewhite;
+    padding-bottom: 1px;
+    /*needed to enable margin for the form*/
 }
 
 .education-form {
     display: flex;
     flex-direction: column;
+    background-color: #add1f4;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
 }
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    gap: 30px;
+    padding-top: 5px;
+}
+
+#save-button,
+#cancel-button {
+    width: 80px;
+    border-radius: 25px;
+    height: 27px;
+    font-weight: 600;
+}
+
+#save-button {
+    background-color: #4c9af3;
+}
+
+#save-button:hover {
+    background-color: #2682eb;
+}
+
+#save-button:active {
+    background-color: #0675f4;
+}
+
+#cancel-button {
+    background-color: #e66262;
+}
+
+#cancel-button:hover {
+    background-color: #ed4242;
+}
+
+#cancel-button:active {
+    background-color: #de3535;
+}
+
+label[for='institution-input'],
+label[for='duration-input'] {
+    padding-left: 2px;
+}
+
+input#institution-input {
+    
+}
+
+
+
+
 
 .education-list {
     margin: 0px;
