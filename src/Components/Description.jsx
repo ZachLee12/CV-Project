@@ -63,10 +63,12 @@ class Description extends React.Component {
                     })}
                 </ul>
 
-                <form action="" onSubmit={this.onSubmitForm} className={`description-form ${displayDescriptionForm ? '' : 'hidden'}`}>
-                    <label htmlFor="description-input"></label>
+                <form action=""
+                    onSubmit={this.onSubmitForm}
+                    className={`description-form ${displayDescriptionForm ? '' : 'hidden'}`}>
+                    <label htmlFor="description-input">Add Description (optional)</label>
                     <input value={this.state.description.text} type="text" id="description-input" onChange={this.onChangeInput} />
-                    <button onClick={this.onClickAddDescription} >Add Description</button>
+                    <button onClick={this.onClickAddDescription} id="add-description-button" >Add</button>
                 </form>
             </div>
         )
