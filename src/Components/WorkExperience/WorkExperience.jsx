@@ -120,9 +120,9 @@ class WorkExperience extends React.Component {
                     onMouseOut={this.onMouseOutTitle}>
                     Work Experience
                     <button
-                        className={`add-button ${this.state.displayAddButton ? '' : 'hidden'}`}
+                        className={`add-work-experience-button ${this.state.displayAddButton ? '' : 'hidden'}`}
                         onClick={this.onClickAddWorkExperience}>
-                        Add Work Experience
+                        + Add Work Experience
                     </button>
                 </p>
                 <ul className="work-experience-list">
@@ -132,7 +132,9 @@ class WorkExperience extends React.Component {
                                 <div className="title">{workExperience.title}</div>
                                 <div className="company">{workExperience.company}</div>
                                 <div className="duration">{workExperience.duration}</div>
-                                <button className={`delete-button ${this.state.displayDeleteButton? '' : 'hidden'}`} id={workExperience.id} onClick={this.onClickDelete}>x</button>
+                                <button
+                                    className={`delete-button ${this.state.displayDeleteButton ? '' : 'hidden'}`}
+                                    id={workExperience.id} onClick={this.onClickDelete}>x</button>
                                 <Description
                                     displayDescriptionForm={this.state.displayDescriptionForm}
                                     displayDescriptionRemoveButton={this.state.displayDescriptionRemoveButton}

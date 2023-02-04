@@ -12,7 +12,13 @@
 .education-title {
     display: flex;
     position: relative;
+    transition: all 400ms ease-in-out;
 }
+
+.education-title:hover{
+    background-color: #f1c472;
+}
+
 
 #add-education-button {
     justify-content: center;
