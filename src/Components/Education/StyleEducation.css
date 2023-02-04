@@ -123,6 +123,11 @@ label[for='duration-input'] {
 .education-list-item {
     position: relative;
     margin-bottom: 10px;
+    transition: all 400ms ease-in-out;
+}
+
+.education-list-item:hover{
+    background-color: #f2c07b;
 }
 
 .edit-features-wrapper .delete-button {
