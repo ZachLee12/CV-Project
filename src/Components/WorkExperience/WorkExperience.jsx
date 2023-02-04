@@ -128,7 +128,7 @@ class WorkExperience extends React.Component {
                 <ul className="work-experience-list">
                     {this.state.workExperienceList.map(workExperience => {
                         return (
-                            <li key={workExperience.id} className="work-experience">
+                            <li key={workExperience.id} className="work-experience-item">
                                 <div className="title">{workExperience.title}</div>
                                 <div className="company">{workExperience.company}</div>
                                 <div className="duration">{workExperience.duration}</div>

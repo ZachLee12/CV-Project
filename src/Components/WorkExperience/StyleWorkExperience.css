@@ -1,9 +1,19 @@
 #WorkExperience {
-    background-color: #c58c8c;
+    padding-bottom: 1px;
+    transition: all 400ms ease-in-out;
 }
 
-.work-experience{
+#WorkExperience:hover{
+    background-color: #f8d5d5;
+}
+
+.work-experience-item{
     position: relative;
+    transition: all 400ms ease-in-out;
+}
+
+.work-experience-item:hover{
+    background-color: #f8a5a5;
 }
 
 .work-experience-form {
@@ -69,46 +79,19 @@
 .delete-button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 40px;
+    border-radius: 100%;
+    background-color: #c8c6c6;
+    transition: background-color 300ms ease-in-out;
 }
 
-/* .education-title {
-    display: flex;
-    position: relative;
-} */
-
-/* #add-education-button {
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-    background-color: #d0d0d0;
-    height: 25px;
-    border: none;
-    width: 130px;
-    border-radius: 25px;
-    font-weight: 600;
+.delete-button:hover{
+    background-color: #e66262;
 }
 
-@keyframes button-fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.delete-button:active{
+    background-color: #de3535;
 }
-
-#add-education-button:hover {
-    background-color: #b9b8b8;
-}
-
-#add-education-button:active {
-    background-color: #a5a5a5;
-} */
 
 .hidden {
     display: none;
