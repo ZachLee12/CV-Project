@@ -136,8 +136,10 @@ class Skills extends React.Component {
                         name="title-input"
                         d="title-input"
                     />
-                    <button onClick={this.onClickSave}>Save</button>
-                    <button onClick={this.onClickCancel}>Cancel</button>
+                    <div className="buttons-wrapper">
+                        <button className="save-button" onClick={this.onClickSave}>Save</button>
+                        <button className="cancel-button" onClick={this.onClickCancel}>Cancel</button>
+                    </div>
                 </form>
             </div>
         )

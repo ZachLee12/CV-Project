@@ -7,7 +7,7 @@ class WorkExperienceForm extends React.Component {
     }
 
     render() {
-        const {onSubmitForm, onChangeInput, onClickSave, onClickCancel, workExperience, displayForm } = this.props
+        const { onSubmitForm, onChangeInput, onClickSave, onClickCancel, workExperience, displayForm } = this.props
 
         return (
             <form className={`work-experience-form ${displayForm ? '' : 'hidden'}`} action="" onSubmit={onSubmitForm}>
@@ -20,8 +20,10 @@ class WorkExperienceForm extends React.Component {
                 <label htmlFor="duration-input">Duration</label>
                 <input onChange={onChangeInput} value={workExperience.duration} type="text" id="duration-input" />
 
-                <button onClick={onClickSave}>Save</button>
-                <button onClick={onClickCancel}>Cancel</button>
+                <div className="buttons-wrapper">
+                    <button className="save-button" onClick={onClickSave}>Save</button>
+                    <button className="cancel-button" onClick={onClickCancel}>Cancel</button>
+                </div>
             </form>
         )
     }

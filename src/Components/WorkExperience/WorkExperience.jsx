@@ -20,7 +20,7 @@ class WorkExperience extends React.Component {
                 duration: 'Jan 2002 - Jan 3000',
                 id: uniqid(),
             }],
-            displayForm: false,
+            displayForm: true,
             displayAddButton: false,
             displayDescriptionForm: false,
             displayDescriptionRemoveButton: false,

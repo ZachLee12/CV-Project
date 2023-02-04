@@ -3,22 +3,17 @@
     transition: all 400ms ease-in-out;
 }
 
-#WorkExperience:hover{
+#WorkExperience:hover {
     background-color: #c8d9f0;
 }
 
-.work-experience-item{
+.work-experience-item {
     position: relative;
     transition: all 400ms ease-in-out;
 }
 
-.work-experience-item:hover{
+.work-experience-item:hover {
     background-color: #9fc5f7;
-}
-
-.work-experience-form {
-    display: flex;
-    flex-direction: column;
 }
 
 .work-experience-title {
@@ -28,7 +23,7 @@
     margin-bottom: 10px;
 }
 
-.add-work-experience-button{
+.add-work-experience-button {
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -60,7 +55,7 @@
 
 .add-work-experience-button:active {
     background-color: #a5a5a5;
-} 
+}
 
 .title {
     font-size: 1.3em;
@@ -69,10 +64,6 @@
 }
 
 .duration {
-    font-size: 0.9em;
-}
-
-.education-duration {
     font-size: 0.9em;
 }
 
@@ -85,16 +76,77 @@
     transition: background-color 300ms ease-in-out;
 }
 
-.delete-button:hover{
+.delete-button:hover {
     background-color: #e66262;
 }
 
-.delete-button:active{
+.delete-button:active {
     background-color: #de3535;
+}
+
+/* FORM */
+.work-experience-form {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    background-color: #add1f4;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px
+}
+
+label[for='title-input'],
+label[for='company-input'],
+label[for='duration-input'] {
+    padding-left: 2px;
+    font-size: 1.2em;
+}
+
+.buttons-wrapper {
+    display: flex;
+}
+
+.save-button,
+.cancel-button {
+    width: 80px;
+    border-radius: 25px;
+    height: 27px;
+    font-weight: 600;
+}
+
+.save-button {
+    background-color: #4c9af3;
+}
+
+.cancel-button {
+    background-color: #e66262;
 }
 
 .hidden {
     display: none;
 }
 
-.add-button {}
+.save-button {
+    background-color: #4c9af3;
+}
+
+.save-button:hover {
+    background-color: #2682eb;
+}
+
+.save-button:active {
+    background-color: #0675f4;
+}
+
+.cancel-button {
+    background-color: #e66262;
+}
+
+.cancel-button:hover {
+    background-color: #ed4242;
+}
+
+.cancel-button:active {
+    background-color: #de3535;
+}
