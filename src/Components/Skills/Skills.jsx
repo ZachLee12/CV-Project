@@ -106,7 +106,7 @@ class Skills extends React.Component {
                     <button
                         className={`add-skill-button ${this.state.displayAddSkillButton ? '' : 'hidden'}`}
                         onClick={this.onClickAddSkill} >
-                        Add Skill
+                        + Add Skill
                     </button>
                 </p>
 

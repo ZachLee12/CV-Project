@@ -19,10 +19,10 @@ class Education extends React.Component {
                 id: uniqid(),
             }],
             displayEducationForm: false,
-            displayAddButton: true,
-            displayDescriptionForm: true,
-            displayDeleteButton: true,
-            displayDescriptionRemoveButton: true
+            displayAddButton: false,
+            displayDescriptionForm: false,
+            displayDeleteButton: false,
+            displayDescriptionRemoveButton: false
         }
     }
 

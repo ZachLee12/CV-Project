@@ -1,5 +1,10 @@
 #Skills {
-    background-color: aquamarine;
+    transition: all 400ms ease-in-out;
+    padding-bottom: 1px;
+}
+
+#Skills:hover{
+    background-color: #e9cdf4;
 }
 
 .hidden {
@@ -10,10 +15,49 @@
     font-size: 1.7em;
     border-bottom: 2px solid black;
     margin-bottom: 10px;
+    position: relative;
 }
+
+.add-skill-button {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background-color: #d0d0d0;
+    height: 25px;
+    border: none;
+    width: 100px;
+    border-radius: 25px;
+    font-weight: 600;
+    animation: button-fade-in 400ms ease-in-out;
+}
+
+@keyframes button-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.add-skill-button:hover {
+    background-color: #b9b8b8;
+}
+
+.add-skill-button:active {
+    background-color: #a5a5a5;
+} 
 
 .skill-item {
     position: relative;
+}
+
+.skill-item:hover{
+    background-color: #cd9ce2;
 }
 
 .skill-item-title {
@@ -23,7 +67,18 @@
 .delete-button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 40px;
+    border-radius: 100%;
+    background-color: #c8c6c6;
+    transition: background-color 300ms ease-in-out;
+}
+
+.delete-button:hover {
+    background-color: #e66262;
+}
+
+.delete-button:active {
+    background-color: #de3535;
 }
 
 .skills-form {
