@@ -21,6 +21,22 @@
     gap: 10px;
 }
 
+#ProfilePicture{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-input-label-and-wrapper{
+    background-color: #302e2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .profile-picture {
     margin-top: 20px;
     width: 90px;
