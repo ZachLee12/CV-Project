@@ -3,6 +3,7 @@ import PersonalDetails from "./Components/PersonalDetails/PersonalDetails";
 import WorkExperience from './Components/WorkExperience/WorkExperience'
 import Skills from "./Components/Skills/Skills";
 import Education from "./Components/Education/Education";
+import ProfilePicture from "./Components/PersonalDetails/ProfilePicture";
 import './App.css'
 
 class App extends React.Component {

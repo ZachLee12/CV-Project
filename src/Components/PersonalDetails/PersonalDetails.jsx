@@ -1,10 +1,11 @@
 import './StylePersonalDetails.css'
 import Address from './Address';
 import React from 'react';
-import ProfilePicture from '../../assets/images/pencil.png'
+import PlaceholderPicture from '../../assets/images/pencil.png'
 import PhoneIcon from '../../assets/images/phone-call.png'
 import EmailIcon from '../../assets/images/envelope.png'
 import LinkedInIcon from '../../assets/images/linkedin.png'
+import ProfilePicture from './ProfilePicture';
 
 class PersonalDetails extends React.Component {
     constructor() {
@@ -78,7 +79,8 @@ class PersonalDetails extends React.Component {
     render() {
         return (
             <div id='PersonalDetails'>
-                <img className="profile-picture" src={ProfilePicture} alt="" />
+                {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
+                <ProfilePicture />
 
                 <form className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
                     <label className='name' htmlFor="name-input" onClick={this.onClickName}>
