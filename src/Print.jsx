@@ -11,13 +11,16 @@ export default class Print extends React.Component {
     render() {
         return (
             <div>
-                <ReactToPrint
-                    trigger={() => <button>Print this component</button>}
-                    content={() => this.componentRef.current}
-                />
                 <App
                     ref={this.componentRef}
                 />
+
+                <div id="ReactToPrint-wrapper">
+                    <ReactToPrint
+                        trigger={() => <button id='React-to-print-button'>Print Your CV!</button>}
+                        content={() => this.componentRef.current}
+                    />
+                </div>
             </div>
         );
     }
