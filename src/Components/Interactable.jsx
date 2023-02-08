@@ -26,10 +26,15 @@ export default class Interactable extends Component {
     this.setInteractions();
   }
 
-  UNSAFE_componentWillReceiveProps() {
+  componentDidUpdate(prevProps) {
     this.interact = interact(findDOMNode(this.node));
     this.setInteractions();
   }
+
+  // UNSAFE_componentWillReceiveProps() {
+  //   this.interact = interact(findDOMNode(this.node));
+  //   this.setInteractions();
+  // }
 
   setInteractions() {
     if (this.props.draggable)

@@ -21,15 +21,16 @@
     gap: 10px;
 }
 
-#ProfilePicture{
+#ProfilePicture {
     border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 90%;
 }
 
-.upload-input-label-and-wrapper{
+.upload-input-label-and-wrapper {
     /* background-color: #302e2e; */
     display: flex;
     flex-direction: column;
