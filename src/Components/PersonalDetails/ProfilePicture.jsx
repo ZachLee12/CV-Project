@@ -66,7 +66,8 @@ class ProfilePicture extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            imageBase64: ''
+            imageBase64: '',
+            displayFileInput: false
         }
     }
 
@@ -91,18 +92,35 @@ class ProfilePicture extends React.Component {
         }).catch(err => console.log('No file was uploaded, or it was not an image.'))
     }
 
+    onMouseOverComponent = (e) => {
+        this.setState({
+            displayFileInput: true
+        })
+    }
+
+    onMouseOutComponent = (e) => {
+        this.setState({
+            displayFileInput: false
+        })
+    }
+
     render() {
         return (
-            <div id="ProfilePicture">
+            <div
+                onMouseOver={this.onMouseOverComponent}
+                onMouseOut={this.onMouseOutComponent}
+                id="ProfilePicture">
                 <Interactable draggable={true} draggableOptions={draggableOptions} resizable={true} resizableOptions={resizableOptions}>
                     <img className="profile-picture" src={this.state.imageBase64 === '' ? PlaceholderImage : this.state.imageBase64} alt="profile" />
                 </Interactable>
 
-                <p className="upload-input-label-and-wrapper">Upload a profile picture</p>
-                <input
-                    className="file-input"
-                    onChange={this.onChangeInput}
-                    type="file" id="myFile" name="filename" accept="image/png, image/gif, image/jpeg, image/webp, image/jpg" />
+                <div className={`file-input-wrapper ${this.state.displayFileInput? '' : 'hidden'}`}>
+                    <p className="upload-input-label-and-wrapper">Upload a profile picture</p>
+                    <input
+                        className="file-input"
+                        onChange={this.onChangeInput}
+                        type="file" id="myFile" name="filename" accept="image/png, image/gif, image/jpeg, image/webp, image/jpg" />
+                </div>
             </div>
         )
     }
