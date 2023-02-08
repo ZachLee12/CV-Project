@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import PlaceholderImage from '../../assets/images/pencil.png'
 
@@ -9,14 +10,15 @@ class ProfilePicture extends React.Component {
         }
     }
 
-
     onChangeInput = async (e) => {
         //await Promise to resolve first,
         const base64 = await this.#getImageBase64(e.target.files[0])
         //then only call this.setState()
-        this.setState({
-            imageBase64: base64
-        })
+        if (typeof base64 === typeof 'string comparison') {
+            this.setState({
+                imageBase64: base64
+            })
+        }
     }
 
     #getImageBase64 = async (file) => {
@@ -26,19 +28,18 @@ class ProfilePicture extends React.Component {
             reader.onloadend = function () {
                 resolve(reader.result) //base64
             }
-        }).catch(err => console.log('No change in uploaded image, no re-rendering needed'))
+        }).catch(err => console.log('No file was uploaded, or it was not an image.'))
     }
 
     render() {
         return (
             <div id="ProfilePicture">
                 <img className="profile-picture" src={this.state.imageBase64 === '' ? PlaceholderImage : this.state.imageBase64} alt="profile" />
-                <label className="upload-input-label-and-wrapper">Upload a profile picture
-                    <input
-                        className="file-input"
-                        onChange={this.onChangeInput}
-                        type="file" id="myFile" name="filename" accept="image/png, image/gif, image/jpeg, image/webp, image/jpg" />
-                </label>
+                <p className="upload-input-label-and-wrapper">Upload a profile picture</p>
+                <input
+                    className="file-input"
+                    onChange={this.onChangeInput}
+                    type="file" id="myFile" name="filename" accept="image/png, image/gif, image/jpeg, image/webp, image/jpg" />
             </div>
         )
     }
