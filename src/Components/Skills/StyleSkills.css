@@ -1,6 +1,7 @@
 #Skills {
     transition: all 400ms ease-in-out;
     padding-bottom: 1px;
+    margin-bottom: 20px;
 }
 
 #Skills:hover {

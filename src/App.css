@@ -6,7 +6,7 @@
 
 #App {
     background-color: whitesmoke;
-    height: 95vh;
+    min-height: 95vh;
     width: max(600px, 60vw);
     margin: auto;
     display: flex;
