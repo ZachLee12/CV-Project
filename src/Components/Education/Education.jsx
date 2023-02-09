@@ -51,15 +51,18 @@ class Education extends React.Component {
     }
 
     onClickSave = (e) => {
-        this.setState({
-            education: {
-                institution: '',
-                duration: '',
-                id: uniqid()
-            },
-            educationList: [...this.state.educationList, this.state.education],
-            displayEducationForm: false,
-        })
+        if (e.target.parentElement.parentElement.checkValidity()) //form element
+        {
+            this.setState({
+                education: {
+                    institution: '',
+                    duration: '',
+                    id: uniqid()
+                },
+                educationList: [...this.state.educationList, this.state.education],
+                displayEducationForm: false,
+            })
+        }
     }
 
     onClickCancel = (e) => {
@@ -144,19 +147,22 @@ class Education extends React.Component {
                 <form onSubmit={this.onSubmitForm} action="" className={`education-form ${this.state.displayEducationForm ? '' : 'hidden'}`}>
                     <label htmlFor="institution-input">Institution</label>
                     <input
+                        required
                         onChange={this.onChangeInstitution}
                         id='institution-input'
                         type="text" />
 
                     <label htmlFor="duration-input">Duration</label>
                     <input
+                        required
+                        placeholder="Eg: Jan 2020 - August 2023"
                         onChange={this.onChangeDuration}
                         id='duration-input'
                         type="text" />
 
                     <div className="buttons-wrapper">
                         <button onClick={this.onClickSave} id='save-button' >Save</button>
-                        <button onClick={this.onClickCancel} id='cancel-button' >Cancel</button>
+                        <button type='button' onClick={this.onClickCancel} id='cancel-button' >Cancel</button>
                     </div>
                 </form>
             </div>

@@ -22,7 +22,7 @@ class WorkExperienceForm extends React.Component {
 
                 <div className="buttons-wrapper">
                     <button className="save-button" onClick={onClickSave}>Save</button>
-                    <button className="cancel-button" onClick={onClickCancel}>Cancel</button>
+                    <button type='button' className="cancel-button" onClick={onClickCancel}>Cancel</button>
                 </div>
             </form>
         )

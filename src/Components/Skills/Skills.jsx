@@ -31,15 +31,17 @@ class Skills extends React.Component {
     }
 
     onClickSave = (e) => {
-        this.setState({
-            skill: {
-                ...this.state.skill,
-                title: '',
-                id: uniqid()
-            },
-            skillList: [...this.state.skillList, this.state.skill],
-            displaySkillsForm: false
-        })
+        if (e.target.parentElement.parentElement.checkValidity()) {
+            this.setState({
+                skill: {
+                    ...this.state.skill,
+                    title: '',
+                    id: uniqid()
+                },
+                skillList: [...this.state.skillList, this.state.skill],
+                displaySkillsForm: false
+            })
+        }
     }
 
     onSubmitForm = (e) => {
@@ -134,11 +136,12 @@ class Skills extends React.Component {
                         value={this.state.skill.title}
                         type="text"
                         name="title-input"
-                        d="title-input"
+                        id="title-input"
+                        required
                     />
                     <div className="buttons-wrapper">
-                        <button className="save-button" onClick={this.onClickSave}>Save</button>
-                        <button className="cancel-button" onClick={this.onClickCancel}>Cancel</button>
+                        <button  className="save-button" onClick={this.onClickSave}>Save</button>
+                        <button type="button" className="cancel-button" onClick={this.onClickCancel}>Cancel</button>
                     </div>
                 </form>
             </div>

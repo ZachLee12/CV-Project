@@ -55,17 +55,19 @@ class WorkExperience extends React.Component {
     }
 
     onClickSave = (e) => {
-        this.setState({
-            workExperience: {
-                //clear all inputs and make a new id
-                title: '',
-                company: '',
-                duration: '',
-                id: uniqid()
-            },
-            workExperienceList: [...this.state.workExperienceList, this.state.workExperience],
-            displayForm: !this.state.displayForm
-        })
+        if (e.target.parentElement.parentElement.checkValidity()) {
+            this.setState({
+                workExperience: {
+                    //clear all inputs and make a new id
+                    title: '',
+                    company: '',
+                    duration: '',
+                    id: uniqid()
+                },
+                workExperienceList: [...this.state.workExperienceList, this.state.workExperience],
+                displayForm: !this.state.displayForm
+            })
+        }
     }
 
     onClickCancel = (e) => {
