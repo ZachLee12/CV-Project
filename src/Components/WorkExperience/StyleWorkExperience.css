@@ -155,5 +155,6 @@ label[for='duration-input'] {
     .add-work-experience-button{
         left:100px;
         top:-10px;
+        border: 2px solid black;
     }
 }

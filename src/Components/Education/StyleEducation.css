@@ -164,3 +164,11 @@ label[for='duration-input'] {
 .hidden {
     display: none;
 }
+
+@media (max-width: 1450px) {
+    #add-education-button{
+        left:70px;
+        top:-10px;
+        border: 2px solid black;
+    }
+}
