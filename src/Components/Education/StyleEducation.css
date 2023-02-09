@@ -15,7 +15,7 @@
     transition: all 400ms ease-in-out;
 }
 
-.education-title:hover{
+.education-title:hover {
     background-color: #f1c472;
 }
 
@@ -126,7 +126,7 @@ label[for='duration-input'] {
     transition: all 400ms ease-in-out;
 }
 
-.education-list-item:hover{
+.education-list-item:hover {
     background-color: #f2c07b;
 }
 
@@ -166,9 +166,16 @@ label[for='duration-input'] {
 }
 
 @media (max-width: 1450px) {
-    #add-education-button{
-        left:70px;
-        top:-10px;
+    #add-education-button {
+        left: 70px;
+        top: -10px;
         border: 2px solid black;
+    }
+
+    /* check why selecting this button has to be more specific ???  */
+    /* the other components have the same class selector */
+    .edit-features-wrapper .delete-button {
+        top: 0px;
+        right: 0px;
     }
 }

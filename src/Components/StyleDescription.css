@@ -18,6 +18,7 @@
     padding: 10px;
     width: max(45%, 150px);
     padding-top: 5px;
+    margin-top: 10px;
     /* margin: 5px; */
 }
 
@@ -73,7 +74,7 @@ label[for="description-input"] {
 .description-list-item {
     /* border: 2px solid rgba(0,0,0,0); */
     /* border-radius: 5px; */
-    height: 25px;
+    min-height: 25px;
     position: relative;
 }
 
@@ -81,4 +82,11 @@ label[for="description-input"] {
     /* border-color: rgba(0,0,0,1); */
     background-color: #a0e6f8;
     transition: all 300ms ease-in-out;
+}
+
+@media (max-width: 1450px) {
+    .remove-button {
+        top: 0px;
+        right: 0px;
+    }
 }

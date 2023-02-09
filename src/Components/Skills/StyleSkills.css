@@ -132,4 +132,9 @@
         top:-10px;
         border: 2px solid black;
     }
+
+    .delete-button{
+        top:0px;
+        right: 0px;
+    }
 }
