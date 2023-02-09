@@ -14,7 +14,7 @@ class Education extends React.Component {
                 id: uniqid()
             },
             educationList: [{
-                institution: 'Some Institution',
+                institution: `Example Education (Click 'x' to delete me!)`,
                 duration: 'Jan 2012 - Feb 2022',
                 id: uniqid(),
             }],

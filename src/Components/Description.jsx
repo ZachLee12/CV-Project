@@ -11,7 +11,7 @@ class Description extends React.Component {
                 text: '',
                 id: uniqid(),
             },
-            descriptionList: [{ text: 'test', id: uniqid() }],
+            descriptionList: [{ text: 'Example Description (you can remove me!)', id: uniqid() }],
             displayDescriptionForm: false
         }
     }

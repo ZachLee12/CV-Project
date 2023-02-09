@@ -12,7 +12,7 @@ class Skills extends React.Component {
                 title: '',
                 id: uniqid()
             },
-            skillList: [{ title: 'Very good at hiking', id: uniqid() }],
+            skillList: [{ title: `Example Skill (Click 'x' to remove me!)`, id: uniqid() }],
             displaySkillsForm: false,
             displayAddSkillButton: false,
             displayDescriptionForm: false,
@@ -140,7 +140,7 @@ class Skills extends React.Component {
                         required
                     />
                     <div className="buttons-wrapper">
-                        <button  className="save-button" onClick={this.onClickSave}>Save</button>
+                        <button className="save-button" onClick={this.onClickSave}>Save</button>
                         <button type="button" className="cancel-button" onClick={this.onClickCancel}>Cancel</button>
                     </div>
                 </form>

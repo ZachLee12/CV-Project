@@ -15,9 +15,9 @@ class WorkExperience extends React.Component {
                 id: uniqid(),
             },
             workExperienceList: [{
-                title: 'Trainee in IT Operations',
-                company: 'Hochschule Luzern',
-                duration: 'Jan 2002 - Jan 3000',
+                title: `Example Work Experience (Click 'x' to remove me!)`,
+                company: 'Company name',
+                duration: 'Jan 2018 - Jan 2023',
                 id: uniqid(),
             }],
             displayForm: false,
