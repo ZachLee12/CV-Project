@@ -1,7 +1,7 @@
 import './StylePersonalDetails.css'
 import Address from './Address';
 import React from 'react';
-import PlaceholderPicture from '../../assets/images/pencil.png'
+// import PlaceholderPicture from '../../assets/images/pencil.png'
 import PhoneIcon from '../../assets/images/phone-call.png'
 import EmailIcon from '../../assets/images/envelope.png'
 import LinkedInIcon from '../../assets/images/linkedin.png'
