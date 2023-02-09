@@ -28,7 +28,7 @@
     align-items: center;
     position: absolute;
     top: 50%;
-    left: 35%;
+    right: 15%;
     transform: translate(-50%, -50%);
     background-color: #d0d0d0;
     height: 25px;
@@ -36,7 +36,7 @@
     width: 170px;
     border-radius: 25px;
     font-weight: 600;
-    animation: button-fade-in 400ms ease-in-out
+    animation: button-fade-in 400ms ease-in-out;
 }
 
 @keyframes button-fade-in {
@@ -149,4 +149,11 @@ label[for='duration-input'] {
 
 .cancel-button:active {
     background-color: #de3535;
+}
+
+@media (max-width: 1450px) {
+    .add-work-experience-button{
+        left:100px;
+        top:-10px;
+    }
 }

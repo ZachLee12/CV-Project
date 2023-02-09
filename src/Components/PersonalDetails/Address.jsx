@@ -7,11 +7,11 @@ class Address extends React.Component {
 
         this.state = {
             street: 'Street',
-            zip: 'Zip',
-            city: 'City',
+            addressLineOne: 'Address line 1',
+            addressLineTwo: 'Address line 2',
             displayStreet: false,
-            displayZip: false,
-            displayCity: false
+            displayAddressLineOne: false,
+            displayAddressLineTwo: false
         }
     }
 
@@ -21,21 +21,21 @@ class Address extends React.Component {
         })
     }
 
-    onChangeZip = (e) => {
+    onChangeAddressLineOne = (e) => {
         this.setState({
-            zip: e.target.value
+            addressLineOne: e.target.value
         })
     }
 
-    onChangeCity = (e) => {
+    onChangeAddressLineTwo = (e) => {
         this.setState({
-            city: e.target.value
+            addressLineTwo: e.target.value
         })
     }
 
-    onClickCity = (e) => {
+    onClickAddressLineTwo = (e) => {
         this.setState({
-            displayCity: !this.state.displayCity
+            displayAddressLineTwo: !this.state.displayAddressLineTwo
         })
     }
 
@@ -45,9 +45,9 @@ class Address extends React.Component {
         })
     }
 
-    onClickZip = (e) => {
+    onClickAddressLineOne = (e) => {
         this.setState({
-            displayZip: !this.state.displayZip
+            displayAddressLineOne: !this.state.displayAddressLineOne
         })
     }
 
@@ -69,31 +69,31 @@ class Address extends React.Component {
                         type="text"
                         id="street-input" />
 
-                    <label onClick={this.onClickZip} htmlFor="zip-input">
+                    <label onClick={this.onClickAddressLineOne} htmlFor="address-line-one-input">
                         <div className="addressText-wrapper">
-                            {this.state.zip === ''
-                                ? 'Zip'
-                                : this.state.zip}
+                            {this.state.addressLineOne === ''
+                                ? 'Address Line 1'
+                                : this.state.addressLineOne}
                         </div>
                     </label>
                     <input
-                        className={`zip-input ${this.state.displayZip ? '' : 'hidden'}`}
-                        onChange={this.onChangeZip}
+                        className={`addressLineOne-input ${this.state.displayAddressLineOne ? '' : 'hidden'}`}
+                        onChange={this.onChangeAddressLineOne}
                         type="text"
-                        id="zip-input" />
+                        id="address-line-one-input" />
 
-                    <label onClick={this.onClickCity} htmlFor="city-input">
+                    <label onClick={this.onClickAddressLineTwo} htmlFor="address-line-two-input">
                         <div className="addressText-wrapper">
-                            {this.state.city === ''
-                                ? 'City'
-                                : this.state.city}
+                            {this.state.addressLineTwo === ''
+                                ? 'Address Line 2'
+                                : this.state.addressLineTwo}
                         </div>
                     </label>
                     <input
-                        className={`city-input ${this.state.displayCity ? '' : 'hidden'}`}
-                        onChange={this.onChangeCity}
+                        className={`address-line-two-input ${this.state.displayAddressLineTwo ? '' : 'hidden'}`}
+                        onChange={this.onChangeAddressLineTwo}
                         type="text"
-                        id="city-input" />
+                        id="address-line-two-input" />
                 </form>
             </div>
         )
