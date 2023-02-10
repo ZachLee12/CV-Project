@@ -1,6 +1,6 @@
 import React from "react";
 import uniqid from "uniqid";
-import Description from "../Description";
+import Description from "../Description/Description.jsx";
 import './StyleSkills.css'
 
 class Skills extends React.Component {

@@ -1,6 +1,6 @@
 import React from "react";
 import PlaceholderImage from '../../assets/images/man.png'
-import Interactable from "../Interactable";
+import Interactable from "../Interactable/Interactable.jsx";
 import interact from "interactjs";
 
 function dragMoveListener(event) {

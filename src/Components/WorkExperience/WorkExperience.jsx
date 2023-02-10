@@ -1,6 +1,6 @@
 import React from "react";
 import './StyleWorkExperience.css'
-import Description from "../Description";
+import Description from "../Description/Description.jsx";
 import uniqid from 'uniqid';
 import WorkExperienceForm from "./WorkExperienceForm";
 

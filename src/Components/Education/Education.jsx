@@ -1,7 +1,7 @@
 import React from "react";
 import uniqid from 'uniqid'
 import './StyleEducation.css'
-import Description from "../Description";
+import Description from "../Description/Description.jsx";
 
 class Education extends React.Component {
 
