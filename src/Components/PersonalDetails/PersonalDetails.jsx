@@ -18,7 +18,10 @@ class PersonalDetails extends React.Component {
             displayNameInput: false,
             displayPhoneNumberInput: false,
             displayEmailInput: false,
-            displayLinkedIn: false
+            displayLinkedIn: false,
+            displayStreet: false,
+            displayAddressLineOne: false,
+            displayAddressLineTwo: false,
         }
     }
 
@@ -76,74 +79,100 @@ class PersonalDetails extends React.Component {
         })
     }
 
+    onMouseOverFormWrapper = (e) => {
+        this.setState({
+            displayPhoneNumberInput: true,
+            displayEmailInput: true,
+            displayLinkedIn: true,
+            displayStreet: true,
+            displayAddressLineOne: true,
+            displayAddressLineTwo: true,
+        })
+    }
+
+    onMouseOutFormWrapper = (e) => {
+        this.setState({
+            displayPhoneNumberInput: false,
+            displayEmailInput: false,
+            displayLinkedIn: false,
+            displayStreet: false,
+            displayAddressLineOne: false,
+            displayAddressLineTwo: false,
+        })
+    }
+
     render() {
         return (
             <div id='PersonalDetails'>
                 {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />
 
-                <form className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
-                    <label className='name' htmlFor="name-input" onClick={this.onClickName}>
-                        <div className="nameText-wrapper">
-                            {this.state.name === ''
-                                ? 'Your Name'
-                                : this.state.name}
-                        </div>
-                    </label>
-                    <input
-                        className={`name-input ${this.state.displayNameInput ? '' : 'hidden'}`}
-                        type="text"
-                        id="name-input"
-                        onChange={this.onChangeName}
-                    />
-
-                    <label className='phone-number details' htmlFor="phone-number-input" onClick={this.onClickPhoneNumber}>
-                        <img id='phone-icon' src={PhoneIcon} alt="phone-icon" />
-                        <div className="innerText-wrapper wrapper">
-                            {this.state.phoneNumber === ''
-                                ? '+123 456 789'
-                                : this.state.phoneNumber}
-                        </div>
-                    </label>
-                    <input
-                        onChange={this.onChangePhoneNumber}
-                        className={`phone-number-input ${this.state.displayPhoneNumberInput ? '' : 'hidden'}`}
-                        type="text"
-                        id="phone-number-input" />
-
-                    <label className='email details' htmlFor="email-input" onClick={this.onClickEmail}>
-                        <img id='email-icon' src={EmailIcon} alt="email-icon" />
-                        <div className="innerText-wrapper wrapper">
-                            {this.state.email === ''
-                                ? 'example@example.com'
-                                : this.state.email}
-                        </div>
-                    </label>
-                    <input
-                        onChange={this.onChangeEmail}
-                        className={`email-input ${this.state.displayEmailInput ? '' : 'hidden'}`}
-                        type="text"
-                        id="email-input" />
-
-                    <label className='linkedIn details' htmlFor="linkedIn-input" onClick={this.onClickLinkedIn}>
-                        <img id='linkedIn-icon' src={LinkedInIcon} alt="linkedIn-icon" />
-                        <div className="innerText-wrapper wrapper">
-                            {this.state.linkedIn === ''
-                                ? 'linkedIn URL'
-                                : this.state.linkedIn}
-                        </div>
-                    </label>
-                    <input
-                        onChange={this.onChangeLinkedIn}
-                        className={`linkedIn-input ${this.state.displayLinkedIn ? '' : 'hidden'}`}
-                        type="text"
-                        id="linkedIn-input" />
-
-                </form>
-
-                <div id="Address" >
-                    <Address />
+                <div
+                    onMouseOut={this.onMouseOutFormWrapper}
+                    onMouseOver={this.onMouseOverFormWrapper} className="personal-details-form-wrapper">
+                    <form className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
+                        <label className='name' htmlFor="name-input" onClick={this.onClickName}>
+                            <div className="nameText-wrapper">
+                                {this.state.name === ''
+                                    ? 'Your Name'
+                                    : this.state.name}
+                            </div>
+                        </label>
+                        <input
+                            className={`name-input ${this.state.displayNameInput ? '' : 'hidden'}`}
+                            type="text"
+                            id="name-input"
+                            onChange={this.onChangeName}
+                        />
+                        <label className='phone-number details' htmlFor="phone-number-input" onClick={this.onClickPhoneNumber}>
+                            <img id='phone-icon' src={PhoneIcon} alt="phone-icon" />
+                            <div className="innerText-wrapper wrapper">
+                                {this.state.phoneNumber === ''
+                                    ? '+123 456 789'
+                                    : this.state.phoneNumber}
+                            </div>
+                        </label>
+                        <input
+                            onChange={this.onChangePhoneNumber}
+                            className={`phone-number-input ${this.state.displayPhoneNumberInput ? '' : 'hidden'}`}
+                            type="text"
+                            id="phone-number-input" />
+                        <label className='email details' htmlFor="email-input" onClick={this.onClickEmail}>
+                            <img id='email-icon' src={EmailIcon} alt="email-icon" />
+                            <div className="innerText-wrapper wrapper">
+                                {this.state.email === ''
+                                    ? 'example@example.com'
+                                    : this.state.email}
+                            </div>
+                        </label>
+                        <input
+                            onChange={this.onChangeEmail}
+                            className={`email-input ${this.state.displayEmailInput ? '' : 'hidden'}`}
+                            type="text"
+                            id="email-input" />
+                        <label className='linkedIn details' htmlFor="linkedIn-input" onClick={this.onClickLinkedIn}>
+                            <img id='linkedIn-icon' src={LinkedInIcon} alt="linkedIn-icon" />
+                            <div className="innerText-wrapper wrapper">
+                                {this.state.linkedIn === ''
+                                    ? 'linkedIn URL'
+                                    : this.state.linkedIn}
+                            </div>
+                        </label>
+                        <input
+                            onChange={this.onChangeLinkedIn}
+                            className={`linkedIn-input ${this.state.displayLinkedIn ? '' : 'hidden'}`}
+                            type="text"
+                            id="linkedIn-input" />
+                    </form>
+                    <div id="Address" >
+                        <Address
+                            displayStreet={this.state.displayStreet}
+                            displayAddressLineOne={this.state.displayAddressLineOne}
+                            displayAddressLineTwo={this.state.displayAddressLineTwo}
+                        />
+                    </div>
                 </div>
+
             </div>
         )
     }
