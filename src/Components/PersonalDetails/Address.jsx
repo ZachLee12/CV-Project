@@ -51,9 +51,28 @@ class Address extends React.Component {
         })
     }
 
+    onMouseOverComponent = (e) => {
+        this.setState({
+            displayStreet: true,
+            displayAddressLineOne: true,
+            displayAddressLineTwo: true
+        })
+    }
+
+    onMouseOutComponent = (e) => {
+        this.setState({
+            displayStreet: false,
+            displayAddressLineOne: false,
+            displayAddressLineTwo: false
+        })
+    }
+
     render() {
         return (
-            <div>
+            <div
+                onMouseOver={this.onMouseOverComponent}
+                onMouseOut={this.onMouseOutComponent}
+                id='Address'>
                 <form action="" className="address-form">
                     <img id="address-icon" src={AddressIcon} alt="address-icon" />
                     <label onClick={this.onClickStreet} htmlFor="street-input">
