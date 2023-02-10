@@ -118,6 +118,7 @@ class ProfilePicture extends React.Component {
                     <p className="upload-input-label-and-wrapper">Upload a profile picture.</p>
                     <p className="profile-picture-function-title">*You can resize your picture and also drag it around!</p>
                     <input
+                        value=''
                         className="file-input"
                         onChange={this.onChangeInput}
                         type="file" id="myFile" name="filename" accept="image/png, image/gif, image/jpeg, image/webp, image/jpg" />
