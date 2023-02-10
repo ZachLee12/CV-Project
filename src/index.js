@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Print from './Print';
+import Print from './Components/Print/Print.jsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

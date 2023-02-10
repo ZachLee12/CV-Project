@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './App'
+import App from '../App/App.jsx'
 import ReactToPrint from 'react-to-print'
 import './Print.css'
 
