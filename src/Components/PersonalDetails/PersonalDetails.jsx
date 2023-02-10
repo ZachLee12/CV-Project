@@ -6,8 +6,11 @@ import PhoneIcon from '../../assets/images/phone-call.png'
 import EmailIcon from '../../assets/images/envelope.png'
 import LinkedInIcon from '../../assets/images/linkedin.png'
 import ProfilePicture from './ProfilePicture';
+import { SwatchesPicker } from 'react-color';
 
 class PersonalDetails extends React.Component {
+    #DEFAULT_BACKGROUND_COLOR = '#B2EBF2'
+
     constructor() {
         super()
         this.state = {
@@ -23,9 +26,9 @@ class PersonalDetails extends React.Component {
             displayAddressLineOne: false,
             displayAddressLineTwo: false,
             displayColorInput: false,
+            hideHexInput: true,
             style: {
-                backgroundColor: '#aeede0',
-                color: 'black'
+                backgroundColor: this.#DEFAULT_BACKGROUND_COLOR,
             }
         }
     }
@@ -89,10 +92,18 @@ class PersonalDetails extends React.Component {
         })
     }
 
-    onChangeColorInput = (e) => {
+    onChangeColorInput = (color) => {
         this.setState({
             style: {
-                backgroundColor: e.target.value
+                backgroundColor: color.hex
+            }
+        })
+    }
+
+    onClickResetBackgroundColor = (e) => {
+        this.setState({
+            style: {
+                backgroundColor: this.#DEFAULT_BACKGROUND_COLOR
             }
         })
     }
@@ -168,9 +179,9 @@ class PersonalDetails extends React.Component {
 
                 <div
                     className={`background-color-input-wrapper ${this.state.displayColorInput ? '' : 'hidden'}`}>
-                    <label htmlFor="background-color">Change Background Color:</label>
-                    <p className='default-color-title'>(default '#aeede0')</p>
-                    <input onChange={this.onChangeColorInput} value={this.state.style.backgroundColor} type="color" name="background-color" id="background-color" />
+                    <div className='change-background-color-title'>Change Background Color:</div>
+                    <button onClick={this.onClickResetBackgroundColor} className="reset-background-color-button">Reset</button>
+                    <SwatchesPicker height={'200px'} width={'100%'} onChange={this.onChangeColorInput} hideHexInput={this.state.hideHexInput} />
                 </div>
             </div>
         )

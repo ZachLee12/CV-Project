@@ -114,8 +114,9 @@ class ProfilePicture extends React.Component {
                     <img className="profile-picture" src={this.state.imageBase64 === '' ? PlaceholderImage : this.state.imageBase64} alt="profile" />
                 </Interactable>
 
-                <div className={`file-input-wrapper ${this.state.displayFileInput? '' : 'hidden'}`}>
-                    <p className="upload-input-label-and-wrapper">Upload a profile picture</p>
+                <div className={`file-input-wrapper ${this.state.displayFileInput ? '' : 'hidden'}`}>
+                    <p className="upload-input-label-and-wrapper">Upload a profile picture.</p>
+                    <p className="profile-picture-function-title">*You can resize your picture and also drag it around!</p>
                     <input
                         className="file-input"
                         onChange={this.onChangeInput}

@@ -54,6 +54,12 @@
     text-decoration: underline;
 }
 
+.profile-picture-function-title {
+    align-self: center;
+    padding-left: 5px;
+
+}
+
 .profile-picture {
     margin-top: 20px;
     width: 130px;
@@ -149,15 +155,32 @@
 .background-color-input-wrapper {
     display: flex;
     flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    gap: 10px;
+    transition: background-color 400ms ease-in-out;
 }
 
-.default-color-title{
+.background-color-input-wrapper:hover {
+    background-color: #aaa8a8;
+}
+
+.change-background-color-title {
     text-align: center;
-    margin: 0;
 }
 
-input[type='color'] {
+.reset-background-color-button {
+    font-weight: 600;
+    border-radius: 5px;
+    width: 50%;
     align-self: center;
+    height: 30px;
+    border: 2px solid black;
+    background-image: linear-gradient(to bottom right, #B2EBF2, #54b9db);
+}
+
+.reset-background-color-button:hover {
+    background-image: linear-gradient(to bottom right, #54b9db, #B2EBF2);
 }
 
 .hidden {
