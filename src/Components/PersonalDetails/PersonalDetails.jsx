@@ -22,6 +22,11 @@ class PersonalDetails extends React.Component {
             displayStreet: false,
             displayAddressLineOne: false,
             displayAddressLineTwo: false,
+            displayColorInput: false,
+            style: {
+                backgroundColor: '#aeede0',
+                color: 'black'
+            }
         }
     }
 
@@ -72,9 +77,33 @@ class PersonalDetails extends React.Component {
         })
     }
 
+    onMouseOverComponent = (e) => {
+        this.setState({
+            displayColorInput: true
+        })
+    }
+
+    onMouseOutComponent = (e) => {
+        this.setState({
+            displayColorInput: false
+        })
+    }
+
+    onChangeColorInput = (e) => {
+        this.setState({
+            style: {
+                backgroundColor: e.target.value
+            }
+        })
+    }
+
     render() {
         return (
-            <div id='PersonalDetails'>
+            <div
+                onMouseOver={this.onMouseOverComponent}
+                onMouseOut={this.onMouseOutComponent}
+                style={this.state.style}
+                id='PersonalDetails'>
                 {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />
                 <form
@@ -134,8 +163,14 @@ class PersonalDetails extends React.Component {
                         type="text"
                         id="linkedIn-input" />
                 </form>
-                <div id="Address" >
-                    <Address />
+
+                <Address />
+
+                <div
+                    className={`background-color-input-wrapper ${this.state.displayColorInput ? '' : 'hidden'}`}>
+                    <label htmlFor="background-color">Change Background Color:</label>
+                    <p className='default-color-title'>(default '#aeede0')</p>
+                    <input onChange={this.onChangeColorInput} value={this.state.style.backgroundColor} type="color" name="background-color" id="background-color" />
                 </div>
             </div>
         )

@@ -1,5 +1,5 @@
+/* This includes <ProfilePicture /> and <Address /> */
 #PersonalDetails {
-    background-color: #aeede0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,19 +10,23 @@
     width: 100%;
 }
 
-.personal-details-form-wrapper {
-    margin-top: 20px;
-    width: 100%;
-}
 
 .personal-details-form {
+    /* border: 2px solid red; */
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 100%;
     margin-top: 20px;
     width: 100%;
+    padding-bottom: 10px;
+    transition: background-color 400ms ease-in-out;
+}
+
+.personal-details-form:hover {
+    background-color: #ebc99d;
 }
 
 #ProfilePicture {
@@ -110,8 +114,15 @@
 
 #Address {
     margin-top: 30px;
-    /* background-color: #4466a4; */
     width: 100%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: background-color 400ms ease-in-out;
+}
+
+#Address:hover {
+    background-color: #9facf4;
 }
 
 .address-form {
@@ -123,6 +134,7 @@
     gap: 10px;
 }
 
+
 #address-icon {
     width: 20px;
     position: absolute;
@@ -132,6 +144,20 @@
 
 .addressText-wrapper {
     text-align: left;
+}
+
+.background-color-input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.default-color-title{
+    text-align: center;
+    margin: 0;
+}
+
+input[type='color'] {
+    align-self: center;
 }
 
 .hidden {
