@@ -12,13 +12,13 @@ class WorkExperienceForm extends React.Component {
         return (
             <form className={`work-experience-form ${displayForm ? '' : 'hidden'}`} action="" onSubmit={onSubmitForm}>
                 <label htmlFor="title-input">Title</label>
-                <input onChange={onChangeInput} value={workExperience.title} type="text" id="title-input" required />
+                <input autoComplete='off' onChange={onChangeInput} value={workExperience.title} type="text" id="title-input" required />
 
                 <label htmlFor="company-input">Company</label>
-                <input onChange={onChangeInput} value={workExperience.company} type="text" id="company-input" required />
+                <input autoComplete='off' onChange={onChangeInput} value={workExperience.company} type="text" id="company-input" required />
 
                 <label htmlFor="duration-input">Duration</label>
-                <input onChange={onChangeInput} value={workExperience.duration} type="text" id="duration-input" required />
+                <input autoComplete='off' onChange={onChangeInput} value={workExperience.duration} type="text" id="duration-input" required />
 
                 <div className="buttons-wrapper">
                     <button className="save-button" onClick={onClickSave}>Save</button>

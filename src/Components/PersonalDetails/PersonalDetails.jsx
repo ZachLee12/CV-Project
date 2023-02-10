@@ -129,6 +129,7 @@ class PersonalDetails extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         className={`name-input ${this.state.displayNameInput ? '' : 'hidden'}`}
                         type="text"
                         id="name-input"
@@ -143,6 +144,7 @@ class PersonalDetails extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         onChange={this.onChangePhoneNumber}
                         className={`phone-number-input ${this.state.displayPhoneNumberInput ? '' : 'hidden'}`}
                         type="text"
@@ -156,6 +158,7 @@ class PersonalDetails extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         onChange={this.onChangeEmail}
                         className={`email-input ${this.state.displayEmailInput ? '' : 'hidden'}`}
                         type="text"
@@ -169,6 +172,7 @@ class PersonalDetails extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         onChange={this.onChangeLinkedIn}
                         className={`linkedIn-input ${this.state.displayLinkedIn ? '' : 'hidden'}`}
                         type="text"

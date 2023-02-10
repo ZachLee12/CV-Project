@@ -68,7 +68,10 @@ class Description extends React.Component {
                     onSubmit={this.onSubmitForm}
                     className={`description-form ${displayDescriptionForm ? '' : 'hidden'}`}>
                     <label htmlFor="description-input">Add Description (optional)</label>
-                    <input value={this.state.description.text} type="text" id="description-input" onChange={this.onChangeInput} required />
+                    <input
+                        autoComplete='off'
+                        value={this.state.description.text}
+                        type="text" id="description-input" onChange={this.onChangeInput} required />
                     <button onClick={this.onClickAddDescription} id="add-description-button" >Add</button>
                 </form>
             </div>

@@ -65,6 +65,7 @@ class Address extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         className={`street-input ${this.state.displayStreet ? '' : 'hidden'}`}
                         onChange={this.onChangeStreet}
                         type="text"
@@ -78,6 +79,7 @@ class Address extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         className={`addressLineOne-input ${this.state.displayAddressLineOne ? '' : 'hidden'}`}
                         onChange={this.onChangeAddressLineOne}
                         type="text"
@@ -91,6 +93,7 @@ class Address extends React.Component {
                         </div>
                     </label>
                     <input
+                        autoComplete='off'
                         className={`address-line-two-input ${this.state.displayAddressLineTwo ? '' : 'hidden'}`}
                         onChange={this.onChangeAddressLineTwo}
                         type="text"

@@ -132,6 +132,7 @@ class Skills extends React.Component {
                 >
                     <label htmlFor="title-input">Title</label>
                     <input
+                        autoComplete='off'
                         onChange={this.onChangeTitle}
                         value={this.state.skill.title}
                         type="text"

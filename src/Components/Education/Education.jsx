@@ -147,6 +147,7 @@ class Education extends React.Component {
                 <form onSubmit={this.onSubmitForm} action="" className={`education-form ${this.state.displayEducationForm ? '' : 'hidden'}`}>
                     <label htmlFor="institution-input">Institution</label>
                     <input
+                        autoComplete='off'
                         required
                         onChange={this.onChangeInstitution}
                         id='institution-input'
@@ -154,6 +155,7 @@ class Education extends React.Component {
 
                     <label htmlFor="duration-input">Duration</label>
                     <input
+                        autoComplete='off'
                         required
                         placeholder="Eg: Jan 2020 - August 2023"
                         onChange={this.onChangeDuration}
