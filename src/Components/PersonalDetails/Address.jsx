@@ -33,24 +33,6 @@ class Address extends React.Component {
         })
     }
 
-    onClickAddressLineTwo = (e) => {
-        this.setState({
-            displayAddressLineTwo: !this.state.displayAddressLineTwo
-        })
-    }
-
-    onClickStreet = (e) => {
-        this.setState({
-            displayStreet: !this.state.displayStreet
-        })
-    }
-
-    onClickAddressLineOne = (e) => {
-        this.setState({
-            displayAddressLineOne: !this.state.displayAddressLineOne
-        })
-    }
-
     onMouseOverComponent = (e) => {
         this.setState({
             displayStreet: true,
@@ -75,7 +57,7 @@ class Address extends React.Component {
                 id='Address'>
                 <form action="" className="address-form">
                     <img id="address-icon" src={AddressIcon} alt="address-icon" />
-                    <label onClick={this.onClickStreet} htmlFor="street-input">
+                    <label htmlFor="street-input">
                         <div className="addressText-wrapper">
                             {this.state.street === ''
                                 ? 'Street'
@@ -88,7 +70,7 @@ class Address extends React.Component {
                         type="text"
                         id="street-input" />
 
-                    <label onClick={this.onClickAddressLineOne} htmlFor="address-line-one-input">
+                    <label htmlFor="address-line-one-input">
                         <div className="addressText-wrapper">
                             {this.state.addressLineOne === ''
                                 ? 'Address Line 1'
@@ -101,7 +83,7 @@ class Address extends React.Component {
                         type="text"
                         id="address-line-one-input" />
 
-                    <label onClick={this.onClickAddressLineTwo} htmlFor="address-line-two-input">
+                    <label htmlFor="address-line-two-input">
                         <div className="addressText-wrapper">
                             {this.state.addressLineTwo === ''
                                 ? 'Address Line 2'

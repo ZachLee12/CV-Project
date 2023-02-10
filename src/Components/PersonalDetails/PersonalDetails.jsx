@@ -54,50 +54,21 @@ class PersonalDetails extends React.Component {
         e.preventDefault();
     }
 
-    onClickName = (e) => {
-        this.setState({
-            displayNameInput: !this.state.displayNameInput
-        })
-    }
-
-
-    onClickPhoneNumber = (e) => {
-        this.setState({
-            displayPhoneNumberInput: !this.state.displayPhoneNumberInput
-        })
-    }
-
-    onClickEmail = (e) => {
-        this.setState({
-            displayEmailInput: !this.state.displayEmailInput
-        })
-    }
-
-    onClickLinkedIn = (e) => {
-        this.setState({
-            displayLinkedIn: !this.state.displayLinkedIn
-        })
-    }
-
     onMouseOverFormWrapper = (e) => {
         this.setState({
+            displayNameInput: true,
             displayPhoneNumberInput: true,
             displayEmailInput: true,
             displayLinkedIn: true,
-            displayStreet: true,
-            displayAddressLineOne: true,
-            displayAddressLineTwo: true,
         })
     }
 
     onMouseOutFormWrapper = (e) => {
         this.setState({
+            displayNameInput: false,
             displayPhoneNumberInput: false,
             displayEmailInput: false,
             displayLinkedIn: false,
-            displayStreet: false,
-            displayAddressLineOne: false,
-            displayAddressLineTwo: false,
         })
     }
 
@@ -106,8 +77,6 @@ class PersonalDetails extends React.Component {
             <div id='PersonalDetails'>
                 {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />
-
-
                 <form
                     onMouseOut={this.onMouseOutFormWrapper}
                     onMouseOver={this.onMouseOverFormWrapper}
