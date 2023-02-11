@@ -3,3 +3,14 @@
     display: flex;
     flex-direction: column;
 }
+
+.custom-section-title-view {
+    font-size: 1.7em;
+    position: relative;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
