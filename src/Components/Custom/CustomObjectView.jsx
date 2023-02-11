@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import Description from '../Description/Description'
+import './CustomObjectView.css'
 
 export default function CustomObjectView(props) {
     const { customObject } = props //destructure
@@ -12,16 +14,34 @@ export default function CustomObjectView(props) {
 
     const [customObjectView, setCustomObjectView] = React.useState(initialState)
 
+
     useEffect(() => {
-        console.log(customObjectView)
+        // console.log(customObjectView)
     })
 
     return (
         <div>
-            <form action="">
-                <label htmlFor="">
-
+            <form className="custom-object-view-form" action="">
+                <label className={`custom-object-view-title ${customObject.hasTitle ? '' : 'hidden'}`} htmlFor="">
+                    Custom Object View Title
+                    <input type="text" />
                 </label>
+
+                <label className={`custom-object-view-institution ${customObject.hasInstitution ? '' : 'hidden'}`} htmlFor="">
+                    Custom Object View Institution
+                    <input type="text" />
+                </label>
+
+                <label className={`custom-object-view-company ${customObject.hasCompany ? '' : 'hidden'}`} htmlFor="">
+                    Custom Object View Company
+                    <input type="text" />
+                </label>
+
+                <label className={`custom-object-view-institution ${customObject.hasDuration ? '' : 'hidden'}`} htmlFor="">
+                    Custom Object View Institution
+                    <input type="text" />
+                </label>
+
             </form>
         </div>
     )

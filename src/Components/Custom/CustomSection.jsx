@@ -16,7 +16,7 @@ export default function CustomSection(props) {
             hasDuration: false,
             id: uniqid()
         },
-        customObjectList: []
+        customSectionList: []
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -76,12 +76,12 @@ export default function CustomSection(props) {
                 ...customSection.customObject,
                 id: uniqid()
             },
-            customObjectList: [...customSection.customObjectList, customSection.customObject]
+            customSectionList: [...customSection.customSectionList, customSection]
         })
     }
 
     useEffect(() => {
-        console.log(customSection) //this will be called on mounting, and when state changes
+        //console.log(customSection) //this will be called on mounting, and when state changes
         return () => {
             // console.log(customSection)
         }
@@ -126,20 +126,20 @@ export default function CustomSection(props) {
                 <button onClick={onClickAddCustomSection}>Create Custom Section</button>
             </form>
 
-            <ul className="custom-objects-list">
-                {customSection.customObjectList.map(object => { //this is named 'object' to avoid confusion with customObject in customSection
+            <div className="custom-objects-view-container">
+                {customSection.customSectionList.map(sectionObject => { //this is named 'object' to avoid confusion with customObject in customSection
                     return (
-                        <div key={object.id} className="custom-section-view">
-                            <p className="custom-section-title-view">{customSection.customSectionTitle}</p>
-                            <li key={object.id}>
+                        <div key={sectionObject.customObject.id} className="custom-section-view">
+                            <p className="custom-section-title-view">{sectionObject.customSectionTitle}</p>
+                            <div key={sectionObject.customObject.id}>
                                 <CustomObjectView
-                                    customObject={object}
+                                    customObject={sectionObject.customObject}
                                 />
-                            </li>
+                            </div>
                         </div>
                     )
                 })}
-            </ul>
+            </div>
 
         </div>
     )
