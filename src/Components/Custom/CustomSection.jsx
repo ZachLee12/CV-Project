@@ -1,22 +1,32 @@
 import React, { useEffect } from "react";
 import './CustomSection.css'
-
+import CustomObjectView from "./CustomObjectView";
+import uniqid from 'uniqid'
 
 //Custom Section = Large Title and thick line
 //Custom Object = Bullet points under the title
 export default function CustomSection(props) {
     const initialState = {
         customSectionTitle: '',
+        customSectionId: uniqid(),
         customObject: {
             hasTitle: false,
             hasInstitution: false,
             hasCompany: false,
-            hasDuration: false
+            hasDuration: false,
+            id: uniqid()
         },
         customObjectList: []
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
+
+    const onChangeCustomSectionTitle = (e) => {
+        setCustomSection({
+            ...customSection,
+            customSectionTitle: e.target.value
+        })
+    }
 
     const onChangeTitleCheckbox = (e) => {
         setCustomSection({
@@ -58,11 +68,13 @@ export default function CustomSection(props) {
         })
     }
 
-    const onClickAddCustomObject = (e) => {
+    const onClickAddCustomSection = (e) => {
         setCustomSection({
             ...customSection,
+            customSectionId: uniqid(),
             customObject: {
-                ...customSection.customObject
+                ...customSection.customObject,
+                id: uniqid()
             },
             customObjectList: [...customSection.customObjectList, customSection.customObject]
         })
@@ -84,7 +96,7 @@ export default function CustomSection(props) {
             <form onSubmit={onSubmit} className="custom-section-form" action="">
                 <label className="custom-section-title" htmlFor="custom-section-title-input">
                     Custom Section Title:
-                    <input id='custom-section-title-input' type="text" />
+                    <input onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
                 </label>
 
 
@@ -111,9 +123,23 @@ export default function CustomSection(props) {
                     </label>
                 </div>
 
-                <button onClick={onClickAddCustomObject}>Create Custom Section</button>
+                <button onClick={onClickAddCustomSection}>Create Custom Section</button>
             </form>
 
+            <ul className="custom-objects-list">
+                {customSection.customObjectList.map(object => { //this is named 'object' to avoid confusion with customObject in customSection
+                    return (
+                        <div key={object.id} className="custom-section-view">
+                            <p className="custom-section-title-view">{customSection.customSectionTitle}</p>
+                            <li key={object.id}>
+                                <CustomObjectView
+                                    customObject={object}
+                                />
+                            </li>
+                        </div>
+                    )
+                })}
+            </ul>
 
         </div>
     )
