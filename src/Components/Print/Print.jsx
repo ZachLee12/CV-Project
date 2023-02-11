@@ -10,7 +10,7 @@ export default class Print extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div id="Print">
                 <App
                     ref={this.componentRef}
                 />

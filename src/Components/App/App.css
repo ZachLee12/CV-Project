@@ -2,6 +2,10 @@
     body {
         print-color-adjust: exact;
     }
+
+    #App{
+        /* break-inside: avoid; */
+    }
 }
 
 #App {
@@ -21,5 +25,5 @@
 }
 
 .main-content {
-    width: calc(100% - 300px - 35px)
+    width: calc(100% - 300px - 35px);
 }

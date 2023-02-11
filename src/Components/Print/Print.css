@@ -12,6 +12,10 @@ body {
   padding: 0px;
 }
 
+#Print{
+  /* overflow: scroll; */
+}
+
 #ReactToPrint-wrapper {
   height: 100px;
   display: flex;
