@@ -5,6 +5,7 @@ import Skills from "../Skills/Skills";
 import Education from "../Education/Education";
 // import ProfilePicture from "../PersonalDetails/ProfilePicture";
 import './App.css'
+import CustomSection from "../Custom/CustomSection";
 
 class App extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
           <Education />
           <WorkExperience />
           <Skills />
+          <CustomSection />
         </div>
       </div>
     )
