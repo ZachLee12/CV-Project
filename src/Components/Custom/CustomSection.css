@@ -110,6 +110,10 @@
     background-color: #a5a5a5;
 }
 
+.custom-object-view-container {
+    margin-bottom: 20px;
+}
+
 .hidden {
     display: none;
 }

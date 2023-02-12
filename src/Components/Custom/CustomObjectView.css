@@ -1,3 +1,7 @@
+.custom-object-view-list {
+    margin-bottom: 35px;
+}
+
 .custom-object-view-form {
     display: flex;
     flex-direction: column;

@@ -300,7 +300,7 @@ export default function CustomSection(props) {
                                     Add {sectionObject.customSectionTitle}
                                 </button>
                             </p>
-                            <div key={sectionObject.customObject.id}>
+                            <div className="custom-object-view-container" key={sectionObject.customObject.id}>
                                 <CustomObjectView
                                     displayDescriptionForm={customSection.displayDescriptionForm}
                                     displayViewForm={sectionObject.customObject.displayViewForm}
