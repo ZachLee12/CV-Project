@@ -10,7 +10,8 @@
 
 .custom-object-view-form label {
     font-size: 1.2em;
-    display: flex;
+    /* DISPLAY is controlled by JSX */
+    /* display: flex;  */
     flex-direction: column;
 }
 
@@ -106,4 +107,8 @@
 
 .hidden {
     display: none;
+}
+
+.display-flex {
+    display: flex;
 }

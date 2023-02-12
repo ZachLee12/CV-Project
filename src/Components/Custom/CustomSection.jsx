@@ -89,9 +89,15 @@ export default function CustomSection(props) {
             customSectionId: uniqid(),
             customObject: {
                 ...customSection.customObject,
+                hasTitle: false,
+                hasInstitution: false,
+                hasCompany: false,
+                hasDuration: false,
+                displayViewForm: false,
                 id: uniqid()
             },
-            customSectionList: [...customSection.customSectionList, customSection]
+            customSectionList: [...customSection.customSectionList, customSection],
+            displayCustomForm: false
         })
     }
 
@@ -160,22 +166,42 @@ export default function CustomSection(props) {
                 <div className="custom-object-customization-wrapper">
                     <p className="what-does-this-section-have-title">What does this section have? (Put a &#x2713;)</p>
                     <label className="custom-object-title-label" htmlFor="custom-object-title-checkbox">
-                        <input onChange={onChangeTitleCheckbox} id='custom-object-title-checkbox' type="checkbox" />
+                        <input
+                            onChange={onChangeTitleCheckbox}
+                            id='custom-object-title-checkbox'
+                            type="checkbox"
+                            checked={customSection.customObject.hasTitle}
+                        />
                         Title?
                     </label>
 
                     <label className="custom-object-institution-label" htmlFor="custom-object-institution-checkbox">
-                        <input onChange={onChangeInstitutionCheckbox} id='custom-object-institution-checkbox' type="checkbox" />
+                        <input
+                            onChange={onChangeInstitutionCheckbox}
+                            id='custom-object-institution-checkbox'
+                            type="checkbox"
+                            checked={customSection.customObject.hasInstitution}
+                        />
                         Institution?
                     </label>
 
                     <label className="custom-object-company-label" htmlFor="custom-object-company-checkbox">
-                        <input onChange={onChangeCompanyCheckbox} id='custom-object-company-checkbox' type="checkbox" />
+                        <input
+                            onChange={onChangeCompanyCheckbox}
+                            id='custom-object-company-checkbox'
+                            type="checkbox"
+                            checked={customSection.customObject.hasCompany}
+                        />
                         Company?
                     </label>
 
                     <label className="custom-object-duration" htmlFor="">
-                        <input onChange={onChangeDurationCheckbox} id='custom-object-duration-checkbox' type="checkbox" />
+                        <input
+                            onChange={onChangeDurationCheckbox}
+                            id='custom-object-duration-checkbox'
+                            type="checkbox"
+                            checked={customSection.customObject.hasDuration}
+                        />
                         Duration?
                     </label>
                 </div>

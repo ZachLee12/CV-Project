@@ -1,13 +1,12 @@
 @media print {
-    body {
+    #App {
         print-color-adjust: exact;
     }
-
 }
 
 #App {
     background-color: whitesmoke;
-    min-height: 95vh;
+    /* height: px; */
     width: max(600px, 60vw);
     margin: auto;
     display: flex;
@@ -16,9 +15,14 @@
     margin-top: 20px;
 }
 
+/* this is covered by #PersonalDetails */
 .side-bar {
-    background-color: #c0f5d6;
     width: 300px;
+    /* THIS IS ONE PAGE */
+    min-height: 1055px;
+
+    /* this is for TWO PAGES */
+    /* min-height: 2110px; */
 }
 
 .main-content {

@@ -83,7 +83,7 @@ export default function CustomObjectView(props) {
         })
     }
 
-    const onClickAddObjectView = (e) => {
+    const onClickSaveObjectView = (e) => {
         setCustomObjectView({
             ...customObjectView,
             view: {
@@ -151,27 +151,27 @@ export default function CustomObjectView(props) {
             </ul>
 
             <form onSubmit={onSubmit} className={`custom-object-view-form ${displayViewForm ? '' : 'hidden'}`} action="">
-                <label className={`custom-object-view-title ${customObject.hasTitle ? '' : 'hidden'}`} htmlFor="">
+                <label className={`custom-object-view-title ${customObject.hasTitle ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Title
                     <input autoComplete="off" onChange={onChangeViewTitle} type="text" />
                 </label>
 
-                <label className={`custom-object-view-institution ${customObject.hasInstitution ? '' : 'hidden'}`} htmlFor="">
+                <label className={`custom-object-view-institution ${customObject.hasInstitution ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Institution
                     <input autoComplete="off" onChange={onChangeViewInstitution} type="text" />
                 </label>
 
-                <label className={`custom-object-view-company ${customObject.hasCompany ? '' : 'hidden'}`} htmlFor="">
+                <label className={`custom-object-view-company ${customObject.hasCompany ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Company
                     <input autoComplete="off" onChange={onChangeViewCompany} type="text" />
                 </label>
 
-                <label className={`custom-object-view-duration ${customObject.hasDuration ? '' : 'hidden'}`} htmlFor="">
+                <label className={`custom-object-view-duration ${customObject.hasDuration ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Duration
                     <input autoComplete="off" onChange={onChangeViewDuration} type="text" />
                 </label>
                 <div className="custom-object-view-form-buttons-wrapper">
-                    <button onClick={onClickAddObjectView} id={customObject.id} className='save-object-view-button' >Save</button>
+                    <button onClick={onClickSaveObjectView} id={customObject.id} className='save-object-view-button' >Save</button>
                     <button onClick={onClickCancelObjectView} id={customObject.id} className="cancel-object-view-button">Cancel</button>
                 </div>
             </form>
