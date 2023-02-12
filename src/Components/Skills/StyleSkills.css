@@ -91,6 +91,7 @@
     border-radius: 10px;
     margin: 10px;
     padding: 5px;
+    border: 2px solid black;
 }
 
 /* IMPORTANT - these classes are also present in StyleWorkExperience.css, so it might clash - check beforehand */

@@ -7,14 +7,14 @@ import uniqid from 'uniqid'
 //Custom Object = Bullet points under the title
 export default function CustomSection(props) {
     const sampleSectionObject = {
-        customSectionTitle: 'Sample Section',
+        customSectionTitle: 'Sample Custom Section',
         customSectionId: uniqid(),
         customObject: {
             hasTitle: true,
             hasInstitution: true,
             hasCompany: true,
             hasDuration: true,
-            displayViewForm: true,
+            displayViewForm: false,
             id: uniqid()
         }
     }
@@ -127,6 +127,10 @@ export default function CustomSection(props) {
         })
     }
 
+    const onMouseOverComponent = (e) => {
+
+    }
+
     useEffect(() => {
         // console.log(customSection) //this will be called on mounting, and when state changes
         return () => {
@@ -135,16 +139,17 @@ export default function CustomSection(props) {
     })
 
     return (
-        <div>Custom Section customization
+        <div id='CustomSection'>
+            Custom Section customization
             <form onSubmit={onSubmit} className="custom-section-form" action="">
                 <label className="custom-section-title" htmlFor="custom-section-title-input">
-                    Custom Section Title:
-                    <input onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
+                    <p className="name-your-custom-section" >Name your custom section:</p>
+                    <input placeholder="Eg: Hobbies" onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
                 </label>
 
 
                 <div className="custom-object-customization-wrapper">
-                    Custom Object customization
+                    <p className="what-does-this-section-have-title">What does this section have? (Put a &#x2713;)</p>
                     <label className="custom-object-title-label" htmlFor="custom-object-title-checkbox">
                         <input onChange={onChangeTitleCheckbox} id='custom-object-title-checkbox' type="checkbox" />
                         Title?
@@ -166,7 +171,9 @@ export default function CustomSection(props) {
                     </label>
                 </div>
 
-                <button onClick={onClickAddCustomSection}>Create Custom Section</button>
+                <button
+                    className="create-custom-section-button"
+                    onClick={onClickAddCustomSection}>Create Custom Section</button>
             </form>
 
             <div className="custom-objects-view-container">

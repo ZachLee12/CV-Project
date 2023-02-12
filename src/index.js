@@ -8,3 +8,7 @@ root.render(
     <Print />
 );
 
+if (module.hot) {
+    module.hot.accept();
+}
+

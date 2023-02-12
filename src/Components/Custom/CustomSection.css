@@ -1,6 +1,57 @@
+#CustomSection {
+    border: 2px solid red;
+}
+
+.custom-section-form {
+    border: 2px solid blue;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fdcaa3;
+}
+
+.name-your-custom-section{
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.create-custom-section-button {
+    height: 30px;
+    border-radius: 25px;
+    background-color: #fbb127;
+    font-weight: 600;
+    transition: background-color 250ms ease-in-out;
+}
+
+.create-custom-section-button:hover {
+    background-color: #fbcb71;
+}
+
+.create-custom-section-button:active {
+    background-color: #edb142;
+}
+
 .custom-object-customization-wrapper {
     display: flex;
     flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+.what-does-this-section-have-title {
+    font-size: 1.3em;
+    margin: 0;
+    margin-bottom: 5px;
+
+}
+
+/* this selects the 'Title?', 'Institution?' and so on ... */
+.custom-object-customization-wrapper label {
+    font-size: 1.1em;
+}
+
+.custom-section-title-view {
+    margin: 0;
 }
 
 .hidden {

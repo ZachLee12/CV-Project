@@ -16,7 +16,8 @@ export default function CustomObjectView(props) {
         },
         viewList: [],
         displayDescriptionForm: true,
-        displayDescriptionRemoveButton: true,
+        displayDescriptionRemoveButton: false,
+        displayDeleteViewButton: false,
         displayCustomObjectViewForm: true,
     }
 
@@ -24,6 +25,22 @@ export default function CustomObjectView(props) {
 
     const onSubmit = (e) => {
         e.preventDefault()
+    }
+
+    const onMouseOverComponent = (e) => {
+        setCustomObjectView({
+            ...customObjectView,
+            displayDescriptionRemoveButton: true,
+            displayDeleteViewButton: true,
+        })
+    }
+
+    const onMouseOutComponent = (e) => {
+        setCustomObjectView({
+            ...customObjectView,
+            displayDescriptionRemoveButton: false,
+            displayDeleteViewButton: false,
+        })
     }
 
     const onChangeViewTitle = (e) => {
@@ -81,6 +98,13 @@ export default function CustomObjectView(props) {
         onClickShowViewForm(e);
     }
 
+    const onClickDeleteObjectView = (e) => {
+        setCustomObjectView({
+            ...customObjectView,
+            viewList: customObjectView.viewList.filter(view => view.id !== e.target.id)
+        })
+    }
+
     useEffect(() => {
         // console.log(customObjectView)
     })
@@ -91,7 +115,14 @@ export default function CustomObjectView(props) {
                 {
                     customObjectView.viewList.map(view => {
                         return (
-                            <li key={view.id}>
+                            <li
+                                onMouseOver={onMouseOverComponent}
+                                onMouseOut={onMouseOutComponent}
+                                key={view.id} className='custom-object-view-item'>
+                                <button
+                                    onMouseOver={onMouseOverComponent}
+                                    onMouseOut={onMouseOutComponent}
+                                    id={view.id} onClick={onClickDeleteObjectView} className={`delete-custom-object-view-button ${customObjectView.displayDeleteViewButton ? '' : 'hidden'}`}>x</button>
                                 <div className={`view-title ${view.title !== '' ? '' : 'hidden'}`}>
                                     {view.title}
                                 </div>
