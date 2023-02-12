@@ -12,6 +12,7 @@
     font-size: 1em;
     font-weight: 600;
     transition: background-color 400ms ease-in-out;
+    margin-bottom: 20px;
 }
 
 .add-custom-section-button:hover {
@@ -29,6 +30,7 @@
     flex-direction: column;
     gap: 10px;
     background-color: #fdcaa3;
+    margin-bottom: 20px;
 }
 
 .create-a-custom-section-title {
@@ -77,10 +79,44 @@
     font-size: 1.1em;
 }
 
+.custom-section-view {
+    position: relative;
+}
+
 .custom-section-title-view {
     margin: 0;
 }
 
+.add-custom-NAME-button {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background-color: #d0d0d0;
+    height: 25px;
+    border: none;
+    min-width: 130px;
+    border-radius: 25px;
+    font-weight: 600;
+    border: 2px solid black;
+}
+
+.add-custom-NAME-button:hover {
+    background-color: #b9b8b8;
+}
+
+.add-custom-NAME-button:active {
+    background-color: #a5a5a5;
+}
+
 .hidden {
     display: none;
+}
+
+@media (max-width: 1450px) {
+    .add-custom-NAME-button {
+        left: 0px;
+        top: -20px;
+    }
 }

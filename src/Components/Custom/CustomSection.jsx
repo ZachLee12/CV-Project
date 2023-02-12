@@ -16,7 +16,9 @@ export default function CustomSection(props) {
             hasDuration: true,
             displayViewForm: false,
             id: uniqid()
-        }
+        },
+        displayCustomForm: false,
+        displayAddNAMEButton: false,
     }
 
     const initialState = {
@@ -32,6 +34,7 @@ export default function CustomSection(props) {
         },
         customSectionList: [sampleSectionObject],
         displayCustomForm: false,
+        displayAddNAMEButton: false,
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -134,9 +137,58 @@ export default function CustomSection(props) {
         })
     }
 
-    const onMouseOverComponent = (e) => {
+    const onMouseOverSectionTitle = (e) => {
+        //this method makes a shallow copy of the targeted customSection object
+        //changes to target will also affect the REAL object
+        let copyList = [...customSection.customSectionList]
+        let targetInformation = null;
 
+        // eslint-disable-next-line array-callback-return
+        let target = copyList.find((section, index) => {
+            if (section.customObject.id === e.target.id) {
+                targetInformation = {
+                    section,
+                    index
+                }
+                return section //must return here, otherwise it wont work
+            }
+        })
+        target = Object.assign(target, {
+            displayAddNAMEButton: true
+        })
+        copyList[targetInformation[1]] = target
+        setCustomSection({
+            ...customSection,
+            customSectionList: [...copyList]
+        })
     }
+
+    const onMouseOutSectionTitle = (e) => {
+        //this method makes a shallow copy of the targeted customSection object
+        //changes to target will also affect the REAL object
+        let copyList = [...customSection.customSectionList]
+        let targetInformation = null;
+
+        // eslint-disable-next-line array-callback-return
+        let target = copyList.find((section, index) => {
+            if (section.customObject.id === e.target.id) {
+                targetInformation = {
+                    section,
+                    index
+                }
+                return section //must return here, otherwise it wont work
+            }
+        })
+        target = Object.assign(target, {
+            displayAddNAMEButton: false
+        })
+        copyList[targetInformation[1]] = target
+        setCustomSection({
+            ...customSection,
+            customSectionList: [...copyList]
+        })
+    }
+
 
     const onClickShowCustomForm = (e) => {
         setCustomSection({
@@ -215,8 +267,19 @@ export default function CustomSection(props) {
                 {customSection.customSectionList.map(sectionObject => { //this is named 'object' to avoid confusion with customObject in customSection
                     return (
                         <div key={sectionObject.customObject.id} className="custom-section-view">
-                            <p className="custom-section-title-view">{sectionObject.customSectionTitle}
-                                <button onClick={onClickShowViewForm} id={sectionObject.customObject.id} >Add {sectionObject.customSectionTitle}</button>
+                            <p
+                                id={sectionObject.customObject.id}
+                                onMouseOver={onMouseOverSectionTitle}
+                                onMouseOut={onMouseOutSectionTitle}
+                                className="custom-section-title-view">{sectionObject.customSectionTitle}
+                                <button
+                                    onClick={onClickShowViewForm}
+                                    id={sectionObject.customObject.id}
+                                    className={`add-custom-NAME-button ${sectionObject.displayAddNAMEButton ? '' : 'hidden'}`}
+                                >
+
+                                    Add {sectionObject.customSectionTitle}
+                                </button>
                             </p>
                             <div key={sectionObject.customObject.id}>
                                 <CustomObjectView
