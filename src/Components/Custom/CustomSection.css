@@ -1,5 +1,25 @@
 #CustomSection {
     border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-custom-section-button {
+    height: 30px;
+    min-width: 60%;
+    border-radius: 5px;
+    background-color: #b4f033;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 400ms ease-in-out;
+}
+
+.add-custom-section-button:hover {
+    background-color: #9fcd3e;
+}
+
+.add-custom-section-button:active {
+    background-color: #78a41b;
 }
 
 .custom-section-form {
