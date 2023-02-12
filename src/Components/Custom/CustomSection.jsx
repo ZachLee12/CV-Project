@@ -19,6 +19,7 @@ export default function CustomSection(props) {
         },
         displayCustomForm: false,
         displayAddNAMEButton: false,
+        displayDescriptionForm: false,
     }
 
     const initialState = {
@@ -32,9 +33,10 @@ export default function CustomSection(props) {
             displayViewForm: false,
             id: uniqid()
         },
-        customSectionList: [sampleSectionObject],
         displayCustomForm: false,
         displayAddNAMEButton: false,
+        displayDescriptionForm: true,
+        customSectionList: [sampleSectionObject],
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -189,6 +191,20 @@ export default function CustomSection(props) {
         })
     }
 
+    const onMouseOverComponent = (e) => {
+        setCustomSection({
+            ...customSection,
+            displayDescriptionForm: true
+        })
+    }
+
+    const onMouseOutComponent = (e) => {
+        setCustomSection({
+            ...customSection,
+            displayDescriptionForm: false
+        })
+    }
+
 
     const onClickShowCustomForm = (e) => {
         setCustomSection({
@@ -205,7 +221,10 @@ export default function CustomSection(props) {
     })
 
     return (
-        <div id='CustomSection'>
+        <div
+            onMouseOver={onMouseOverComponent}
+            onMouseOut={onMouseOutComponent}
+            id='CustomSection'>
             <button onClick={onClickShowCustomForm} className={`add-custom-section-button ${props.displayAddCustomSectionButton ? '' : 'hidden'}`}>Add Custom Section</button>
             <form onSubmit={onSubmit} className={`custom-section-form ${customSection.displayCustomForm ? '' : 'hidden'}`} action="">
                 <p className="create-a-custom-section-title">Create a Custom Section!</p>
@@ -283,6 +302,7 @@ export default function CustomSection(props) {
                             </p>
                             <div key={sectionObject.customObject.id}>
                                 <CustomObjectView
+                                    displayDescriptionForm={customSection.displayDescriptionForm}
                                     displayViewForm={sectionObject.customObject.displayViewForm}
                                     customObject={sectionObject.customObject}
                                     onClickShowViewForm={onClickShowViewForm}

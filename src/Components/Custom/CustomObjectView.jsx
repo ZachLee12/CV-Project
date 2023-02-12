@@ -4,7 +4,7 @@ import './CustomObjectView.css'
 import uniqid from 'uniqid'
 
 export default function CustomObjectView(props) {
-    const { customObject, displayViewForm, onClickShowViewForm } = props //destructure
+    const { customObject, displayViewForm } = props //destructure
 
     const initialState = {
         view: {
@@ -15,7 +15,6 @@ export default function CustomObjectView(props) {
             id: uniqid()
         },
         viewList: [],
-        displayDescriptionForm: true,
         displayDescriptionRemoveButton: false,
         displayDeleteViewButton: false,
         displayCustomObjectViewForm: true,
@@ -90,12 +89,13 @@ export default function CustomObjectView(props) {
                 ...customObjectView.view,
                 id: uniqid()
             },
-            viewList: [...customObjectView.viewList, customObjectView.view]
+            viewList: [...customObjectView.viewList, customObjectView.view],
         })
+        props.onClickShowViewForm(e);
     }
 
     const onClickCancelObjectView = (e) => {
-        onClickShowViewForm(e);
+        props.onClickShowViewForm(e);
     }
 
     const onClickDeleteObjectView = (e) => {
@@ -140,7 +140,7 @@ export default function CustomObjectView(props) {
                                 </div>
 
                                 <Description
-                                    displayDescriptionForm={customObjectView.displayDescriptionForm}
+                                    displayDescriptionForm={props.displayDescriptionForm}
                                     displayDescriptionRemoveButton={customObjectView.displayDescriptionRemoveButton}
                                 />
                             </li>
