@@ -6,6 +6,19 @@ import uniqid from 'uniqid'
 //Custom Section = Large Title and thick line
 //Custom Object = Bullet points under the title
 export default function CustomSection(props) {
+    const sampleSectionObject = {
+        customSectionTitle: 'Sample Section',
+        customSectionId: uniqid(),
+        customObject: {
+            hasTitle: true,
+            hasInstitution: true,
+            hasCompany: true,
+            hasDuration: true,
+            displayViewForm: true,
+            id: uniqid()
+        }
+    }
+
     const initialState = {
         customSectionTitle: '',
         customSectionId: uniqid(),
@@ -17,7 +30,7 @@ export default function CustomSection(props) {
             displayViewForm: false,
             id: uniqid()
         },
-        customSectionList: [],
+        customSectionList: [sampleSectionObject],
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -90,13 +103,15 @@ export default function CustomSection(props) {
         //changes to target will also affect the REAL object
         let copyList = [...customSection.customSectionList]
         let targetInformation = null;
+
+        // eslint-disable-next-line array-callback-return
         let target = copyList.find((section, index) => {
             if (section.customObject.id === e.target.id) {
                 targetInformation = {
                     section,
                     index
                 }
-                return section
+                return section //must return here, otherwise it wont work
             }
         })
         target = Object.assign(target, {
@@ -165,6 +180,7 @@ export default function CustomSection(props) {
                                 <CustomObjectView
                                     displayViewForm={sectionObject.customObject.displayViewForm}
                                     customObject={sectionObject.customObject}
+                                    onClickShowViewForm={onClickShowViewForm}
                                 />
                             </div>
                         </div>

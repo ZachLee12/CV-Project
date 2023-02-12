@@ -4,7 +4,7 @@ import './CustomObjectView.css'
 import uniqid from 'uniqid'
 
 export default function CustomObjectView(props) {
-    const { customObject, displayViewForm } = props //destructure
+    const { customObject, displayViewForm, onClickShowViewForm } = props //destructure
 
     const initialState = {
         view: {
@@ -77,6 +77,10 @@ export default function CustomObjectView(props) {
         })
     }
 
+    const onClickCancelObjectView = (e) => {
+        onClickShowViewForm(e);
+    }
+
     useEffect(() => {
         // console.log(customObjectView)
     })
@@ -117,27 +121,27 @@ export default function CustomObjectView(props) {
 
             <form onSubmit={onSubmit} className={`custom-object-view-form ${displayViewForm ? '' : 'hidden'}`} action="">
                 <label className={`custom-object-view-title ${customObject.hasTitle ? '' : 'hidden'}`} htmlFor="">
-                    Custom Object View Title
-                    <input onChange={onChangeViewTitle} type="text" />
+                    Title
+                    <input autoComplete="off" onChange={onChangeViewTitle} type="text" />
                 </label>
 
                 <label className={`custom-object-view-institution ${customObject.hasInstitution ? '' : 'hidden'}`} htmlFor="">
-                    Custom Object View Institution
-                    <input onChange={onChangeViewInstitution} type="text" />
+                    Institution
+                    <input autoComplete="off" onChange={onChangeViewInstitution} type="text" />
                 </label>
 
                 <label className={`custom-object-view-company ${customObject.hasCompany ? '' : 'hidden'}`} htmlFor="">
-                    Custom Object View Company
-                    <input onChange={onChangeViewCompany} type="text" />
+                    Company
+                    <input autoComplete="off" onChange={onChangeViewCompany} type="text" />
                 </label>
 
                 <label className={`custom-object-view-duration ${customObject.hasDuration ? '' : 'hidden'}`} htmlFor="">
-                    Custom Object View Duration
-                    <input onChange={onChangeViewDuration} type="text" />
+                    Duration
+                    <input autoComplete="off" onChange={onChangeViewDuration} type="text" />
                 </label>
                 <div className="custom-object-view-form-buttons-wrapper">
-                    <button onClick={onClickAddObjectView}>Add</button>
-                    <button>Cancel</button>
+                    <button onClick={onClickAddObjectView} id={customObject.id} className='save-object-view-button' >Save</button>
+                    <button onClick={onClickCancelObjectView} id={customObject.id} className="cancel-object-view-button">Cancel</button>
                 </div>
             </form>
         </div>
