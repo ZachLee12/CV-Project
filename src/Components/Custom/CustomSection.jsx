@@ -14,9 +14,10 @@ export default function CustomSection(props) {
             hasInstitution: false,
             hasCompany: false,
             hasDuration: false,
+            displayViewForm: false,
             id: uniqid()
         },
-        customSectionList: []
+        customSectionList: [],
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -80,16 +81,43 @@ export default function CustomSection(props) {
         })
     }
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+    }
+
+    const onClickShowViewForm = (e) => {
+        //this method makes a shallow copy of the targeted customSection object
+        //changes to target will also affect the REAL object
+        let copyList = [...customSection.customSectionList]
+        let targetInformation = null;
+        let target = copyList.find((section, index) => {
+            if (section.customObject.id === e.target.id) {
+                targetInformation = {
+                    section,
+                    index
+                }
+                return section
+            }
+        })
+        target = Object.assign(target, {
+            customObject: {
+                ...target.customObject,
+                displayViewForm: !target.customObject.displayViewForm
+            }
+        })
+        copyList[targetInformation[1]] = target
+        setCustomSection({
+            ...customSection,
+            customSectionList: [...copyList]
+        })
+    }
+
     useEffect(() => {
-        //console.log(customSection) //this will be called on mounting, and when state changes
+        // console.log(customSection) //this will be called on mounting, and when state changes
         return () => {
             // console.log(customSection)
         }
     })
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-    }
 
     return (
         <div>Custom Section customization
@@ -130,9 +158,12 @@ export default function CustomSection(props) {
                 {customSection.customSectionList.map(sectionObject => { //this is named 'object' to avoid confusion with customObject in customSection
                     return (
                         <div key={sectionObject.customObject.id} className="custom-section-view">
-                            <p className="custom-section-title-view">{sectionObject.customSectionTitle}</p>
+                            <p className="custom-section-title-view">{sectionObject.customSectionTitle}
+                                <button onClick={onClickShowViewForm} id={sectionObject.customObject.id} >Add {sectionObject.customSectionTitle}</button>
+                            </p>
                             <div key={sectionObject.customObject.id}>
                                 <CustomObjectView
+                                    displayViewForm={sectionObject.customObject.displayViewForm}
                                     customObject={sectionObject.customObject}
                                 />
                             </div>

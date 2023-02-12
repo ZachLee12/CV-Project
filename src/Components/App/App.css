@@ -3,9 +3,6 @@
         print-color-adjust: exact;
     }
 
-    #App{
-        /* break-inside: avoid; */
-    }
 }
 
 #App {

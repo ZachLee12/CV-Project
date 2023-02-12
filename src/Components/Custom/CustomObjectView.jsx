@@ -4,7 +4,7 @@ import './CustomObjectView.css'
 import uniqid from 'uniqid'
 
 export default function CustomObjectView(props) {
-    const { customObject } = props //destructure
+    const { customObject, displayViewForm } = props //destructure
 
     const initialState = {
         view: {
@@ -16,7 +16,8 @@ export default function CustomObjectView(props) {
         },
         viewList: [],
         displayDescriptionForm: true,
-        displayDescriptionRemoveButton: true
+        displayDescriptionRemoveButton: true,
+        displayCustomObjectViewForm: true,
     }
 
     const [customObjectView, setCustomObjectView] = React.useState(initialState)
@@ -114,7 +115,7 @@ export default function CustomObjectView(props) {
                 }
             </ul>
 
-            <form onSubmit={onSubmit} className="custom-object-view-form" action="">
+            <form onSubmit={onSubmit} className={`custom-object-view-form ${displayViewForm ? '' : 'hidden'}`} action="">
                 <label className={`custom-object-view-title ${customObject.hasTitle ? '' : 'hidden'}`} htmlFor="">
                     Custom Object View Title
                     <input onChange={onChangeViewTitle} type="text" />
