@@ -8,9 +8,32 @@ import './App.css'
 import CustomSection from "../Custom/CustomSection";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      displayAddCustomSectionButton: true
+    }
+  }
+
+  onMouseOverComponent = (e) => {
+    this.setState({
+      displayAddCustomSectionButton: true
+    })
+  }
+
+  onMouseOutComponent = (e) => {
+    this.setState({
+      displayAddCustomSectionButton: false
+    })
+  }
+
   render() {
     return (
-      <div id="App">
+      <div
+        onMouseOver={this.onMouseOverComponent}
+        onMouseOut={this.onMouseOutComponent}
+        id="App">
         <div className="side-bar">
           <PersonalDetails />
         </div>
@@ -18,7 +41,9 @@ class App extends React.Component {
           <Education />
           <WorkExperience />
           <Skills />
-          <CustomSection />
+          <CustomSection
+            displayAddCustomSectionButton={this.state.displayAddCustomSectionButton}
+          />
         </div>
       </div>
     )

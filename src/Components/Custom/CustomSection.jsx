@@ -31,6 +31,7 @@ export default function CustomSection(props) {
             id: uniqid()
         },
         customSectionList: [sampleSectionObject],
+        displayCustomForm: false,
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -82,7 +83,7 @@ export default function CustomSection(props) {
         })
     }
 
-    const onClickAddCustomSection = (e) => {
+    const onClickCreateCustomSection = (e) => {
         setCustomSection({
             ...customSection,
             customSectionId: uniqid(),
@@ -131,6 +132,13 @@ export default function CustomSection(props) {
 
     }
 
+    const onClickShowCustomForm = (e) => {
+        setCustomSection({
+            ...customSection,
+            displayCustomForm: !customSection.displayCustomForm
+        })
+    }
+
     useEffect(() => {
         // console.log(customSection) //this will be called on mounting, and when state changes
         return () => {
@@ -140,8 +148,9 @@ export default function CustomSection(props) {
 
     return (
         <div id='CustomSection'>
-            Custom Section customization
-            <form onSubmit={onSubmit} className="custom-section-form" action="">
+            <button onClick={onClickShowCustomForm} className={`add-custom-section-button ${props.displayAddCustomSectionButton ? '' : 'hidden'}`}>Add Custom Section</button>
+            <form onSubmit={onSubmit} className={`custom-section-form ${customSection.displayCustomForm ? '' : 'hidden'}`} action="">
+                <p className="create-a-custom-section-title">Create a Custom Section!</p>
                 <label className="custom-section-title" htmlFor="custom-section-title-input">
                     <p className="name-your-custom-section" >Name your custom section:</p>
                     <input placeholder="Eg: Hobbies" onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
@@ -173,7 +182,7 @@ export default function CustomSection(props) {
 
                 <button
                     className="create-custom-section-button"
-                    onClick={onClickAddCustomSection}>Create Custom Section</button>
+                    onClick={onClickCreateCustomSection}>Create Custom Section</button>
             </form>
 
             <div className="custom-objects-view-container">

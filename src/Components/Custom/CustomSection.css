@@ -11,7 +11,14 @@
     background-color: #fdcaa3;
 }
 
-.name-your-custom-section{
+.create-a-custom-section-title {
+    font-size: 1.6em;
+    margin: 0;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.name-your-custom-section {
     margin: 0;
     font-size: 1.3em;
 }
