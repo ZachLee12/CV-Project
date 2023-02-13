@@ -67,25 +67,6 @@
     font-size: 1.3em;
 }
 
-#this-field-cannot-be-empty {
-    position: absolute;
-    left: 0px;
-    top: 45px;
-    color: red;
-    font-weight: 600;
-    text-shadow: 0.5px 0.5px 0px #de794d;
-}
-
-.fade-in-opacity {
-    transition: opacity 400ms ease-in-out;
-    opacity: 1;
-}
-
-.fade-out-opacity {
-    transition: opacity 400ms ease-in-out;
-    opacity: 0;
-}
-
 .create-custom-section-button {
     height: 30px;
     border-radius: 25px;

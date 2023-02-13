@@ -26,14 +26,14 @@ class Description extends React.Component {
     }
 
     onClickAddDescription = (e) => {
-        if(e.target.parentElement.checkValidity())
-        this.setState({
-            description: {
-                text: '',
-                id: uniqid()
-            },
-            descriptionList: [...this.state.descriptionList, this.state.description]
-        })
+        if (e.target.parentElement.checkValidity())
+            this.setState({
+                description: {
+                    text: '',
+                    id: uniqid()
+                },
+                descriptionList: [...this.state.descriptionList, this.state.description]
+            })
     }
 
     onSubmitForm = (e) => {
@@ -70,8 +70,8 @@ class Description extends React.Component {
                     <label htmlFor="description-input">Add Description (optional)</label>
                     <input
                         autoComplete='off'
-                        value={this.state.description.text}
                         type="text" id="description-input" onChange={this.onChangeInput} required />
+
                     <button onClick={this.onClickAddDescription} id="add-description-button" >Add</button>
                 </form>
             </div>
