@@ -19,10 +19,18 @@
 .side-bar {
     width: 300px;
     /* THIS IS ONE PAGE */
-    min-height: 1055px;
+    /* min-height: 1055px; */
 
     /* this is for TWO PAGES */
     /* min-height: 2110px; */
+}
+
+.one-page-height {
+    min-height: 1055px;
+}
+
+.two-page-height {
+    min-height: 2110px;
 }
 
 .main-content {

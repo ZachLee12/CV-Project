@@ -33,6 +33,7 @@ class App extends React.Component {
       <div
         onMouseOver={this.onMouseOverComponent}
         onMouseOut={this.onMouseOutComponent}
+        className={`${this.props.isTwoPageCV ? 'two-page-height' : 'one-page-height'}`}
         id="App">
         <div className="side-bar">
           <PersonalDetails />

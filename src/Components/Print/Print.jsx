@@ -7,13 +7,28 @@ export default class Print extends React.Component {
     constructor() {
         super()
         this.componentRef = React.createRef();
+
+        this.state = {
+            isTwoPageCV: false
+        }
     }
+
+    onClickTwoPageCV = (e) => {
+        this.setState({
+            isTwoPageCV: !this.state.isTwoPageCV
+        })
+    }
+
     render() {
         return (
-            <div id="Print">
-                <App
-                    ref={this.componentRef}
-                />
+            <React.Fragment>
+                <header id='header'>
+                    Build your Resume/CV!
+                </header>
+
+                <button onClick={this.onClickTwoPageCV}>
+                    {this.state.isTwoPageCV ? 'Make One-Page CV' : 'Make Two-Pages CV'}
+                </button>
 
                 <div id="ReactToPrint-wrapper">
                     <ReactToPrint
@@ -21,7 +36,13 @@ export default class Print extends React.Component {
                         content={() => this.componentRef.current}
                     />
                 </div>
-            </div>
+                <div id="Print">
+                    <App
+                        isTwoPageCV={this.state.isTwoPageCV}
+                        ref={this.componentRef}
+                    />
+                </div>
+            </React.Fragment>
         );
     }
 }
