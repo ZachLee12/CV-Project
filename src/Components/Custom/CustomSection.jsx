@@ -236,6 +236,15 @@ export default function CustomSection(props) {
         })
     }
 
+    const onClickDelete = (e) => {
+        setCustomSection({
+            ...customSection,
+            customSectionList: customSection.customSectionList.filter(sectionObject => sectionObject.customSectionId !== e.target.id)
+        })
+
+        // this.state.workExperienceList.filter(workExperience => workExperience.id !== e.target.id)
+    }
+
     useEffect(() => {
         // console.log(customSection) //this will be called on mounting, and when state changes
         return () => {
@@ -324,14 +333,18 @@ export default function CustomSection(props) {
             </form>
 
             <div className="custom-objects-view-container">
-                {customSection.customSectionList.map(sectionObject => { //this is named 'object' to avoid confusion with customObject in customSection
+                {customSection.customSectionList.map(sectionObject => { //this is named 'sectionObject' to avoid confusion with customObject in customSection
                     return (
                         <div key={sectionObject.customObject.id} className="custom-section-view">
                             <p
                                 id={sectionObject.customObject.id}
                                 onMouseOver={onMouseOverSectionTitle}
                                 onMouseOut={onMouseOutSectionTitle}
-                                className="custom-section-title-view">{sectionObject.customSectionTitle}
+                                className="custom-section-title-view">
+
+                                {/* this is the large section title */}
+                                {sectionObject.customSectionTitle}
+
                                 <button
                                     onClick={onClickShowViewForm}
                                     id={sectionObject.customObject.id}
@@ -341,6 +354,12 @@ export default function CustomSection(props) {
                                     Add {sectionObject.customSectionTitle}
                                 </button>
                             </p>
+                            <button
+                                onClick={onClickDelete}
+                                id={sectionObject.customSectionId}
+                                className={`delete-section-button`}>
+                                delete section
+                            </button>
                             <div className="custom-object-view-container" key={sectionObject.customObject.id}>
                                 <CustomObjectView
                                     displayDescriptionForm={customSection.displayDescriptionForm}
