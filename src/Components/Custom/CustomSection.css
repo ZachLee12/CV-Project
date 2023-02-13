@@ -23,6 +23,10 @@
     background-color: #78a41b;
 }
 
+/* Fade-in for add-custom-section-button */
+
+
+
 .custom-section-form {
     border: 2px solid blue;
     padding: 10px;
@@ -100,6 +104,17 @@
     border-radius: 25px;
     font-weight: 600;
     border: 2px solid black;
+    animation: button-fade-in 400ms ease-in-out;
+}
+
+@keyframes button-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .add-custom-NAME-button:hover {

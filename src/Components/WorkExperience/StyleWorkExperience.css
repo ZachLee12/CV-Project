@@ -74,6 +74,7 @@
     border-radius: 100%;
     background-color: #c8c6c6;
     transition: background-color 300ms ease-in-out;
+    animation: button-fade-in 400ms ease-in-out;
 }
 
 .delete-button:hover {
@@ -153,9 +154,9 @@ label[for='duration-input'] {
 }
 
 @media (max-width: 1450px) {
-    .add-work-experience-button{
-        left:100px;
-        top:-10px;
+    .add-work-experience-button {
+        left: 100px;
+        top: -10px;
         border: 2px solid black;
     }
 }
