@@ -28,3 +28,18 @@
 .main-content {
     width: calc(100% - 300px - 35px);
 }
+
+/* Targets add-button in CustomSection Component */
+#App:hover .add-custom-section-button {
+    animation: fade-in-custom-section-button 400ms ease-in-out;
+}
+
+@keyframes fade-in-custom-section-button {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

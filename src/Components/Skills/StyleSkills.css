@@ -59,6 +59,7 @@
 
 .skill-item:hover {
     background-color: #cd9ce2;
+    transition: background-color 400ms ease-in-out;
 }
 
 .skill-item-title {
