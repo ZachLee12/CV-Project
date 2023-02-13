@@ -144,7 +144,10 @@ class Education extends React.Component {
                     })}
                 </ul>
 
-                <form onSubmit={this.onSubmitForm} action="" className={`education-form ${this.state.displayEducationForm ? '' : 'hidden'}`}>
+                <form
+                    onSubmit={this.onSubmitForm}
+                    action=""
+                    className={`education-form ${this.state.displayEducationForm ? '' : 'hidden'}`}>
                     <label htmlFor="institution-input">Institution</label>
                     <input
                         autoComplete='off'

@@ -37,6 +37,10 @@ export default function CustomSection(props) {
         displayAddNAMEButton: false,
         displayDescriptionForm: true,
         customSectionList: [sampleSectionObject],
+        displayEmptyFieldWarning: false,
+        displayCheckAtLeastOneWarning: false,
+        checkedAtLeastOneCheckbox: false
+        // displayAddCustomSectionButton: false,
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)
@@ -54,7 +58,8 @@ export default function CustomSection(props) {
             customObject: {
                 ...customSection.customObject,
                 hasTitle: e.target.checked
-            }
+            },
+            checkedAtLeastOneCheckbox: true
         })
     }
 
@@ -64,7 +69,8 @@ export default function CustomSection(props) {
             customObject: {
                 ...customSection.customObject,
                 hasInstitution: e.target.checked
-            }
+            },
+            checkedAtLeastOneCheckbox: true
         })
     }
 
@@ -74,7 +80,8 @@ export default function CustomSection(props) {
             customObject: {
                 ...customSection.customObject,
                 hasCompany: e.target.checked
-            }
+            },
+            checkedAtLeastOneCheckbox: true
         })
     }
 
@@ -84,26 +91,41 @@ export default function CustomSection(props) {
             customObject: {
                 ...customSection.customObject,
                 hasDuration: e.target.checked
-            }
+            },
+            checkedAtLeastOneCheckbox: true
         })
     }
 
     const onClickCreateCustomSection = (e) => {
-        setCustomSection({
-            ...customSection,
-            customSectionId: uniqid(),
-            customObject: {
-                ...customSection.customObject,
-                hasTitle: false,
-                hasInstitution: false,
-                hasCompany: false,
-                hasDuration: false,
-                displayViewForm: false,
-                id: uniqid()
-            },
-            customSectionList: [...customSection.customSectionList, customSection],
-            displayCustomForm: false
-        })
+        // if (customSection.customSectionTitle === '' || !customSection.checkedAtLeastOneCheckbox) {
+        //     if (customSection.customSectionTitle === '') {
+        //         setCustomSection({
+        //             ...customSection,
+        //             displayEmptyFieldWarning: true
+        //         })
+        //     }
+
+        //     return
+        // }
+        console.log(e.target.parentElement.children)
+        if (true) {
+            setCustomSection({
+                ...customSection,
+                customSectionId: uniqid(),
+                customObject: {
+                    ...customSection.customObject,
+                    hasTitle: false,
+                    hasInstitution: false,
+                    hasCompany: false,
+                    hasDuration: false,
+                    displayViewForm: false,
+                    id: uniqid()
+                },
+                customSectionList: [...customSection.customSectionList, customSection],
+                displayCustomForm: false,
+                displayEmptyFieldWarning: false
+            })
+        }
     }
 
     const onSubmit = (e) => {
@@ -209,7 +231,8 @@ export default function CustomSection(props) {
     const onClickShowCustomForm = (e) => {
         setCustomSection({
             ...customSection,
-            displayCustomForm: !customSection.displayCustomForm
+            displayCustomForm: !customSection.displayCustomForm,
+            // displayAddCustomSectionButton: false
         })
     }
 
@@ -225,12 +248,24 @@ export default function CustomSection(props) {
             onMouseOver={onMouseOverComponent}
             onMouseOut={onMouseOutComponent}
             id='CustomSection'>
-            <button onClick={onClickShowCustomForm} className={`add-custom-section-button ${props.displayAddCustomSectionButton ? '' : 'hidden'}`}>Add Custom Section</button>
+            <button
+                onClick={onClickShowCustomForm}
+                className={`add-custom-section-button 
+                ${props.displayAddCustomSectionButton ? '' : 'hidden'}
+                ${customSection.displayCustomForm ? 'close-custom-section-color' : ''}`
+                }>
+                {customSection.displayCustomForm ? 'Close Custom Section' : 'Add Custom Section'}
+            </button>
             <form onSubmit={onSubmit} className={`custom-section-form ${customSection.displayCustomForm ? '' : 'hidden'}`} action="">
                 <p className="create-a-custom-section-title">Create a Custom Section!</p>
                 <label className="custom-section-title" htmlFor="custom-section-title-input">
                     <p className="name-your-custom-section" >Name your custom section:</p>
-                    <input placeholder="Eg: Hobbies" onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
+                    <input required autoComplete="off" placeholder="Eg: Hobbies" onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
+                    <span
+                        className={customSection.displayEmptyFieldWarning ? 'fade-in-opacity' : 'fade-out-opacity'}
+                        id='this-field-cannot-be-empty'>
+                        This field cannot be empty!
+                    </span>
                 </label>
 
 
@@ -275,9 +310,15 @@ export default function CustomSection(props) {
                         />
                         Duration?
                     </label>
+                    <span
+                        className={customSection.displayCheckAtLeastOneWarning ? 'fade-in-opacity' : 'fade-out-opacity'}
+                        id='check-at-least-one-box'>
+                        Check at least one box!
+                    </span>
                 </div>
 
                 <button
+                    type="button"
                     className="create-custom-section-button"
                     onClick={onClickCreateCustomSection}>Create Custom Section</button>
             </form>

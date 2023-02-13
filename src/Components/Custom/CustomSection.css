@@ -23,6 +23,19 @@
     background-color: #78a41b;
 }
 
+/* this class is added to `add-custom-section-button` when the Custom Form is displayed */
+.close-custom-section-color {
+    background-color: #de7979;
+}
+
+.close-custom-section-color:hover {
+    background-color: #f25858;
+}
+
+.close-custom-section-color:active {
+    background-color: #c84b4b;
+}
+
 /* Fade-in for add-custom-section-button */
 
 
@@ -44,9 +57,33 @@
     border-bottom: 2px solid black;
 }
 
+.custom-section-title {
+    position: relative;
+    margin-bottom: 15px;
+}
+
 .name-your-custom-section {
     margin: 0;
     font-size: 1.3em;
+}
+
+#this-field-cannot-be-empty {
+    position: absolute;
+    left: 0px;
+    top: 45px;
+    color: red;
+    font-weight: 600;
+    text-shadow: 0.5px 0.5px 0px #de794d;
+}
+
+.fade-in-opacity {
+    transition: opacity 400ms ease-in-out;
+    opacity: 1;
+}
+
+.fade-out-opacity {
+    transition: opacity 400ms ease-in-out;
+    opacity: 0;
 }
 
 .create-custom-section-button {
@@ -68,7 +105,17 @@
 .custom-object-customization-wrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
+    margin-bottom: 10px;
     /* border: 2px solid red; */
+}
+
+#check-at-least-one-box {
+    position: absolute;
+    bottom: -17px;
+    color: red;
+    font-weight: 600;
+    text-shadow: 0.5px 0.5px 0px #de794d;
 }
 
 .what-does-this-section-have-title {
