@@ -65,7 +65,7 @@ class WorkExperience extends React.Component {
                     id: uniqid()
                 },
                 workExperienceList: [...this.state.workExperienceList, this.state.workExperience],
-                displayForm: !this.state.displayForm
+                displayForm: false,
             })
         }
     }
@@ -145,6 +145,7 @@ class WorkExperience extends React.Component {
                         )
                     })}
                 </ul>
+
 
                 <WorkExperienceForm
                     onChangeInput={this.onChangeInput}

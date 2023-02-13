@@ -89,8 +89,6 @@
 .work-experience-form {
     display: flex;
     flex-direction: column;
-    display: flex;
-    flex-direction: column;
     background-color: #add1f4;
     border-radius: 10px;
     margin: 10px;

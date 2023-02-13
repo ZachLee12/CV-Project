@@ -134,7 +134,6 @@ class Skills extends React.Component {
                     <input
                         autoComplete='off'
                         onChange={this.onChangeTitle}
-                        value={this.state.skill.title}
                         type="text"
                         name="title-input"
                         id="title-input"
