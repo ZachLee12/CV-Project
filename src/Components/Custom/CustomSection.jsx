@@ -285,9 +285,11 @@ export default function CustomSection(props) {
                             onChange={onChangeTitleCheckbox}
                             id='custom-object-title-checkbox'
                             type="checkbox"
-                            checked={customSection.customObject.hasTitle}
+                            checked={true}
+                            readOnly
+                        // checked={customSection.customObject.hasTitle}
                         />
-                        Title?
+                        Title? (must be checked)
                     </label>
 
                     <label className="custom-object-institution-label" htmlFor="custom-object-institution-checkbox">
@@ -354,12 +356,14 @@ export default function CustomSection(props) {
                                     Add {sectionObject.customSectionTitle}
                                 </button>
                             </p>
-                            <button
-                                onClick={onClickDelete}
-                                id={sectionObject.customSectionId}
-                                className={`delete-section-button`}>
-                                delete section
-                            </button>
+                            <div className="delete-section-button-wrapper">
+                                <button
+                                    onClick={onClickDelete}
+                                    id={sectionObject.customSectionId}
+                                    className={`delete-section-button`}>
+                                    delete section
+                                </button>
+                            </div>
                             <div className="custom-object-view-container" key={sectionObject.customObject.id}>
                                 <CustomObjectView
                                     displayDescriptionForm={customSection.displayDescriptionForm}

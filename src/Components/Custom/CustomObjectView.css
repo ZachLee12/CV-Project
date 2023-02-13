@@ -27,13 +27,6 @@
     background-color: #eff0af;
 }
 
-.custom-section-title-view {
-    font-size: 1.7em;
-    position: relative;
-    border-bottom: 2px solid black;
-    margin-bottom: 10px;
-}
-
 .custom-object-view-form-buttons-wrapper {
     display: flex;
     gap: 30px;

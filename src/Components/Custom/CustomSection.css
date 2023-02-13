@@ -135,7 +135,34 @@
 }
 
 .custom-section-title-view {
-    margin: 0;
+    font-size: 1.7em;
+    position: relative;
+    border-bottom: 2px solid black;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.delete-section-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-section-button {
+    border: 2px solid black;
+    background-color: #de7979;
+    border-radius: 7px;
+    transition: background-color 400ms ease-in-out;
+    align-self: center;
+    height: 25px;
+}
+
+.delete-section-button:hover {
+    background-color: #f25858;
+}
+
+.delete-section-button:active {
+    background-color: #c84b4b;
 }
 
 .add-custom-NAME-button {
