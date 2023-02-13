@@ -22,13 +22,15 @@ class Education extends React.Component {
             displayAddButton: false,
             displayDescriptionForm: false,
             displayDeleteButton: false,
-            displayDescriptionRemoveButton: false
+            displayDescriptionRemoveButton: false,
+            displayEducationFormWhenHover: false
         }
     }
 
     onClickAddEducation = (e) => {
         this.setState({
-            displayEducationForm: !this.state.displayEducationForm
+            displayEducationForm: !this.state.displayEducationForm,
+            displayEducationFormWhenHover: true
         })
     }
 
@@ -61,13 +63,15 @@ class Education extends React.Component {
                 },
                 educationList: [...this.state.educationList, this.state.education],
                 displayEducationForm: false,
+                displayEducationFormWhenHover: false
             })
         }
     }
 
     onClickCancel = (e) => {
         this.setState({
-            displayEducationForm: !this.state.displayEducationForm
+            displayEducationForm: !this.state.displayEducationForm,
+            displayEducationFormWhenHover: false
         })
     }
 
@@ -94,6 +98,12 @@ class Education extends React.Component {
     }
 
     onMouseOverComponent = (e) => {
+        if (this.state.displayEducationFormWhenHover) {
+            this.setState({
+                displayEducationForm: true
+            })
+        }
+
         this.setState({
             displayDescriptionForm: true,
             displayDeleteButton: true,
@@ -105,7 +115,8 @@ class Education extends React.Component {
         this.setState({
             displayDescriptionForm: false,
             displayDeleteButton: false,
-            displayDescriptionRemoveButton: false
+            displayDescriptionRemoveButton: false,
+            displayEducationForm: false
         })
     }
 

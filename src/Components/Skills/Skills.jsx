@@ -17,7 +17,8 @@ class Skills extends React.Component {
             displayAddSkillButton: false,
             displayDescriptionForm: false,
             displayDeleteButton: false,
-            displayDescriptionRemoveButton: false
+            displayDescriptionRemoveButton: false,
+            displaySkillsFormWhenHover: false
         }
     }
 
@@ -39,7 +40,8 @@ class Skills extends React.Component {
                     id: uniqid()
                 },
                 skillList: [...this.state.skillList, this.state.skill],
-                displaySkillsForm: false
+                displaySkillsForm: false,
+                displaySkillsFormWhenHover: false
             })
         }
     }
@@ -56,13 +58,15 @@ class Skills extends React.Component {
 
     onClickAddSkill = (e) => {
         this.setState({
-            displaySkillsForm: !this.state.displaySkillsForm
+            displaySkillsForm: !this.state.displaySkillsForm,
+            displaySkillsFormWhenHover: true
         })
     }
 
     onClickCancel = (e) => {
         this.setState({
-            displaySkillsForm: false
+            displaySkillsForm: false,
+            displaySkillsFormWhenHover: false
         })
     }
 
@@ -79,6 +83,12 @@ class Skills extends React.Component {
     }
 
     onMouseOverComponent = (e) => {
+        if (this.state.displaySkillsFormWhenHover) {
+            this.setState({
+                displaySkillsForm: true,
+            })
+        }
+
         this.setState({
             displayDescriptionForm: true,
             displayDeleteButton: true,
@@ -87,6 +97,11 @@ class Skills extends React.Component {
     }
 
     onMouseOutComponent = (e) => {
+        if (this.state.displaySkillsFormWhenHover) {
+            this.setState({
+                displaySkillsForm: false,
+            })
+        }
         this.setState({
             displayDescriptionForm: false,
             displayDeleteButton: false,

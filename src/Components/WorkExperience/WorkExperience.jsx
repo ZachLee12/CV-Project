@@ -24,13 +24,15 @@ class WorkExperience extends React.Component {
             displayAddButton: false,
             displayDescriptionForm: false,
             displayDescriptionRemoveButton: false,
-            displayDeleteButton: false
+            displayDeleteButton: false,
+            displayFormWhenHover: false,
         }
     }
 
     onClickAddWorkExperience = (e) => {
         this.setState({
-            displayForm: !this.state.displayForm
+            displayForm: !this.state.displayForm,
+            displayFormWhenHover: true,
         })
     }
 
@@ -66,13 +68,15 @@ class WorkExperience extends React.Component {
                 },
                 workExperienceList: [...this.state.workExperienceList, this.state.workExperience],
                 displayForm: false,
+                displayFormWhenHover: false
             })
         }
     }
 
     onClickCancel = (e) => {
         this.setState({
-            displayForm: !this.state.displayForm
+            displayForm: !this.state.displayForm,
+            displayFormWhenHover: false
         })
     }
 
@@ -95,6 +99,12 @@ class WorkExperience extends React.Component {
     }
 
     onMouseOverComponent = (e) => {
+        if (this.state.displayFormWhenHover) {
+            this.setState({
+                displayForm: true
+            })
+        }
+
         this.setState({
             displayDescriptionForm: true,
             displayDeleteButton: true,
@@ -106,7 +116,8 @@ class WorkExperience extends React.Component {
         this.setState({
             displayDescriptionForm: false,
             displayDeleteButton: false,
-            displayDescriptionRemoveButton: false
+            displayDescriptionRemoveButton: false,
+            displayForm: false
         })
     }
 
