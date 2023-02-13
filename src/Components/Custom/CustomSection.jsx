@@ -6,6 +6,9 @@ import uniqid from 'uniqid'
 //Custom Section = Large Title and thick line
 //Custom Object = Bullet points under the title
 export default function CustomSection(props) {
+
+    const formRef = React.useRef(null)
+
     const sampleSectionObject = {
         customSectionTitle: 'Sample Custom Section',
         customSectionId: uniqid(),
@@ -36,6 +39,7 @@ export default function CustomSection(props) {
         displayCustomForm: false,
         displayAddNAMEButton: false,
         displayDescriptionForm: true,
+        displayDeleteSectionButton: false,
         customSectionList: [sampleSectionObject],
         displayEmptyFieldWarning: false,
         displayCheckAtLeastOneWarning: false,
@@ -97,18 +101,7 @@ export default function CustomSection(props) {
     }
 
     const onClickCreateCustomSection = (e) => {
-        // if (customSection.customSectionTitle === '' || !customSection.checkedAtLeastOneCheckbox) {
-        //     if (customSection.customSectionTitle === '') {
-        //         setCustomSection({
-        //             ...customSection,
-        //             displayEmptyFieldWarning: true
-        //         })
-        //     }
-
-        //     return
-        // }
-        console.log(e.target.parentElement.children)
-        if (true) {
+        if (formRef.current.checkValidity()) {
             setCustomSection({
                 ...customSection,
                 customSectionId: uniqid(),
@@ -216,14 +209,16 @@ export default function CustomSection(props) {
     const onMouseOverComponent = (e) => {
         setCustomSection({
             ...customSection,
-            displayDescriptionForm: true
+            displayDescriptionForm: true,
+            displayDeleteSectionButton: true,
         })
     }
 
     const onMouseOutComponent = (e) => {
         setCustomSection({
             ...customSection,
-            displayDescriptionForm: false
+            displayDescriptionForm: false,
+            displayDeleteSectionButton: false,
         })
     }
 
@@ -265,11 +260,18 @@ export default function CustomSection(props) {
                 }>
                 {customSection.displayCustomForm ? 'Close Custom Section' : 'Add Custom Section'}
             </button>
-            <form onSubmit={onSubmit} className={`custom-section-form ${customSection.displayCustomForm ? '' : 'hidden'}`} action="">
+            <form ref={formRef} onSubmit={onSubmit} className={`custom-section-form ${customSection.displayCustomForm ? '' : 'hidden'}`} action="">
                 <p className="create-a-custom-section-title">Create a Custom Section!</p>
                 <label className="custom-section-title" htmlFor="custom-section-title-input">
                     <p className="name-your-custom-section" >Name your custom section:</p>
-                    <input required autoComplete="off" placeholder="Eg: Hobbies" onChange={onChangeCustomSectionTitle} id='custom-section-title-input' type="text" />
+                    <input
+                        required
+                        autoComplete="off"
+                        placeholder="Eg: Hobbies"
+                        onChange={onChangeCustomSectionTitle}
+                        id='custom-section-title-input'
+                        type="text" />
+
                     <span
                         className={customSection.displayEmptyFieldWarning ? 'fade-in-opacity' : 'fade-out-opacity'}
                         id='this-field-cannot-be-empty'>
@@ -329,7 +331,6 @@ export default function CustomSection(props) {
                 </div>
 
                 <button
-                    type="button"
                     className="create-custom-section-button"
                     onClick={onClickCreateCustomSection}>Create Custom Section</button>
             </form>
@@ -360,7 +361,7 @@ export default function CustomSection(props) {
                                 <button
                                     onClick={onClickDelete}
                                     id={sectionObject.customSectionId}
-                                    className={`delete-section-button`}>
+                                    className={`delete-section-button ${customSection.displayDeleteSectionButton ? '' : 'hidden'}`}>
                                     delete section
                                 </button>
                             </div>
