@@ -6,19 +6,32 @@
   }
 }
 
+
+
+#root {}
+
+body {
+  background-color: rgb(203, 195, 164);
+}
+
 html,
 body {
   margin: 0px;
   padding: 0px;
+
+  /* THIS IS IT OMG I FOUND IT FINALLY */
+  min-width: fit-content;
 }
 
 #header {
-  min-width: 100vw;
+  /* min-width: 100vw; */
   background-color: #92bce9;
   min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 .build-your-resume-title {
@@ -37,7 +50,7 @@ body {
 
 .cv-pages-button {
   max-width: 400px;
-  height: 50px;
+  min-height: 50px;
   padding-left: 50px;
   padding-right: 50px;
   font-size: 1.5em;
@@ -68,7 +81,7 @@ body {
 
 #React-to-print-button {
   max-width: 400px;
-  height: 50px;
+  min-height: 50px;
   padding-left: 50px;
   padding-right: 50px;
   font-size: 1.5em;
