@@ -13,6 +13,26 @@
     gap: 20px;
     box-shadow: 3px 3px 10px 0px #545454;
     margin-top: 20px;
+    position: relative;
+}
+
+#page-break-indicator {
+    position: absolute;
+    top: 1055px;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 600;
+    background-color: rgb(84, 84, 84, 0.4);
+    font-size: 0.7em;
+    user-select: none;
+    pointer-events: none;
+    text-shadow: 1px 1px 0px black;
+}
+
+#make-two-pages-cv-title {
+    color: #91ee4a;
 }
 
 /* this is covered by #PersonalDetails */

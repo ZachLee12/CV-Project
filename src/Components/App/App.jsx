@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      displayAddCustomSectionButton: false
+      displayAddCustomSectionButton: false,
     }
   }
 
@@ -35,6 +35,10 @@ class App extends React.Component {
         onMouseOut={this.onMouseOutComponent}
         className={`${this.props.isTwoPageCV ? 'two-page-height' : 'one-page-height'}`}
         id="App">
+        <div
+          id='page-break-indicator'>
+          -----------------------------------------PAGE BREAK HERE, please click <span id='make-two-pages-cv-title'>'Make Two-Pages CV'</span> above ------------------------------------
+        </div>
         <div className="side-bar">
           <PersonalDetails />
         </div>

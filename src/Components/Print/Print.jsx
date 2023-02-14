@@ -9,13 +9,13 @@ export default class Print extends React.Component {
         this.componentRef = React.createRef();
 
         this.state = {
-            isTwoPageCV: false
+            isTwoPageCV: false,
         }
     }
 
     onClickTwoPageCV = (e) => {
         this.setState({
-            isTwoPageCV: !this.state.isTwoPageCV
+            isTwoPageCV: !this.state.isTwoPageCV,
         })
     }
 
