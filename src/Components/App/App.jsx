@@ -13,18 +13,21 @@ class App extends React.Component {
 
     this.state = {
       displayAddCustomSectionButton: false,
+      displayPageBreakMessage: false,
     }
   }
 
   onMouseOverComponent = (e) => {
     this.setState({
-      displayAddCustomSectionButton: true
+      displayAddCustomSectionButton: true,
+      displayPageBreakMessage: true,
     })
   }
 
   onMouseOutComponent = (e) => {
     this.setState({
-      displayAddCustomSectionButton: false
+      displayAddCustomSectionButton: false,
+      displayPageBreakMessage: false,
     })
   }
 
@@ -36,6 +39,7 @@ class App extends React.Component {
         className={`${this.props.isTwoPageCV ? 'two-page-height' : 'one-page-height'}`}
         id="App">
         <div
+          className={`${this.state.displayPageBreakMessage ? '' : 'hidden'}`}
           id='page-break-indicator'>
           -----------------------------------------PAGE BREAK HERE, please click <span id='make-two-pages-cv-title'>'Make Two-Pages CV'</span> above ------------------------------------
         </div>

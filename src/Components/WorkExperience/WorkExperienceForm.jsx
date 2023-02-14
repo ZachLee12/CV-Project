@@ -7,7 +7,7 @@ class WorkExperienceForm extends React.Component {
     }
 
     render() {
-        const { onSubmitForm, onChangeInput, onClickSave, onClickCancel, workExperience, displayForm } = this.props
+        const { onSubmitForm, onChangeInput, onClickSave, onClickCancel, displayForm } = this.props
 
         return (
             <form className={`work-experience-form ${displayForm ? '' : 'hidden'}`} action="" onSubmit={onSubmitForm}>

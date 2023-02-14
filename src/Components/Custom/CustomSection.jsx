@@ -326,7 +326,7 @@ export default function CustomSection(props) {
                                     className={`add-custom-NAME-button ${sectionObject.displayAddNAMEButton ? '' : 'hidden'}`}
                                 >
 
-                                    Add {sectionObject.customSectionTitle}
+                                    + Add {sectionObject.customSectionTitle}
                                 </button>
                             </p>
                             <div className="delete-section-button-wrapper">
