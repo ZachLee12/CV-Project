@@ -69,6 +69,8 @@
 #ProfilePicture:hover .profile-picture {
     background-color: #2690c9;
     border: 4px solid black;
+    user-select: none;
+    touch-action: none;
 }
 
 .name {
@@ -165,18 +167,18 @@
     background-color: #aaa8a8;
 }
 
-#PersonalDetails:hover .background-color-input-wrapper{
+#PersonalDetails:hover .background-color-input-wrapper {
     background-color: #aaa8a8;
     animation: color-input-fade-in 400ms ease-in-out;
 }
 
 
 @keyframes color-input-fade-in {
-    0%{
+    0% {
         opacity: 0;
     }
 
-    100%{
+    100% {
         opacity: 1;
     }
 }
