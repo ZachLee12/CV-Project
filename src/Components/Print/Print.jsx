@@ -26,15 +26,12 @@ export default class Print extends React.Component {
                     <p className='build-your-resume-title'>Build your Resume/CV!</p>
                 </header>
 
-                <div className='cv-pages-button-wrapper'>
+                <div className="buttons-wrapper">
                     <button
                         className={`cv-pages-button ${this.state.isTwoPageCV ? 'one-page-button-color' : ''}`}
                         onClick={this.onClickTwoPageCV}>
                         {this.state.isTwoPageCV ? 'Make One-Page CV' : 'Make Two-Pages CV'}
                     </button>
-                </div>
-
-                <div id="ReactToPrint-wrapper">
                     <ReactToPrint
                         trigger={() => <button id='React-to-print-button'>Print Your Resume/CV!</button>}
                         content={() => this.componentRef.current}

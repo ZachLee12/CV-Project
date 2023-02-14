@@ -28,11 +28,11 @@
     font-size: 0.7em;
     user-select: none;
     pointer-events: none;
-    text-shadow: 1px 1px 0px black;
+    text-shadow: 1px 1px 2px black;
 }
 
 #make-two-pages-cv-title {
-    color: #91ee4a;
+    color: #63de05;
 }
 
 /* this is covered by #PersonalDetails */
