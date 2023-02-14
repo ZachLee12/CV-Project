@@ -24,7 +24,7 @@
     text-align: center;
     color: whitesmoke;
     font-weight: 600;
-    background-color: rgb(84, 84, 84, 0.4);
+    background-color: rgba(84, 84, 84, 0.4);
     font-size: 0.7em;
     user-select: none;
     pointer-events: none;
