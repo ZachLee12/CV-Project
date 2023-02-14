@@ -136,6 +136,7 @@
     transition: background-color 400ms ease-in-out;
     align-self: center;
     height: 25px;
+    animation: delete-button-fade-in 400ms ease-in-out;
 }
 
 .delete-section-button:hover {
@@ -144,6 +145,16 @@
 
 .delete-section-button:active {
     background-color: #c84b4b;
+}
+
+@keyframes delete-button-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .add-custom-NAME-button {

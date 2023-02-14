@@ -11,7 +11,7 @@ export default function CustomSection(props) {
     const formRef = React.useRef(null)
 
     const sampleSectionObject = {
-        customSectionTitle: 'Sample Custom Section',
+        customSectionTitle: 'Example Custom Section',
         customSectionId: uniqid(),
         customObject: {
             hasTitle: REQUIRED_CUSTOM_FIELD,
