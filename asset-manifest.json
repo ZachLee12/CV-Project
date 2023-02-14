@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/CV-Project/static/css/main.e0ee2948.css",
-    "main.js": "/CV-Project/static/js/main.1c650ea8.js",
+    "main.css": "/CV-Project/static/css/main.786ce098.css",
+    "main.js": "/CV-Project/static/js/main.d68488ba.js",
     "static/media/BoomerTantrum-j88y.ttf": "/CV-Project/static/media/BoomerTantrum-j88y.78ad6ef2884a28f47f49.ttf",
     "static/media/man.png": "/CV-Project/static/media/man.f2a59cc4ad31fe6c0079.png",
     "static/media/phone-call.png": "/CV-Project/static/media/phone-call.90000ca27a8a4d0424aa.png",
     "static/media/marker.png": "/CV-Project/static/media/marker.e0ed7a12855081c4afa1.png",
     "index.html": "/CV-Project/index.html",
-    "main.e0ee2948.css.map": "/CV-Project/static/css/main.e0ee2948.css.map",
-    "main.1c650ea8.js.map": "/CV-Project/static/js/main.1c650ea8.js.map"
+    "main.786ce098.css.map": "/CV-Project/static/css/main.786ce098.css.map",
+    "main.d68488ba.js.map": "/CV-Project/static/js/main.d68488ba.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0ee2948.css",
-    "static/js/main.1c650ea8.js"
+    "static/css/main.786ce098.css",
+    "static/js/main.d68488ba.js"
   ]
 }
