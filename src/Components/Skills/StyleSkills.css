@@ -102,6 +102,15 @@
     border: 2px solid black;
 }
 
+.skills-buttons-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    gap: 30px;
+    padding-top: 5px;
+}
+
 /* IMPORTANT - these classes are also present in StyleWorkExperience.css, so it might clash - check beforehand */
 .save-button,
 .cancel-button {

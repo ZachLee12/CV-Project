@@ -20,7 +20,7 @@ class WorkExperienceForm extends React.Component {
                 <label htmlFor="duration-input">Duration</label>
                 <input autoComplete='off' onChange={onChangeInput} type="text" id="duration-input" required />
 
-                <div className="buttons-wrapper">
+                <div className="work-experience-buttons-wrapper">
                     <button className="save-button" onClick={onClickSave}>Save</button>
                     <button type='button' className="cancel-button" onClick={onClickCancel}>Cancel</button>
                 </div>

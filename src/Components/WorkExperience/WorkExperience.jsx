@@ -60,10 +60,7 @@ class WorkExperience extends React.Component {
         if (e.target.parentElement.parentElement.checkValidity()) {
             this.setState({
                 workExperience: {
-                    //clear all inputs and make a new id
-                    title: '',
-                    company: '',
-                    duration: '',
+                    ...this.state.workExperience,
                     id: uniqid()
                 },
                 workExperienceList: [...this.state.workExperienceList, this.state.workExperience],

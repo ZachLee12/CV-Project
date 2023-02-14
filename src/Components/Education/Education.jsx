@@ -7,6 +7,8 @@ class Education extends React.Component {
 
     constructor() {
         super();
+
+        this.institutionRef = React.createRef()
         this.state = {
             education: {
                 institution: '',
@@ -57,15 +59,17 @@ class Education extends React.Component {
         {
             this.setState({
                 education: {
-                    institution: '',
-                    duration: '',
+                    ...this.state.education,
                     id: uniqid()
                 },
                 educationList: [...this.state.educationList, this.state.education],
                 displayEducationForm: false,
                 displayEducationFormWhenHover: false
             })
+
+            setTimeout(() => { console.log(this.state) }, 0)
         }
+
     }
 
     onClickCancel = (e) => {
@@ -161,6 +165,7 @@ class Education extends React.Component {
                     className={`education-form ${this.state.displayEducationForm ? '' : 'hidden'}`}>
                     <label htmlFor="institution-input">Institution</label>
                     <input
+                        ref={this.institutionRef}
                         autoComplete='off'
                         required
                         onChange={this.onChangeInstitution}
@@ -176,7 +181,7 @@ class Education extends React.Component {
                         id='duration-input'
                         type="text" />
 
-                    <div className="buttons-wrapper">
+                    <div className="education-buttons-wrapper">
                         <button onClick={this.onClickSave} id='save-button' >Save</button>
                         <button type='button' onClick={this.onClickCancel} id='cancel-button' >Cancel</button>
                     </div>

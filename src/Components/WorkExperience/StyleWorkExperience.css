@@ -114,8 +114,13 @@ label[for='duration-input'] {
     font-size: 1.2em;
 }
 
-.buttons-wrapper {
+.work-experience-buttons-wrapper {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    gap: 30px;
+    padding-top: 5px;
 }
 
 .save-button,

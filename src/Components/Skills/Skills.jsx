@@ -36,7 +36,6 @@ class Skills extends React.Component {
             this.setState({
                 skill: {
                     ...this.state.skill,
-                    title: '',
                     id: uniqid()
                 },
                 skillList: [...this.state.skillList, this.state.skill],
@@ -154,7 +153,7 @@ class Skills extends React.Component {
                         id="title-input"
                         required
                     />
-                    <div className="buttons-wrapper">
+                    <div className="skills-buttons-wrapper">
                         <button className="save-button" onClick={this.onClickSave}>Save</button>
                         <button type="button" className="cancel-button" onClick={this.onClickCancel}>Cancel</button>
                     </div>
