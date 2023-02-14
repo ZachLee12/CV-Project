@@ -1,6 +1,13 @@
 #CustomSection {
     display: flex;
     flex-direction: column;
+    /* padding: 5px; */
+    margin: 5px;
+    transition: background-color 400ms ease-in-out;
+}
+
+#CustomSection:hover {
+    /* background-color: #e9cc96; */
 }
 
 .add-custom-section-button {
@@ -89,14 +96,6 @@
     /* border: 2px solid red; */
 }
 
-#check-at-least-one-box {
-    position: absolute;
-    bottom: -17px;
-    color: red;
-    font-weight: 600;
-    text-shadow: 0.5px 0.5px 0px #de794d;
-}
-
 .what-does-this-section-have-title {
     font-size: 1.3em;
     margin: 0;
@@ -118,6 +117,9 @@
     position: relative;
     border-bottom: 2px solid black;
     margin: 0px;
+}
+
+#CustomSection:hover .custom-section-title-view {
     margin-bottom: 10px;
 }
 

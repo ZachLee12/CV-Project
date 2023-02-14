@@ -11,15 +11,15 @@
 #root {}
 
 body {
-  background-color: rgb(203, 195, 164);
+  background-color: #cbc3a4;
 }
 
 html,
 body {
   margin: 0px;
   padding: 0px;
-
-  /* THIS IS IT OMG I FOUND IT FINALLY */
+  margin-bottom: 20px;
+  /* THIS IS IT OMG I FINALLY FOUND IT */
   min-width: fit-content;
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .cv-pages-button {
-  max-width: 400px;
+  min-width: 400px;
   min-height: 50px;
   padding-left: 50px;
   padding-right: 50px;
@@ -80,7 +80,7 @@ body {
 }
 
 #React-to-print-button {
-  max-width: 400px;
+  min-width: 400px;
   min-height: 50px;
   padding-left: 50px;
   padding-right: 50px;

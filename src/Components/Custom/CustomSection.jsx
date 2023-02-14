@@ -6,6 +6,7 @@ import uniqid from 'uniqid'
 //Custom Section = Large Title and thick line
 //Custom Object = Bullet points under the title
 export default function CustomSection(props) {
+    const REQUIRED_CUSTOM_FIELD = true
 
     const formRef = React.useRef(null)
 
@@ -13,7 +14,7 @@ export default function CustomSection(props) {
         customSectionTitle: 'Sample Custom Section',
         customSectionId: uniqid(),
         customObject: {
-            hasTitle: true,
+            hasTitle: REQUIRED_CUSTOM_FIELD,
             hasInstitution: true,
             hasCompany: true,
             hasDuration: true,
@@ -29,7 +30,7 @@ export default function CustomSection(props) {
         customSectionTitle: '',
         customSectionId: uniqid(),
         customObject: {
-            hasTitle: false,
+            hasTitle: REQUIRED_CUSTOM_FIELD,
             hasInstitution: false,
             hasCompany: false,
             hasDuration: false,
@@ -42,8 +43,6 @@ export default function CustomSection(props) {
         displayDeleteSectionButton: false,
         customSectionList: [sampleSectionObject],
         displayEmptyFieldWarning: false,
-        displayCheckAtLeastOneWarning: false,
-        checkedAtLeastOneCheckbox: false
         // displayAddCustomSectionButton: false,
     }
 
@@ -56,17 +55,6 @@ export default function CustomSection(props) {
         })
     }
 
-    const onChangeTitleCheckbox = (e) => {
-        setCustomSection({
-            ...customSection,
-            customObject: {
-                ...customSection.customObject,
-                hasTitle: e.target.checked
-            },
-            checkedAtLeastOneCheckbox: true
-        })
-    }
-
     const onChangeInstitutionCheckbox = (e) => {
         setCustomSection({
             ...customSection,
@@ -74,7 +62,6 @@ export default function CustomSection(props) {
                 ...customSection.customObject,
                 hasInstitution: e.target.checked
             },
-            checkedAtLeastOneCheckbox: true
         })
     }
 
@@ -85,7 +72,6 @@ export default function CustomSection(props) {
                 ...customSection.customObject,
                 hasCompany: e.target.checked
             },
-            checkedAtLeastOneCheckbox: true
         })
     }
 
@@ -96,7 +82,6 @@ export default function CustomSection(props) {
                 ...customSection.customObject,
                 hasDuration: e.target.checked
             },
-            checkedAtLeastOneCheckbox: true
         })
     }
 
@@ -107,7 +92,7 @@ export default function CustomSection(props) {
                 customSectionId: uniqid(),
                 customObject: {
                     ...customSection.customObject,
-                    hasTitle: false,
+                    hasTitle: REQUIRED_CUSTOM_FIELD,
                     hasInstitution: false,
                     hasCompany: false,
                     hasDuration: false,
@@ -263,7 +248,7 @@ export default function CustomSection(props) {
             <form ref={formRef} onSubmit={onSubmit} className={`custom-section-form ${customSection.displayCustomForm ? '' : 'hidden'}`} action="">
                 <p className="create-a-custom-section-title">Create a Custom Section!</p>
                 <label className="custom-section-title" htmlFor="custom-section-title-input">
-                    <p className="name-your-custom-section" >Name your custom section:</p>
+                    <p className="name-your-custom-section" >*Name your custom section:</p>
                     <input
                         required
                         autoComplete="off"
@@ -271,12 +256,6 @@ export default function CustomSection(props) {
                         onChange={onChangeCustomSectionTitle}
                         id='custom-section-title-input'
                         type="text" />
-
-                    <span
-                        className={customSection.displayEmptyFieldWarning ? 'fade-in-opacity' : 'fade-out-opacity'}
-                        id='this-field-cannot-be-empty'>
-                        This field cannot be empty!
-                    </span>
                 </label>
 
 
@@ -284,12 +263,10 @@ export default function CustomSection(props) {
                     <p className="what-does-this-section-have-title">What does this section have? (Put a &#x2713;)</p>
                     <label className="custom-object-title-label" htmlFor="custom-object-title-checkbox">
                         <input
-                            onChange={onChangeTitleCheckbox}
                             id='custom-object-title-checkbox'
                             type="checkbox"
                             checked={true}
                             readOnly
-                        // checked={customSection.customObject.hasTitle}
                         />
                         Title? (must be checked)
                     </label>
@@ -323,11 +300,7 @@ export default function CustomSection(props) {
                         />
                         Duration?
                     </label>
-                    <span
-                        className={customSection.displayCheckAtLeastOneWarning ? 'fade-in-opacity' : 'fade-out-opacity'}
-                        id='check-at-least-one-box'>
-                        Check at least one box!
-                    </span>
+
                 </div>
 
                 <button

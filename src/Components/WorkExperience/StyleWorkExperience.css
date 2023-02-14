@@ -21,6 +21,11 @@
     position: relative;
     border-bottom: 2px solid black;
     margin-bottom: 10px;
+    transition: background-color 400ms ease-in-out;
+}
+
+.work-experience-title:hover {
+    background-color: #84b8fc;
 }
 
 .add-work-experience-button {
@@ -37,6 +42,7 @@
     border-radius: 25px;
     font-weight: 600;
     animation: button-fade-in 400ms ease-in-out;
+    border: 2px solid black;
 }
 
 @keyframes button-fade-in {
@@ -61,6 +67,10 @@
     font-size: 1.3em;
     display: flex;
     position: relative;
+}
+
+.company {
+    font-size: 1.15em;
 }
 
 .duration {

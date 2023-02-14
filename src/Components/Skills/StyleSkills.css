@@ -17,6 +17,11 @@
     border-bottom: 2px solid black;
     margin-bottom: 10px;
     position: relative;
+    transition: background-color 400ms ease-in-out
+}
+
+.skills-title:hover{
+    background-color: #d892f4;
 }
 
 .add-skill-button {
@@ -33,6 +38,7 @@
     border-radius: 25px;
     font-weight: 600;
     animation: button-fade-in 400ms ease-in-out;
+    border: 2px solid black;
 }
 
 @keyframes button-fade-in {
