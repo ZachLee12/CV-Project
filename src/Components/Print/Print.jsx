@@ -27,7 +27,9 @@ export default class Print extends React.Component {
                 </header>
 
                 <div className='cv-pages-button-wrapper'>
-                    <button className='cv-pages-button' onClick={this.onClickTwoPageCV}>
+                    <button
+                        className={`cv-pages-button ${this.state.isTwoPageCV ? 'one-page-button-color' : ''}`}
+                        onClick={this.onClickTwoPageCV}>
                         {this.state.isTwoPageCV ? 'Make One-Page CV' : 'Make Two-Pages CV'}
                     </button>
                 </div>
