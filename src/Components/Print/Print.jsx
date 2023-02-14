@@ -23,7 +23,7 @@ export default class Print extends React.Component {
         return (
             <React.Fragment>
                 <header id='header'>
-                    <p className='build-your-resume-title'>Build your Resume/CV!</p>
+                    <p className='build-your-resume-title'>Resume/CV Builder</p>
                 </header>
 
                 <div className="buttons-wrapper">

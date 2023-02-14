@@ -6,12 +6,13 @@
   }
 }
 
-
-
-#root {}
+@font-face {
+  font-family: 'Boomer Tantrum';
+  src: url('../../assets/fonts/BoomerTantrum-j88y.ttf');
+}
 
 body {
-  background-color: #cbc3a4;
+  background-color: #c0c2c2;
 }
 
 html,
@@ -25,7 +26,7 @@ body {
 
 #header {
   /* min-width: 100vw; */
-  background-color: #92bce9;
+  background-color: #213d5b;
   min-height: 100px;
   display: flex;
   justify-content: center;
@@ -35,8 +36,10 @@ body {
 }
 
 .build-your-resume-title {
+  color: #6ddaff;
   margin: 0;
-  font-size: 2em;
+  font-size: 2.5em;
+  font-family: 'Boomer Tantrum';
   /* font-weight: 600; */
 }
 
