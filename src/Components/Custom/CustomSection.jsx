@@ -43,7 +43,6 @@ export default function CustomSection(props) {
         displayDeleteSectionButton: false,
         customSectionList: [sampleSectionObject],
         displayEmptyFieldWarning: false,
-        // displayAddCustomSectionButton: false,
     }
 
     const [customSection, setCustomSection] = React.useState(initialState)

@@ -26,6 +26,20 @@
     list-style-type: square;
 }
 
+#description-this-field-cannot-be-empty {
+    color: red;
+    font-weight: 600;
+    transition: opacity 400ms ease-in-out;
+}
+
+.hide-error-message {
+    opacity: 0;
+}
+
+.show-error-message {
+    opacity: 1;
+}
+
 /* htmlFor in React */
 label[for="description-input"] {
     padding-left: 2px;
@@ -38,7 +52,9 @@ label[for="description-input"] {
     /* border: none; */
     transition: background-color 300ms ease-in-out;
     position: absolute;
-    top: 1.5px;
+    right: 0px;
+    bottom: 1.5px;
+    height: 20px;
     animation: button-fade-in 400ms ease-in-out;
 }
 
@@ -96,5 +112,9 @@ label[for="description-input"] {
     .remove-button {
         top: 0px;
         right: 0px;
+    }
+
+    .description-form {
+        width: 90%;
     }
 }

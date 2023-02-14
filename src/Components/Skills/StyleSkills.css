@@ -60,6 +60,7 @@
 }
 
 .skill-item {
+    margin-bottom: 10px;
     position: relative;
 }
 
@@ -74,7 +75,7 @@
 
 .delete-button {
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 40px;
     border-radius: 100%;
     background-color: #c8c6c6;

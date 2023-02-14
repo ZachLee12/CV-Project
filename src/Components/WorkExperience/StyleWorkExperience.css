@@ -10,6 +10,7 @@
 .work-experience-item {
     position: relative;
     transition: all 400ms ease-in-out;
+    margin-bottom: 10px;
 }
 
 .work-experience-item:hover {
