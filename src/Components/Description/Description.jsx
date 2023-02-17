@@ -58,7 +58,7 @@ class Description extends React.Component {
     render() {
         const { displayDescriptionForm, displayDescriptionRemoveButton } = this.props
         return (
-            <div id='Description'>
+            <div data-testid='Description' id='Description'>
                 <ul className='description-list'>
                     {this.state.descriptionList.map(desc => {
                         return <li key={desc.id} className='description-list-item'>

@@ -109,10 +109,12 @@ class ProfilePicture extends React.Component {
             <div
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
+                data-testid='ProfilePicture'
                 id="ProfilePicture">
                 <Interactable draggable={true} draggableOptions={draggableOptions} resizable={true} resizableOptions={resizableOptions}>
                     <img className="profile-picture" src={this.state.imageBase64 === '' ? PlaceholderImage : this.state.imageBase64} alt="profile" />
                 </Interactable>
+
 
                 <div className={`file-input-wrapper ${this.state.displayFileInput ? '' : 'hidden'}`}>
                     <p className="upload-input-label-and-wrapper">Upload a profile picture.</p>

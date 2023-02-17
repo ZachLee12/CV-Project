@@ -113,6 +113,7 @@ class Skills extends React.Component {
             <div
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
+                data-testid='Skills'
                 id='Skills' >
                 <p className="skills-title"
                     onMouseOver={this.onMouseOverSkillsTitle}

@@ -37,7 +37,7 @@ export default class Print extends React.Component {
                         content={() => this.componentRef.current}
                     />
                 </div>
-                <div id="Print">
+                <div data-testid='Print' id="Print">
                     <App
                         isTwoPageCV={this.state.isTwoPageCV}
                         ref={this.componentRef}

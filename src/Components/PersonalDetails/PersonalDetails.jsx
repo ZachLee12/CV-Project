@@ -114,6 +114,7 @@ class PersonalDetails extends React.Component {
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
                 style={this.state.style}
+                data-testid = 'PersonalDetails'
                 id='PersonalDetails'>
                 {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />

@@ -126,7 +126,7 @@ class Education extends React.Component {
 
     render() {
         return (
-            <div id='Education' onMouseOver={this.onMouseOverComponent} onMouseOut={this.onMouseOutComponent}>
+            <div data-testid='Education' id='Education' onMouseOver={this.onMouseOverComponent} onMouseOut={this.onMouseOutComponent}>
                 <p
                     className="education-title"
                     onMouseOver={this.onMouseOverTitle}

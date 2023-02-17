@@ -54,6 +54,7 @@ class Address extends React.Component {
             <div
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
+                data-testid = 'Address'
                 id="Address">
                 <form action="" className="address-form">
                     <img id="address-icon" src={AddressIcon} alt="address-icon" />

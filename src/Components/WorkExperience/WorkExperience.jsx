@@ -123,6 +123,7 @@ class WorkExperience extends React.Component {
             <div
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
+                data-testid = 'WorkExperience'
                 id='WorkExperience'>
                 <p
                     className="work-experience-title"

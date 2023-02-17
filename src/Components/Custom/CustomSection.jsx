@@ -235,6 +235,7 @@ export default function CustomSection(props) {
         <div
             onMouseOver={onMouseOverComponent}
             onMouseOut={onMouseOutComponent}
+            data-testid='CustomSection'
             id='CustomSection'>
             <button
                 onClick={onClickShowCustomForm}
@@ -307,7 +308,7 @@ export default function CustomSection(props) {
                     onClick={onClickCreateCustomSection}>Create Custom Section</button>
             </form>
 
-            <div className="custom-objects-view-container">
+            <div className="render-section-container">
                 {customSection.customSectionList.map(sectionObject => { //this is named 'sectionObject' to avoid confusion with customObject in customSection
                     return (
                         <div key={sectionObject.customObject.id} className="custom-section-view">

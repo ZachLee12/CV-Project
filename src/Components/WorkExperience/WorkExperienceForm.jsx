@@ -10,7 +10,7 @@ class WorkExperienceForm extends React.Component {
         const { onSubmitForm, onChangeInput, onClickSave, onClickCancel, displayForm } = this.props
 
         return (
-            <form className={`work-experience-form ${displayForm ? '' : 'hidden'}`} action="" onSubmit={onSubmitForm}>
+            <form data-testid='WorkExperienceForm' className={`work-experience-form ${displayForm ? '' : 'hidden'}`} action="" onSubmit={onSubmitForm}>
                 <label htmlFor="title-input">Title</label>
                 <input autoComplete='off' onChange={onChangeInput} type="text" id="title-input" required />
 

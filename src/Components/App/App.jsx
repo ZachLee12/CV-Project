@@ -41,7 +41,7 @@ class App extends React.Component {
         <div
           className={`${this.state.displayPageBreakMessage ? '' : 'hidden'}`}
           id='page-break-indicator'>
-          -----------------------------------------PAGE BREAK HERE, please click <span id='make-two-pages-cv-title'>'Make Two-Pages CV'</span> above ------------------------------------
+          -----------------------------------------PAGE BREAK HERE, please click <span id='make-two-pages-cv-title'>'Make Two-Pages Resume/CV'</span> above ------------------------------------
         </div>
         <div className="side-bar">
           <PersonalDetails />

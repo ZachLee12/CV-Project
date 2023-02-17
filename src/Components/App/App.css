@@ -30,6 +30,7 @@
     user-select: none;
     pointer-events: none;
     text-shadow: 1px 1px 2px black;
+    animation: fade-in 400ms ease-in-out
 }
 
 #make-two-pages-cv-title {
@@ -60,10 +61,10 @@
 
 /* Targets add-button in CustomSection Component */
 #App:hover .add-custom-section-button {
-    animation: fade-in-custom-section-button 400ms ease-in-out;
+    animation: fade-in 400ms ease-in-out;
 }
 
-@keyframes fade-in-custom-section-button {
+@keyframes fade-in {
     from {
         opacity: 0;
     }

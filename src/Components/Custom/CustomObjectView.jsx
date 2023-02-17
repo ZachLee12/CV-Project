@@ -110,7 +110,7 @@ export default function CustomObjectView(props) {
     })
 
     return (
-        <div>
+        <div data-testid='CustomObjectView' id='CustomObjectView'>
             <ul className="custom-object-view-list">
                 {
                     customObjectView.viewList.map(view => {
