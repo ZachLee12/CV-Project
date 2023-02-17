@@ -116,7 +116,7 @@ class ProfilePicture extends React.Component {
                 </Interactable>
 
 
-                <div className={`file-input-wrapper ${this.state.displayFileInput ? '' : 'hidden'}`}>
+                <div data-testid='file-input-wrapper' className={`file-input-wrapper ${this.state.displayFileInput ? '' : 'hidden'}`}>
                     <p className="upload-input-label-and-wrapper">Upload a profile picture.</p>
                     <p className="profile-picture-function-title">*You can resize your picture and also drag it around!</p>
                     <input

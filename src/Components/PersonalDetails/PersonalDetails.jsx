@@ -119,6 +119,7 @@ class PersonalDetails extends React.Component {
                 {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />
                 <form
+                    data-testid ='personal-details-form'
                     onMouseOut={this.onMouseOutFormWrapper}
                     onMouseOver={this.onMouseOverFormWrapper}
                     className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
@@ -183,6 +184,7 @@ class PersonalDetails extends React.Component {
                 <Address />
 
                 <div
+                    data-testid='background-color-input-wrapper'
                     className={`background-color-input-wrapper ${this.state.displayColorInput ? '' : 'hidden'}`}>
                     <div className='change-background-color-title'>Change Background Color:</div>
                     <button onClick={this.onClickResetBackgroundColor} className="reset-background-color-button">Reset</button>
