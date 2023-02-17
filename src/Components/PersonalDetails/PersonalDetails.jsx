@@ -114,7 +114,7 @@ class PersonalDetails extends React.Component {
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
                 style={this.state.style}
-                data-testid = 'PersonalDetails'
+                data-testid='PersonalDetails'
                 id='PersonalDetails'>
                 {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />
@@ -124,7 +124,7 @@ class PersonalDetails extends React.Component {
                     onMouseOver={this.onMouseOverFormWrapper}
                     className="personal-details-form" action="" onSubmit={this.onSubmitForm}>
                     <label className='name' htmlFor="name-input" onClick={this.onClickName}>
-                        <div className="nameText-wrapper">
+                        <div data-testid='nameText-wrapper' className="nameText-wrapper">
                             {this.state.name === ''
                                 ? 'Your Name'
                                 : this.state.name}
@@ -139,7 +139,7 @@ class PersonalDetails extends React.Component {
                     />
                     <label className='phone-number details' htmlFor="phone-number-input" onClick={this.onClickPhoneNumber}>
                         <img id='phone-icon' src={PhoneIcon} alt="phone-icon" />
-                        <div className="innerText-wrapper wrapper">
+                        <div data-testid='phoneText-wrapper' className="innerText-wrapper wrapper">
                             {this.state.phoneNumber === ''
                                 ? '+123 456 789'
                                 : this.state.phoneNumber}
@@ -151,9 +151,10 @@ class PersonalDetails extends React.Component {
                         className={`phone-number-input ${this.state.displayPhoneNumberInput ? '' : 'hidden'}`}
                         type="text"
                         id="phone-number-input" />
+                    
                     <label className='email details' htmlFor="email-input" onClick={this.onClickEmail}>
                         <img id='email-icon' src={EmailIcon} alt="email-icon" />
-                        <div className="innerText-wrapper wrapper">
+                        <div data-testid='emailText-wrapper' className="innerText-wrapper wrapper">
                             {this.state.email === ''
                                 ? 'example@example.com'
                                 : this.state.email}
@@ -167,7 +168,7 @@ class PersonalDetails extends React.Component {
                         id="email-input" />
                     <label className='linkedIn details' htmlFor="linkedIn-input" onClick={this.onClickLinkedIn}>
                         <img id='linkedIn-icon' src={LinkedInIcon} alt="linkedIn-icon" />
-                        <div className="innerText-wrapper wrapper">
+                        <div data-testid='linkedInText-wrapper' className="innerText-wrapper wrapper">
                             {this.state.linkedIn === ''
                                 ? 'linkedIn URL'
                                 : this.state.linkedIn}
