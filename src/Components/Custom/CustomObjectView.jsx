@@ -172,21 +172,21 @@ export default function CustomObjectView(props) {
 
                 <label className={`custom-object-view-institution ${customObject.hasInstitution ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Institution
-                    <input autoComplete="off" onChange={onChangeViewInstitution} type="text" />
+                    <input required autoComplete="off" onChange={onChangeViewInstitution} type="text" />
                 </label>
 
                 <label className={`custom-object-view-company ${customObject.hasCompany ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Company
-                    <input autoComplete="off" onChange={onChangeViewCompany} type="text" />
+                    <input required autoComplete="off" onChange={onChangeViewCompany} type="text" />
                 </label>
 
                 <label className={`custom-object-view-duration ${customObject.hasDuration ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Duration
-                    <input autoComplete="off" onChange={onChangeViewDuration} type="text" />
+                    <input required autoComplete="off" onChange={onChangeViewDuration} type="text" />
                 </label>
                 <div className="custom-object-view-form-buttons-wrapper">
-                    <button onClick={onClickSaveObjectView} id={customObject.id} className='save-object-view-button' >Save</button>
-                    <button onClick={onClickCancelObjectView} id={customObject.id} className="cancel-object-view-button">Cancel</button>
+                    <button onClick={onClickSaveObjectView} id={customObject.id} className='save-object-view-button'>Save</button>
+                    <button onClick={onClickCancelObjectView} id={customObject.id} className="cancel-object-view-button" type='button'>Cancel</button>
                 </div>
             </form>
         </div>
