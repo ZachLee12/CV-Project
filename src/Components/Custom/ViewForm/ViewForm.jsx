@@ -3,16 +3,6 @@ import './StyleViewForm.css'
 
 function ViewForm(props) {
 
-    // customObject={customObject}
-    // displayViewForm={displayViewForm}
-    // formRef={formRef}
-    // onChangeViewTitle={onChangeViewTitle}
-    // onChangeViewCompany={onChangeViewCompany}
-    // onChangeViewInstitution={onChangeViewInstitution}
-    // onChangeViewDuration={onChangeViewDuration}
-    // onClickCancelObjectView={onClickCancelObjectView}
-    // onClickSaveObjectView={onClickSaveObjectView}
-
     const onSubmit = (e) => {
         e.preventDefault()
     }

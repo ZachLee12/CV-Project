@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import './CustomSection.css'
-import CustomObjectView from "./CustomObjectView";
+import './StyleCustomSection.css'
+import CustomObjectView from "../CustomObjectView/CustomObjectView";
 import uniqid from 'uniqid'
 
 //Custom Section = Large Title and thick line

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Description from '../Description/Description'
-import './CustomObjectView.css'
+import Description from '../../Description/Description'
+import './StyleCustomObjectView.css'
 import uniqid from 'uniqid'
-import ViewForm from "./ViewForm";
+import ViewForm from "../ViewForm/ViewForm";
 
 export default function CustomObjectView(props) {
     const { customObject, displayViewForm } = props //destructure

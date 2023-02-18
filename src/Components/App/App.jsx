@@ -5,7 +5,7 @@ import Skills from "../Skills/Skills";
 import Education from "../Education/Education";
 // import ProfilePicture from "../PersonalDetails/ProfilePicture";
 import './App.css'
-import CustomSection from "../Custom/CustomSection";
+import CustomSection from "../Custom/CustomSection/CustomSection";
 
 class App extends React.Component {
   constructor(props) {
