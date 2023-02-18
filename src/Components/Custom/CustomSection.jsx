@@ -114,7 +114,7 @@ export default function CustomSection(props) {
         //changes to target will also affect the REAL object
         let copyList = [...customSection.customSectionList]
         let targetInformation = null;
-
+        
         // eslint-disable-next-line array-callback-return
         let target = copyList.find((section, index) => {
             if (section.customObject.id === e.target.id) {

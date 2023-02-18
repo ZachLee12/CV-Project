@@ -2,23 +2,6 @@
     margin-bottom: 35px;
 }
 
-.custom-object-view-form {
-    display: flex;
-    flex-direction: column;
-    background-color: #add1f4;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 5px;
-    border: 2px solid black
-}
-
-.custom-object-view-form label {
-    font-size: 1.2em;
-    /* DISPLAY is controlled by JSX */
-    /* display: flex;  */
-    flex-direction: column;
-}
-
 .custom-section-view {
     transition: background-color 400ms ease-in-out;
 }
@@ -27,14 +10,6 @@
     background-color: #eff0af;
 }
 
-.custom-object-view-form-buttons-wrapper {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    padding-top: 5px;
-}
 
 .custom-object-view-item {
     position: relative;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Description from '../Description/Description'
 import './CustomObjectView.css'
 import uniqid from 'uniqid'
+import ViewForm from "./ViewForm";
 
 export default function CustomObjectView(props) {
     const { customObject, displayViewForm } = props //destructure
@@ -23,10 +24,6 @@ export default function CustomObjectView(props) {
     }
 
     const [customObjectView, setCustomObjectView] = React.useState(initialState)
-
-    const onSubmit = (e) => {
-        e.preventDefault()
-    }
 
     const onMouseOverComponent = (e) => {
         setCustomObjectView({
@@ -96,7 +93,6 @@ export default function CustomObjectView(props) {
             })
             props.onClickShowViewForm(e);
         }
-        
     }
 
     const onClickCancelObjectView = (e) => {
@@ -109,10 +105,6 @@ export default function CustomObjectView(props) {
             viewList: customObjectView.viewList.filter(view => view.id !== e.target.id)
         })
     }
-
-    useEffect(() => {
-        // console.log(customObjectView)
-    })
 
     return (
         <div data-testid='CustomObjectView' id='CustomObjectView'>
@@ -155,40 +147,19 @@ export default function CustomObjectView(props) {
                 }
             </ul>
 
-            <form
-                ref={formRef}
-                onSubmit={onSubmit}
-                className={`custom-object-view-form ${displayViewForm ? '' : 'hidden'}`}
-                action="">
-                <label className={`custom-object-view-title ${customObject.hasTitle ? 'display-flex' : 'hidden'}`} htmlFor="">
-                    Title
-                    <input
-                        required
-                        autoComplete="off"
-                        onChange={onChangeViewTitle}
-                        name='title-input'
-                        type="text" />
-                </label>
 
-                <label className={`custom-object-view-institution ${customObject.hasInstitution ? 'display-flex' : 'hidden'}`} htmlFor="">
-                    Institution
-                    <input required autoComplete="off" onChange={onChangeViewInstitution} type="text" />
-                </label>
+            <ViewForm
+                customObject={customObject}
+                displayViewForm={displayViewForm}
+                formRef={formRef}
+                onChangeViewTitle={onChangeViewTitle}
+                onChangeViewCompany={onChangeViewCompany}
+                onChangeViewInstitution={onChangeViewInstitution}
+                onChangeViewDuration={onChangeViewDuration}
+                onClickCancelObjectView={onClickCancelObjectView}
+                onClickSaveObjectView={onClickSaveObjectView}
+            />
 
-                <label className={`custom-object-view-company ${customObject.hasCompany ? 'display-flex' : 'hidden'}`} htmlFor="">
-                    Company
-                    <input required autoComplete="off" onChange={onChangeViewCompany} type="text" />
-                </label>
-
-                <label className={`custom-object-view-duration ${customObject.hasDuration ? 'display-flex' : 'hidden'}`} htmlFor="">
-                    Duration
-                    <input required autoComplete="off" onChange={onChangeViewDuration} type="text" />
-                </label>
-                <div className="custom-object-view-form-buttons-wrapper">
-                    <button onClick={onClickSaveObjectView} id={customObject.id} className='save-object-view-button'>Save</button>
-                    <button onClick={onClickCancelObjectView} id={customObject.id} className="cancel-object-view-button" type='button'>Cancel</button>
-                </div>
-            </form>
         </div>
     )
 
