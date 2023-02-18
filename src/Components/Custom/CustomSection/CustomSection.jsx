@@ -211,7 +211,6 @@ export default function CustomSection(props) {
         setCustomSection({
             ...customSection,
             displayCustomForm: !customSection.displayCustomForm,
-            // displayAddCustomSectionButton: false
         })
     }
 
@@ -220,16 +219,7 @@ export default function CustomSection(props) {
             ...customSection,
             customSectionList: customSection.customSectionList.filter(sectionObject => sectionObject.customSectionId !== e.target.id)
         })
-
-        // this.state.workExperienceList.filter(workExperience => workExperience.id !== e.target.id)
     }
-
-    useEffect(() => {
-        // console.log(customSection) //this will be called on mounting, and when state changes
-        return () => {
-            // console.log(customSection)
-        }
-    })
 
     return (
         <div
@@ -350,7 +340,6 @@ export default function CustomSection(props) {
                     )
                 })}
             </div>
-
         </div>
     )
 }

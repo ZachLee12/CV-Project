@@ -25,7 +25,6 @@ body {
 }
 
 #header {
-  /* min-width: 100vw; */
   background-color: #213d5b;
   min-height: 100px;
   display: flex;
@@ -40,14 +39,12 @@ body {
   margin: 0;
   font-size: 2.5em;
   font-family: 'Boomer Tantrum';
-  /* font-weight: 600; */
 }
 
 .cv-pages-button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
 }
 
 .cv-pages-button {
@@ -64,7 +61,6 @@ body {
 
 .buttons-wrapper {
   display: flex;
-  /* border: 2px solid red; */
   min-height: 80px;
   justify-content: center;
   align-items: center;

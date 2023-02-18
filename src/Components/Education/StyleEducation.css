@@ -1,7 +1,6 @@
 #Education {
     /*needed to enable margin for the form*/
     padding-bottom: 1px;
-    /* border: 1px solid rgba(0, 0, 0, 0); */
 }
 
 #Education:hover {
@@ -119,7 +118,6 @@ label[for='duration-input'] {
 
 .education-list {
     margin: 0px;
-    /* background-color: wheat; */
 }
 
 .education-list-item {
@@ -174,8 +172,6 @@ label[for='duration-input'] {
         border: 2px solid black;
     }
 
-    /* check why selecting this button has to be more specific ???  */
-    /* the other components have the same class selector */
     .edit-features-wrapper .delete-button {
         top: 0px;
         right: 0px;

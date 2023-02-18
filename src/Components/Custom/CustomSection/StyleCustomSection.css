@@ -189,7 +189,6 @@
 
 /* This is to align it with the other default sections */
 .render-section-container{
-    /* border: 2px solid red; */
     position: relative;
     right: 5px;
     width: 547px;

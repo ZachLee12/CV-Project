@@ -2,7 +2,6 @@
     display: block;
     width: 90%;
     overflow-wrap: break-word;
-    /* border: 2px solid red; */
 }
 
 .description-form {
@@ -15,7 +14,6 @@
     width: max(45%, 150px);
     padding-top: 5px;
     margin-top: 10px;
-    /* margin: 5px; */
     animation: button-fade-in 400ms ease-in-out;
 }
 
@@ -49,7 +47,6 @@ label[for="description-input"] {
     margin-left: 30px;
     border-radius: 5px;
     background-color: #cdcdcd;
-    /* border: none; */
     transition: background-color 300ms ease-in-out;
     position: absolute;
     right: 0px;
@@ -86,14 +83,11 @@ label[for="description-input"] {
 
 /* for border transition */
 .description-list-item {
-    /* border: 2px solid rgba(0,0,0,0); */
-    /* border-radius: 5px; */
     min-height: 25px;
     position: relative;
 }
 
 .description-list-item:hover {
-    /* border-color: rgba(0,0,0,1); */
     background-color: #a0e6f8;
     transition: all 300ms ease-in-out;
 }

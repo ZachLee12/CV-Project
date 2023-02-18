@@ -59,8 +59,6 @@ function ViewForm(props) {
             </div>
         </form>
     )
-
 }
-
 
 export default ViewForm

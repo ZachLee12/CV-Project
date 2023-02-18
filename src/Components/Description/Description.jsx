@@ -89,7 +89,6 @@ class Description extends React.Component {
                         id="description-input"
                         onChange={this.onChangeInput}
                          />
-
                     <button onClick={this.onClickAddDescription} id="add-description-button" >Add</button>
                 </form>
             </div>

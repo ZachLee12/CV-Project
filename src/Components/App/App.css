@@ -6,8 +6,6 @@
 
 #App {
     background-color: whitesmoke;
-    /* height: px; */
-    /* width: max(600px, 60vw); */
     width: 880px;
     margin: auto;
     display: flex;
@@ -41,11 +39,6 @@
 /* this is covered by #PersonalDetails */
 .side-bar {
     width: 300px;
-    /* THIS IS ONE PAGE */
-    /* min-height: 1055px; */
-
-    /* this is for TWO PAGES */
-    /* min-height: 2264px; */
 }
 
 .one-page-height {
