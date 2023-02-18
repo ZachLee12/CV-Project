@@ -6,6 +6,8 @@ import uniqid from 'uniqid'
 export default function CustomObjectView(props) {
     const { customObject, displayViewForm } = props //destructure
 
+    const formRef = React.useRef(null)
+
     const initialState = {
         view: {
             title: '',
@@ -83,15 +85,18 @@ export default function CustomObjectView(props) {
     }
 
     const onClickSaveObjectView = (e) => {
-        setCustomObjectView({
-            ...customObjectView,
-            view: {
-                ...customObjectView.view,
-                id: uniqid()
-            },
-            viewList: [...customObjectView.viewList, customObjectView.view],
-        })
-        props.onClickShowViewForm(e);
+        if (formRef.current.checkValidity()) {
+            setCustomObjectView({
+                ...customObjectView,
+                view: {
+                    ...customObjectView.view,
+                    id: uniqid()
+                },
+                viewList: [...customObjectView.viewList, customObjectView.view],
+            })
+            props.onClickShowViewForm(e);
+        }
+        
     }
 
     const onClickCancelObjectView = (e) => {
@@ -150,10 +155,19 @@ export default function CustomObjectView(props) {
                 }
             </ul>
 
-            <form onSubmit={onSubmit} className={`custom-object-view-form ${displayViewForm ? '' : 'hidden'}`} action="">
+            <form
+                ref={formRef}
+                onSubmit={onSubmit}
+                className={`custom-object-view-form ${displayViewForm ? '' : 'hidden'}`}
+                action="">
                 <label className={`custom-object-view-title ${customObject.hasTitle ? 'display-flex' : 'hidden'}`} htmlFor="">
                     Title
-                    <input autoComplete="off" onChange={onChangeViewTitle} type="text" />
+                    <input
+                        required
+                        autoComplete="off"
+                        onChange={onChangeViewTitle}
+                        name='title-input'
+                        type="text" />
                 </label>
 
                 <label className={`custom-object-view-institution ${customObject.hasInstitution ? 'display-flex' : 'hidden'}`} htmlFor="">

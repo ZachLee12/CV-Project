@@ -7,6 +7,7 @@ import WorkExperienceForm from "./WorkExperienceForm";
 class WorkExperience extends React.Component {
     constructor() {
         super();
+        this.formRef = React.createRef()
         this.state = {
             workExperience: {
                 title: '',
@@ -57,7 +58,7 @@ class WorkExperience extends React.Component {
     }
 
     onClickSave = (e) => {
-        if (e.target.parentElement.parentElement.checkValidity()) {
+        if (this.formRef.current.checkValidity()) {
             this.setState({
                 workExperience: {
                     ...this.state.workExperience,
@@ -123,7 +124,7 @@ class WorkExperience extends React.Component {
             <div
                 onMouseOver={this.onMouseOverComponent}
                 onMouseOut={this.onMouseOutComponent}
-                data-testid = 'WorkExperience'
+                data-testid='WorkExperience'
                 id='WorkExperience'>
                 <p
                     className="work-experience-title"
@@ -157,6 +158,7 @@ class WorkExperience extends React.Component {
 
 
                 <WorkExperienceForm
+                    formRef={this.formRef}
                     onChangeInput={this.onChangeInput}
                     onClickCancel={this.onClickCancel}
                     onSubmitForm={this.onSubmitForm}

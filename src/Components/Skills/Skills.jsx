@@ -6,7 +6,7 @@ import './StyleSkills.css'
 class Skills extends React.Component {
     constructor() {
         super()
-
+        this.formRef = React.createRef();
         this.state = {
             skill: {
                 title: '',
@@ -32,7 +32,7 @@ class Skills extends React.Component {
     }
 
     onClickSave = (e) => {
-        if (e.target.parentElement.parentElement.checkValidity()) {
+        if (this.formRef.current.checkValidity()) {
             this.setState({
                 skill: {
                     ...this.state.skill,
@@ -141,6 +141,7 @@ class Skills extends React.Component {
                 </ul>
 
                 <form
+                    ref={this.formRef}
                     action=""
                     onSubmit={this.onSubmitForm}
                     className={`skills-form ${this.state.displaySkillsForm ? '' : 'hidden'}`}
