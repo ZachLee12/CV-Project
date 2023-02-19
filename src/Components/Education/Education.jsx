@@ -126,21 +126,29 @@ class Education extends React.Component {
 
     render() {
         return (
-            <div data-testid='Education' id='Education' onMouseOver={this.onMouseOverComponent} onMouseOut={this.onMouseOutComponent}>
+            <div
+                data-testid='Education'
+                id='Education'
+                onMouseOver={this.onMouseOverComponent}
+                onMouseOut={this.onMouseOutComponent}>
                 <p
                     className="education-title"
                     onMouseOver={this.onMouseOverTitle}
-                    onMouseOut={this.onMouseOutTitle}
-                >
+                    onMouseOut={this.onMouseOutTitle}>
+                    
                     Education
+
                     <button
                         id='add-education-button'
                         onClick={this.onClickAddEducation}
                         className={this.state.displayAddButton ? '' : 'hidden'}>
+                        
                         + Add Education
+
                     </button>
                 </p>
-                <ul className="education-list">
+
+                <ul data-testid='education-list' className="education-list">
                     {this.state.educationList.map(education => {
                         return (
                             <li
@@ -149,7 +157,13 @@ class Education extends React.Component {
                                 <div className="education-institution">{education.institution}</div>
                                 <div className="education-duration">{education.duration}</div>
                                 <div className="edit-features-wrapper">
-                                    <button onClick={this.onClickDelete} id={education.id} className={`delete-button ${this.state.displayDeleteButton ? '' : 'hidden'}`} >x</button>
+                                    <button
+                                        onClick={this.onClickDelete}
+                                        id={education.id}
+                                        className={`delete-button ${this.state.displayDeleteButton ? '' : 'hidden'}`} >
+                                        x  {/*THE DELETE BUTTON IS THIS ONE HERE*/}
+                                    </button>
+
                                     <Description
                                         displayDescriptionRemoveButton={this.state.displayDescriptionRemoveButton}
                                         displayDescriptionForm={this.state.displayDescriptionForm} />
