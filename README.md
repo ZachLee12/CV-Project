@@ -48,21 +48,31 @@ To use the draggable features of InteractJS in React, I have implemented `Intera
 Elements that should be draggable and/or resizable are then wrapped around as such: 
 
 ```javascript
-   <Interactable draggable={true} draggableOptions={draggableOptions} resizable={true} resizableOptions={resizableOptions}>
-                    <img className="profile-picture" src={this.state.imageBase64 === '' ? PlaceholderImage : this.state.imageBase64} alt="profile" />
-   </Interactable>
+<Interactable draggable={true} draggableOptions={draggableOptions} resizable={true} resizableOptions={resizableOptions}>
+   <img className="profile-picture" src={this.state.imageBase64 === '' ? PlaceholderImage : this.state.imageBase64} alt="profile" />
+</Interactable>
 ```
 
-
 ## Tools
-This project is built with [React](https://reactjs.org/), [InteractJS](https://interactjs.io/), [React-To-Print](https://www.npmjs.com/package/react-to-print) and tested with [JestJS](https://jestjs.io/) and [React-Testing-Library](https://testing-library.com/).
+### Built with:
+  [React](https://reactjs.org/) 
+  
+  [InteractJS](https://interactjs.io/) 
+  
+  [React-To-Print](https://www.npmjs.com/package/react-to-print)
+  
+### Tested with:
+  [JestJS](https://jestjs.io/)
+  
+  [React-Testing-Library](https://testing-library.com/).
 
 ## Docker
 This project is also available as a Docker Image! If you would like to run this project as your own Docker Container, please follow the steps below.
-Docker Repository: https://hub.docker.com/repository/docker/zachleezy/resume-cv-builder/general
+
+  Docker Repository: https://hub.docker.com/repository/docker/zachleezy/resume-cv-builder/general
 
 Steps:
-1. Pull the Docker Image of this project from the Docker Repository.
+1. Pull the Docker Image of this project from the Docker Repository (link above).
 
 ```
 docker pull zachleezy/resume-cv-builder:1.0
