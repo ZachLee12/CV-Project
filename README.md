@@ -53,19 +53,6 @@ Elements that should be draggable and/or resizable are then wrapped around as su
 </Interactable>
 ```
 
-## Tools
-### Built with:
-  [React](https://reactjs.org/) 
-  
-  [InteractJS](https://interactjs.io/) 
-  
-  [React-To-Print](https://www.npmjs.com/package/react-to-print)
-  
-### Tested with:
-  [JestJS](https://jestjs.io/)
-  
-  [React-Testing-Library](https://testing-library.com/).
-
 ## Docker
 This project is also available as a Docker Image! If you would like to run this project as your own Docker Container, please follow the steps below.
 
@@ -86,5 +73,17 @@ docker run -p 8080:8080 -d zachleezy/resume-cv-builder
 
 3. Navigate to `localhost:8080` and have fun with the applcation! 
 
+## Tools
+### Built with:
+  [React](https://reactjs.org/) 
+  
+  [InteractJS](https://interactjs.io/) 
+  
+  [React-To-Print](https://www.npmjs.com/package/react-to-print)
+  
+### Tested with:
+  [JestJS](https://jestjs.io/)
+  
+  [React-Testing-Library](https://testing-library.com/).
 
 
