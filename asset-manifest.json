@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.08910739.css",
-    "main.js": "/static/js/main.27bc0bd9.js",
-    "static/media/BoomerTantrum-j88y.ttf": "/static/media/BoomerTantrum-j88y.78ad6ef2884a28f47f49.ttf",
-    "static/media/man.png": "/static/media/man.f2a59cc4ad31fe6c0079.png",
-    "static/media/phone-call.png": "/static/media/phone-call.90000ca27a8a4d0424aa.png",
-    "static/media/marker.png": "/static/media/marker.e0ed7a12855081c4afa1.png",
-    "index.html": "/index.html",
-    "main.08910739.css.map": "/static/css/main.08910739.css.map",
-    "main.27bc0bd9.js.map": "/static/js/main.27bc0bd9.js.map"
+    "main.css": "/Resume-CV-Builder/static/css/main.f2aee714.css",
+    "main.js": "/Resume-CV-Builder/static/js/main.a71be009.js",
+    "static/media/BoomerTantrum-j88y.ttf": "/Resume-CV-Builder/static/media/BoomerTantrum-j88y.78ad6ef2884a28f47f49.ttf",
+    "static/media/man.png": "/Resume-CV-Builder/static/media/man.f2a59cc4ad31fe6c0079.png",
+    "static/media/phone-call.png": "/Resume-CV-Builder/static/media/phone-call.90000ca27a8a4d0424aa.png",
+    "static/media/marker.png": "/Resume-CV-Builder/static/media/marker.e0ed7a12855081c4afa1.png",
+    "index.html": "/Resume-CV-Builder/index.html",
+    "main.f2aee714.css.map": "/Resume-CV-Builder/static/css/main.f2aee714.css.map",
+    "main.a71be009.js.map": "/Resume-CV-Builder/static/js/main.a71be009.js.map"
   },
   "entrypoints": [
-    "static/css/main.08910739.css",
-    "static/js/main.27bc0bd9.js"
+    "static/css/main.f2aee714.css",
+    "static/js/main.a71be009.js"
   ]
 }
