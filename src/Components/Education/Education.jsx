@@ -98,7 +98,9 @@ class Education extends React.Component {
     }
 
     onMouseOutTitle = (e) => {
-        this.setState({ displayAddButton: false })
+        this.setState({
+            displayAddButton: false
+        })
     }
 
     onMouseOverComponent = (e) => {

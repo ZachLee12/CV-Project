@@ -127,6 +127,7 @@
 
 #Address:hover {
     background-color: #9facf4;
+    border: 2px solid red;
 }
 
 .address-form {
@@ -136,14 +137,26 @@
     width: 100%;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
 }
 
+.address-display {
+    max-width: 92%;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.address-display-wrapper {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
 
 #address-icon {
     width: 20px;
-    position: absolute;
-    margin-right: 10px;
-    left: 70px;
+    height: 20px;
+    
 }
 
 .addressText-wrapper {

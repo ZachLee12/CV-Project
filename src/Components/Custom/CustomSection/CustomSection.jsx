@@ -114,7 +114,7 @@ export default function CustomSection(props) {
         //changes to target will also affect the REAL object
         let copyList = [...customSection.customSectionList]
         let targetInformation = null;
-        
+
         // eslint-disable-next-line array-callback-return
         let target = copyList.find((section, index) => {
             if (section.customObject.id === e.target.id) {
@@ -253,6 +253,7 @@ export default function CustomSection(props) {
                     <p className="what-does-this-section-have-title">What does this section have? (Put a &#x2713;)</p>
                     <label className="custom-object-title-label" htmlFor="custom-object-title-checkbox">
                         <input
+                            data-testid='custom-object-title-checkbox'
                             id='custom-object-title-checkbox'
                             type="checkbox"
                             checked={true}
@@ -263,6 +264,7 @@ export default function CustomSection(props) {
 
                     <label className="custom-object-institution-label" htmlFor="custom-object-institution-checkbox">
                         <input
+                            data-testid='custom-object-institution-checkbox'
                             onChange={onChangeInstitutionCheckbox}
                             id='custom-object-institution-checkbox'
                             type="checkbox"
@@ -273,6 +275,7 @@ export default function CustomSection(props) {
 
                     <label className="custom-object-company-label" htmlFor="custom-object-company-checkbox">
                         <input
+                            data-testid='custom-object-company-checkbox'
                             onChange={onChangeCompanyCheckbox}
                             id='custom-object-company-checkbox'
                             type="checkbox"
