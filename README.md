@@ -71,7 +71,7 @@ docker pull zachleezy/resume-cv-builder:1.0
 docker run -p 8080:8080 -d zachleezy/resume-cv-builder
 ```
 
-3. Navigate to `localhost:8080` and have fun with the applcation! 
+3. Navigate to `localhost:8080` and have fun with the application! 
 
 ## Tools
 ### Built with:
