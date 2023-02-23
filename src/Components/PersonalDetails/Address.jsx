@@ -83,61 +83,14 @@ class Address extends React.Component {
                     <textarea
                         ref={this.addressInputRef}
                         onChange={this.onChangeTextArea}
-                        name="address-test"
+                        className="address-textarea"
                         cols="30"
                         rows="10"
                         placeholder="Your Address will display exactly how you format it here!">
-
-
                     </textarea>
                 </form>
 
-                {/* <form action="" data-testid='address-form' className="address-form">
-                    <div className="address-first-line-wrapper">
-                        <img id="address-icon" src={AddressIcon} alt="address-icon" />
-                        <label htmlFor="street-input">
-                            <div className="addressText-wrapper">
-                                {this.state.street === ''
-                                    ? 'Street'
-                                    : this.state.street}
-                            </div>
-                        </label>
-                    </div>
-                    <input
-                        autoComplete='off'
-                        className={`street-input ${this.state.displayStreet ? '' : 'hidden'}`}
-                        onChange={this.onChangeStreet}
-                        type="text"
-                        id="street-input" />
-
-                    <label htmlFor="address-line-one-input">
-                        <div className="addressText-wrapper">
-                            {this.state.addressLineOne === ''
-                                ? 'Address Line 1'
-                                : this.state.addressLineOne}
-                        </div>
-                    </label>
-                    <input
-                        autoComplete='off'
-                        className={`addressLineOne-input ${this.state.displayAddressLineOne ? '' : 'hidden'}`}
-                        onChange={this.onChangeAddressLineOne}
-                        type="text"
-                        id="address-line-one-input" />
-
-                    <label htmlFor="address-line-two-input">
-                        <div className="addressText-wrapper">
-                            {this.state.addressLineTwo === ''
-                                ? 'Address Line 2'
-                                : this.state.addressLineTwo}
-                        </div>
-                    </label>
-                    <input
-                        autoComplete='off'
-                        className={`address-line-two-input ${this.state.displayAddressLineTwo ? '' : 'hidden'}`}
-                        onChange={this.onChangeAddressLineTwo}
-                        type="text"
-                        id="address-line-two-input" />
-                </form> */}
+              
             </div>
         )
     }
