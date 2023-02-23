@@ -123,6 +123,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     transition: background-color 400ms ease-in-out;
+    min-height: 50px;
 }
 
 #Address:hover {
@@ -136,18 +137,30 @@
     width: 100%;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
 }
 
+.address-display {
+    max-width: 92%;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+.address-display-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
 
 #address-icon {
     width: 20px;
-    position: absolute;
-    margin-right: 10px;
-    left: 70px;
+    height: 20px;   
 }
 
-.addressText-wrapper {
-    text-align: left;
+.address-textarea{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 0.9em;
+    resize: vertical;
 }
 
 .background-color-input-wrapper {

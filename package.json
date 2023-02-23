@@ -48,5 +48,10 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
+<<<<<<< HEAD
   }
+=======
+  },
+  "homepage": "http://ZachLee12.github.io/Resume-CV-Builder"
+>>>>>>> master
 }

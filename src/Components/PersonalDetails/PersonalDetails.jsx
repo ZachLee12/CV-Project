@@ -115,7 +115,6 @@ class PersonalDetails extends React.Component {
                 style={this.state.style}
                 data-testid='PersonalDetails'
                 id='PersonalDetails'>
-                {/* <img className="profile-picture" src={PlaceholderPicture} alt="" /> */}
                 <ProfilePicture />
                 <form
                     data-testid ='personal-details-form'
