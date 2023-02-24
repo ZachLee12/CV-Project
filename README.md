@@ -11,9 +11,9 @@ You have the option to print your Resume/CV as well!
 
 ## About the Project
 ### Main Concept
-This is my first React project. Each section of the Resume/CV template represents a Component that has its own state. Components such as `Education`, `WorkExperience`, and `Skills` have `Description` as their ***Child Component***, in which they `props` to them.
+This is my first React project. Each section of the Resume/CV template represents a Component that has its own state. Components such as `Education`, `WorkExperience`, and `Skills` have `Description` as their ***Child Component***, in which they pass `props` to them.
 
-Each Component also listens for `onMouseOver` and `onMouseOut` React Events to decide whether to change their state which would cause a re-render. This is mainly implemented in the Components for them to decide whether if they should render some hidden elements in them.
+Each Component also listens for `onMouseOver` and `onMouseOut` React Events to decide whether to change their state and cause a re-render. This is mainly implemented in the Components for them to decide whether if they should render some hidden elements in them.
 
 ### The `ProfilePicture` Component
 For uploading your own images as your profile picture, it is handled with Promises and Async/Await. Inside `ProfilePicture`, the class method `onChangeInput` will handle converting image files to Base64 before updating its own state. Since the JavaScript built-in `readAsDataURL` is asynchronous, I have implemented a private asynchronous function `#getImageBase64` to handle the asynchrony with Promises. An example of this implementation can be found below:
