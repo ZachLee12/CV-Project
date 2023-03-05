@@ -1,7 +1,7 @@
 # Resume-CV-Builder 
   Live Demo: https://zachlee12.github.io/Resume-CV-Builder
 
-  AWS-Amplify: https://aws-amplify.d24ws5qtncmkb5.amplifyapp.com/
+  AWS-Amplify: https://aws-amplify.d24ws5qtncmkb5.amplifyapp.com/ [TERMINATED]
   
   Docker Image: https://hub.docker.com/repository/docker/zachleezy/resume-cv-builder/general
 
